@@ -1,0 +1,943 @@
+\documentclass[12pt]{book}
+
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+
+\newcolumntype{C}{ >{\centering\arraybackslash} m{4cm} }
+\newcolumntype{E}{ >{\centering\arraybackslash} m{11cm} }
+\newcolumntype{D}{ >{\centering\arraybackslash} m{3cm} }
+\newcolumntype{F}{ >{\centering\arraybackslash} m{1cm} }
+\newcolumntype{G}{ >{\centering\arraybackslash} m{2cm} }
+\newcolumntype{H}{ >{\centering\arraybackslash} m{8cm} }
+\newcolumntype{K}{ >{\centering\arraybackslash} m{7cm} }
+\newcolumntype{Y}{ >{\centering\arraybackslash} m{10cm} }
+
+
+\usepackage{color}
+\usepackage{xcolor}
+
+\usepackage[margin=1.1in,footskip=.25in]{geometry}
+
+\usepackage{listings}
+
+\lstdefinestyle{mystyle2}{
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                             
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=3,
+}
+
+\lstset{style=mystyle2}
+
+\usepackage{amsmath, amssymb}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\usepackage[most]{tcolorbox}
+
+\tcbset{
+    frame code={}
+    center title,
+    left=10pt,
+    right=10pt,
+    top=10pt,
+    bottom=10pt,
+    colback=gray!5,
+    colframe=gray,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=0mm,
+    boxsep=5pt,
+    arc=0pt,outer arc=0pt,
+}
+
+\usepackage{graphics}
+\usepackage{graphicx}
+
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{patterns}
+\usetikzlibrary{matrix,backgrounds}
+\usetikzlibrary{arrows,shapes,trees}
+\usetikzlibrary{chains,shapes}
+\usetikzlibrary{arrows}
+
+
+\usepackage{xepersian}
+\settextfont[Scale=1]{Vazir}
+
+\renewcommand{\baselinestretch}{1.3} 
+
+
+\begin{document}
+
+
+
+
+
+\chapter{مرتبه ی اجرایی
+}
+
+
+
+\section{سر فصل ها}
+
+
+
+\begin{enumerate}
+	\item مرتبه ی اجرایی ( پیچیدگی اجرایی )
+	\item رابطه های بازگشتی
+	\item روش تقسیم و حل
+	\item روش پویا
+	\item روش حریصانه
+	\item روش عقبگرد 
+	\item الگوریتم های گراف
+	\item الگوریتم های مرتب سازی
+	\item مسائل
+	\lr{p}
+	و
+	\lr{np}
+\end{enumerate}
+
+
+
+\section{پیچیدگی اجرایی}
+
+
+پیچیدگی یک الگوریتم ، تابعی است که مدت زمان اجرای استفاده شده توسط الگوریتم را بر حسب تعداد داده های ورودی 
+\lr{n}
+اندازه می گیرد .
+
+
+
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{ l | l  }
+    notation
+    &
+    name
+     \\ \hline
+     $\mathcal{O}(1)$
+     &
+     constant
+     \\ \hline
+     $\mathcal{O}(n)$
+     &
+     linear
+     \\ \hline
+     $\mathcal{O}(\log{(n)})$
+     &
+     logarithmic
+     \\ \hline
+     $\mathcal{O}(n^2)$
+     &
+     quadratic
+     \\ \hline
+     $\mathcal{O}(n^x)$
+     &
+     polynomial
+     \\ \hline
+     $\mathcal{O}(e^n)$
+     &
+     exponential
+     \\ \hline
+     $\mathcal{O}(n!)$
+     &
+     factorial
+     \\
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+
+
+\section{مرتبه ی اجرایی توابع چند جمله ای}
+
+
+\begin{tcolorbox}
+\Large
+\begin{align*}
+f(n) = n^{m} + n^{m-1} + \dots + n^{1} + n + c \Rightarrow f(n) = O^{(n^{m})}
+\end{align*}
+\end{tcolorbox}
+
+
+\subsubsection{مثال}
+
+
+\begin{align*}
+f(n) = 5^{n^{2}} + 3n + 4 &\Rightarrow f(n) = O^{(n^{2})}
+\\ \\
+f(n) = n + 6n^{8} + n^{2} &\Rightarrow f(n) = O^{(n^{8})}
+\\ \\
+n! + 2^{n} + 1000n^{10} &\Rightarrow f(n) = O(n!)
+\end{align*}
+
+
+\newpage
+
+
+\section{مقایسه}
+
+
+\begin{align*}
+ O(1) <  O(\log{(n)}) <  O(n) <  O(n\log{(n)}) <  O(n^{2}) <  O(2^{n}) <  O(n!) <  O(n^{n})
+\end{align*}
+
+
+
+
+\begin{tcolorbox}
+\Large
+\begin{align*}
+\log^{n}_{2} = \log{(n)}
+\end{align*}
+\end{tcolorbox}
+
+
+
+
+\section{مرتبه اجرایی حلقه های ساده}
+
+
+
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{ Y  C  }
+    \begin{lstlisting}[language=C++, caption=]
+    
+    
+	for( int i = a ; i <= b ; i+=k ) {
+		
+	}
+	\end{lstlisting}
+    &
+    \colorbox{gray!10}{\parbox{90pt}{
+    $$\cfrac{b - a + 1}{k}$$
+    }}
+     \\ 
+     \begin{lstlisting}[language=C++, caption=]
+     
+     
+     for( int i = b ; i >= a ; i-=k ) {
+		
+     }
+	\end{lstlisting}
+    &
+    \colorbox{gray!10}{\parbox{90pt}{
+    $$\cfrac{b - a + 1}{k}$$
+    }}
+     \\ 
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+
+
+\newpage
+
+\subsubsection{مثال}
+
+
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{ Y  C  }
+    \begin{lstlisting}[language=C++, caption=]
+    
+    
+	for( int i = 1 ; i <= n ; i+=1 ) {
+		
+	}
+	\end{lstlisting}
+    &
+    \colorbox{gray!10}{\parbox{90pt}{
+    $$\cfrac{n - 1 + 1}{1} = n$$
+    }}
+     \\ 
+     \begin{lstlisting}[language=C++, caption=]
+     
+     
+     for( int i = 3 ; i <= n ; i+=2 ) {
+		
+     }
+	\end{lstlisting}
+    &
+    \colorbox{gray!10}{\parbox{120pt}{
+    $$\cfrac{n - 3 + 1}{2} = \cfrac{n - 2}{2}$$
+    }}
+     \\ 
+     \begin{lstlisting}[language=C++, caption=]
+     
+     
+     for( int i = 9 ; i < 3n+4 ; i+=5 ) {
+		
+     }
+	\end{lstlisting}
+    &
+    \colorbox{gray!10}{\parbox{130pt}{
+    $$\cfrac{3n+4 - 9}{5} = \cfrac{3n - 5}{5}$$
+    }}
+     \\ 
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+
+\newpage
+
+
+\section{مرتبه ی لگاریتمی}
+
+
+
+
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{ Y C  }
+    \begin{lstlisting}[language=C++, caption=]
+    
+    
+	for( int i = a ; i <= b ; i=i*k ) {
+		
+	}
+	\end{lstlisting}
+    &
+    \colorbox{gray!10}{\parbox{90pt}{
+    $$\log^{b}_{k} - \log^{a}_{k} + 1$$
+    }}
+     \\ 
+     \begin{lstlisting}[language=C++, caption=]
+     
+     
+     for( int i = b ; i >= a ; i=i/k ) {
+		
+     }
+	\end{lstlisting}
+    &
+    \colorbox{gray!10}{\parbox{90pt}{
+    $$\log^{b}_{k} - \log^{a}_{k} + 1$$
+    }}
+     \\ 
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+
+
+
+\subsubsection{مثال}
+
+
+
+
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{ Y C  }
+    \begin{lstlisting}[language=C++, caption=]
+    
+    
+	for( int i = 1 ; i <= 8 ; i=i*2 ) {
+		
+	}
+	\end{lstlisting}
+    &
+    \colorbox{gray!10}{\parbox{120pt}{
+    $$\log^{8}_{2} - \log^{1}_{2} + 1 = 4$$
+    }}
+     \\ 
+     \begin{lstlisting}[language=C++, caption=]
+     
+     
+     for( int i = 27 ; i <= n ; i=i*3 ) {
+		
+     }
+	\end{lstlisting}
+    &
+    \colorbox{gray!10}{\parbox{150pt}{
+    $$\log^{n}_{3} - \log^{27}_{3} + 1 = \log^{n}_{3} - 2$$
+    }}
+     \\ 
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+
+\newpage
+
+
+\section{حلقه های تو در تو}
+
+
+
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{ Y C  }
+    \begin{lstlisting}[language=C++, caption=]
+    
+    
+	for( int i = 1 ; i <= n ; i++ )
+		for( int j = 1 ; j <= n ; j++ )
+			
+	\end{lstlisting}
+    &
+    \colorbox{gray!10}{\parbox{90pt}{
+    $$n^{2}$$
+    }}
+     \\ 
+     \begin{lstlisting}[language=C++, caption=]
+     
+     
+	for( int i = 2 ; i <= n ; i+=4 )
+		for( int j = n ; j > 3 ; j=j-2 )
+			
+	\end{lstlisting}
+    &
+    \colorbox{gray!10}{\parbox{140pt}{
+    $$\cfrac{n-2+1}{4} \times \cfrac{n-3}{2} \Rightarrow n^{2}$$
+    }}
+     \\ 
+     \begin{lstlisting}[language=C++, caption=]
+     
+     
+	for( int i = 1 ; i <= n ; i*=2 )
+		for( int j = 1 ; j <= n ; j++ )
+			
+	\end{lstlisting}
+    &
+    \colorbox{gray!10}{\parbox{160pt}{
+    $$\log{(n+1)} \times n \Rightarrow O(n\log{n})$$
+    }}
+     \\ 
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+
+
+\newpage
+
+
+
+\section{حلقه های پشت سرهم}
+
+
+
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{ Y C  }
+    \begin{lstlisting}[language=C++, caption=]
+
+	for( int i = 1 ; i <= n ; i++ ) {
+	
+	}
+	
+	for( int j = 1 ; j <= m ; j++ ) {
+	
+	}
+			
+	\end{lstlisting}
+    &
+    \colorbox{gray!10}{\parbox{90pt}{
+    \begin{align*}
+    &O(max(n,m))
+    \\ Or \\
+    &O(n + m)
+    \end{align*}
+    }}
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+
+
+\section{ترکیب حلقه های تو در تو و پشت سر هم}
+
+
+
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{ Y C  }
+    \begin{lstlisting}[language=C++, caption=]
+	for( int i = 1 ; i <= n ; i++ ) {
+		for( int j = 1 ; j <= n ; j++ ) {
+		
+		}
+	}
+	
+	for( int k = 1 ; k <= n ; k++ ) {
+	
+	}	
+	\end{lstlisting}
+    &
+    \colorbox{gray!10}{\parbox{90pt}{
+    \begin{align*}
+    O(max(n^{2},n)) = O(n^{2})
+    \end{align*}
+    }}
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+
+
+\section{حلقه های تو در توی وابسته}
+
+
+
+
+\begin{latin}
+    \begin{lstlisting}[language=C++, caption=]
+	for( int i = 1 ; i <= n ; i++ ) {
+		for( int j = 1 ; j <= i ; j++ ) {
+		
+		}
+	}	
+	\end{lstlisting}
+\end{latin}
+
+
+
+\begin{tcolorbox}
+\begin{align*}
+    1 + 2 + 3 + \dots + n = \cfrac{n(n+1)}{2} \Rightarrow O(n^{2})
+	\end{align*}
+\end{tcolorbox}
+
+
+
+
+\section{نماد های پیچیدگی اجرایی}
+
+
+
+\subsection{\lr{big-$O$ Notation}}
+
+عبارت
+$g(n) \in O(f(n))$
+یعنی برای تابع پیچیدگی مفروض 
+$f(n)$
+،
+$O(f(n))$
+به مجموعه ای از توابع اشاره دارد که برای آنها ثابت های 
+\lr{c}
+و
+\lr{$n_{0}$}
+وجود دارند ، بطوریکه برای همه ی 
+$n \geq n_{0}$
+داریم :
+
+$$
+g(n) \leq cf(n)
+$$
+
+
+\subsection{\lr{big-$\Omega$ Notation}}
+
+عبارت
+$g(n) \in \Omega(f(n))$
+یعنی برای تابع پیچیدگی مفروض 
+$f(n)$
+،
+$\Omega(f(n))$
+به مجموعه ای از توابع اشاره دارد که برای آنها ثابت های 
+\lr{c}
+و
+\lr{$n_{0}$}
+وجود دارند ، بطوریکه برای همه ی 
+$n \geq n_{0}$
+داریم :
+
+$$
+g(n) \geq cf(n)
+$$
+
+
+
+\subsection{\lr{$\theta$ Notation}}
+
+
+
+عبارت
+$g(n) \in \theta(f(n))$
+یعنی :
+
+\begin{center}
+$g(n) \in O(f(n))$
+
+و
+
+$g(n) \in \Omega(f(n))$
+\end{center}
+
+
+\section{خواص توابع رشد}
+
+
+\subsection{بازتابی}
+
+\begin{align*}
+\begin{rcases}
+f(n) = O(f(n)) \\
+f(n) = \Omega(f(n))
+\end{rcases} \Rightarrow
+f(n) = \theta(f(n))
+\end{align*}
+
+\subsection{تراگذاری}
+
+\begin{align*}
+\begin{rcases}
+f(n) = \theta(g(n)) \\
+g(n) = \theta(h(n))
+\end{rcases} \Rightarrow
+f(n) = \theta(h(n))
+\end{align*}
+
+\subsection{تقارن برای $\theta$}
+
+\begin{align*}
+f(n) = \theta(g(n)) \Leftrightarrow  g(n) = \theta(f(n))
+\end{align*}
+
+\subsection{تقارن ترانهاده}
+
+\begin{align*}
+f(n) = O(g(n)) \Leftrightarrow g(n) = \Omega(f(n))
+\end{align*}
+
+\section{نکته}
+
+
+\begin{align*}
+\begin{rcases}
+f(n) \in O(g(n)) \\
+h(n) \in O(k(n))
+\end{rcases} &\Rightarrow
+f(n) + h(n) \in O(max(g(n) , k(n)))
+\\ \\
+\begin{rcases}
+f(n) \in O(g(n)) \\
+h(n) \in O(k(n))
+\end{rcases} &\Rightarrow
+f(n) . h(n) \in O(g(n) . k(n))
+\end{align*}
+
+
+
+
+
+\chapter{روش تقسیم و حل}
+
+
+
+\section{مراحل}
+
+
+\begin{enumerate}
+	\item تقسیم نمونه ای از یک مسئله به یک یا چند نمونه کوچکتر
+	\item حل نمونه های کوچکتر
+	\item ترکیب حل نمونه های کوچکتر برای به دست آوردن حل نمونه اولیه ( در صورت نیاز )
+\end{enumerate}
+
+
+\noindent
+** دلیل اینکه میگوییم 
+\textbf{در صورت نیاز}
+این است که در بعضی الگوریتم ها مانند جستجوی دودویی نمونه فقط به یک نمونه کوچکتر کاهش می یابد و نیازی به ترکیب حل ها نیست .
+
+\noindent
+** هنگام طراحی الگوریتم های تقسیم و حل معمولاً آن را به صورت یک روال بازگشتی می نویسند .
+
+
+\subsubsection{مثال}
+
+\noindent
+الگوریتمی که هر ورودی مسئله به اندازه ی
+\lr{n}
+را به 2 بخش کم و بیش مساوی تقسیم می کند و زیر مسئله ها را به صورت بازگشتی حل و سپس با هزینه خطی حاصل این دو را با هم ترکیب کرده و جواب مسئله را به دست می آورد برابر است با :
+
+\begin{align*}
+T(n) &= 2 \: T(\frac{n}{2}) + O(n) \\
+T(n) &= O(n\log{(n)})
+\end{align*}
+
+
+
+\section{ضرب دو عدد صحیح بزرگ}
+
+برای انجام اعمال محاسباتی روی اعداد صحیح بزرگتر از حد قابل نمایش توسط سخت افزار کامپیوتر ، باید از روش تقسیم و حل استفاده کرد .
+
+اگر 
+\lr{n}
+تعداد ارقام عدد صحیح 
+\lr{u}
+باشد ، آن را به دو عدد صحیح یکی
+\lr{x}
+ با 
+ $\lceil \frac{n}{2} \rceil$
+رقم و دیگری 
+$y$
+با
+ $\lfloor \frac{n}{2} \rfloor$
+ تبدیل می کنیم :
+ 
+\begin{align*}
+u &= x \times 10^{m} + y  & m &= \lfloor \frac{n}{2} \rfloor
+\end{align*}
+
+مثال :
+
+\begin{align*}
+12345 &= 123 \times 10^{2} + 45
+\end{align*}
+
+
+\subsection{ضرب
+\lr{u}
+و
+\lr{v}
+}
+
+\begin{align*}
+u \times v = (x \times 10^{m} + y) (w \times 10^{m} + z) = xw \times 10^{2m} + (xz + wy) \times 10^{m} + yz
+\end{align*}
+
+
+
+پس می توان 
+\lr{u}
+و
+\lr{v}
+را با 4 عمل ضرب روی اعداد صحیح ( با حدود نیمی از ارقام ) و اجرای عملیات زمان خطی در هم ضرب کنیم .
+
+
+
+
+
+
+\chapter{روش برنامه نویسی پویا}
+
+
+در روش پویا ابتدا نمونه های کوچکتر را حل کرده و نتایج را 
+\textbf{ذخیره} 
+می کنیم و بعداً هرگاه به یکی از آن ها نیاز پیدا شد به جای محاسبه دوباره ، کافی است آن را بازیابی کنیم .
+
+در برنامه نویسی پویا از جدول استفاده می شود .
+
+
+برنامه نویسی پویا از این لحاظ که نمونه را به نمونه های کوچکتر تقسیم می کند مشابه روش تقسیم و حل است .
+
+
+
+\section{مراحل بسط یک الگوریتم برنامه نویسی پویا}
+
+
+\begin{enumerate}
+	\item ارائه ی یک ویژگی بازگشتی برای حل نمونه ای مسئله
+	\item حل نمونه ای از مسئله به شیوه پایین به بالا با حل نمونه های کوچکتر
+\end{enumerate}
+
+
+
+\section{الگوریتم هایی که به روش برنامه نویسی پویا حل می شوند}
+
+
+
+\begin{enumerate}
+	\item دنباله فیبوناچی
+	\item ضرب دو جمله ای
+	\item ضرب زنجیره ای ماتریس ها
+	\item درخت های جستجوی دودویی بهینه
+	\item کوله پشتی 0 و 1
+	\item فلوید
+	\item فروشنده دوره گرد
+\end{enumerate}
+
+
+
+
+
+
+
+\chapter{روش حریصانه}
+
+
+\noindent
+الگوریتم حریصانه با انجام یک سری انتخاب ، که در جای خود بهینه است ، عمل کرده به امید اینکه یک حل بهینه کلی یافت شود .
+
+\noindent
+در الگوریتم حریصانه همواره جواب بهینه حاصل نمی شود .
+
+
+\noindent
+بهینه بودن الگوریتم باید تعیین شود .
+
+
+\noindent
+در روش حریصانه ، تقسیم به نمونه های کوچکتر صورت نمی پذیرد .
+
+
+
+\subsection{نحوه ی کار الگوریتم حریصانه}
+
+
+الگوریتم حریصانه ، کار را با یک مجموعه ی تهی آغاز کرده و به ترتیب عناصری به مجموعه اضافه می کند تا این مجموعه حلی برای نمونه ای از یک مسئله را نشان دهد .
+
+
+هر تکرار شامل مولفه های زیر است :
+
+\subsubsection{روال انتخاب}
+عنصر بعدی را که باید به مجموعه اضافه شود انتخاب می کند . انتخاب طبق یک ملاک حریصانه انجام شده که یک شرط بهینه را در همان برهه برآورده می سازد .
+
+
+\subsubsection{بررسی امکان سنجی}
+تعیین می کند که آیا مجموعه ی جدید برای رسیدن به حل ، عملی است یا خیر .
+
+
+\subsubsection{بررسی راه حل}
+
+تعیین می کند که آیا مجموعه ی جدید ، حل نمونه را ارائه می کند یا خیر .
+
+
+
+\section{نمونه هایی از الگوریتم های حریصانه}
+
+
+\begin{enumerate}
+	\item خرد کردن پول
+	\item زمانبندی
+	\item کد هافمن
+	\item کوله پشتی کسری
+	\item دایکسترا
+	\item پریم
+	\item کراسکال
+\end{enumerate}
+
+
+%\chapter{روش شاخه و قید}
+
+
+
+\chapter{الگوریتم های گراف}
+
+
+\section{نمایش گراف}
+
+
+\begin{enumerate}
+	\item ماتریس همجواری
+	\lr{(Adjacency Matrices)}
+	\item لیست همجواری
+	\lr{(Adjacency List)}
+\end{enumerate}
+
+
+
+\section{پیمایش گراف}
+
+
+\begin{enumerate}
+	\item سطحی
+	\lr{(BFS : Breadth First Search)}
+	\item عمقی
+	\lr{(DFS : Depth First Search)}
+\end{enumerate}
+
+در پیمایش
+\lr{DFS}
+از پشته و در پیمایش
+\lr{BFS}
+از صف استفاده می شود .
+
+
+
+
+
+
+\section{کوتاهترین مسیر
+\lr{(Shortest Paths)}
+}
+
+
+
+\subsection{\lr{Single-Source All Destination}}
+
+\begin{latin}
+\begin{itemize}
+	\item Dijkstra
+	\item Bellman-Ford
+\end{itemize}
+\end{latin}
+
+
+\subsection{\lr{All-Pairs}}
+
+\begin{latin}
+\begin{itemize}
+	\item Matrix Multiplication
+	\item Floyd-Warshall
+\end{itemize}
+\end{latin}
+
+
+
+\section{درخت پوشای کمینه
+\lr{(Minimum Spanning Tree)}
+}
+
+
+
+\subsection{درخت پوشا}
+
+یک زیر گراف متصل است که حاوی همه ی رئوس موجود در گراف بوده و یک درخت باشد یعنی چرخه نداشته باشد .
+
+
+\subsection{الگوریتم های تعیین درخت پوشای کمینه}
+
+\begin{latin}
+\begin{enumerate}
+	\item Prim
+	\item Kruskal
+\end{enumerate}
+\end{latin}
+
+\end{document}

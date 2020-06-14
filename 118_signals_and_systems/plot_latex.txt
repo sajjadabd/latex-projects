@@ -1,0 +1,141 @@
+\begin{tikzpicture}
+\draw[->] (-5,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-2) -- (0,5) node[above] {$y$};
+\foreach \x in {-4,...,-1} {
+\draw (\x,0.1cm) -- (\x,-0.1cm) node[below] {$\x\phantom{-}\strut$};
+}
+\foreach \x in {1,...,4} {
+\draw (\x,0.1cm) -- (\x,-0.1cm) node[below] {$\x\strut$};
+}
+\foreach \y in {1,2,...,4} {
+\draw (0.1cm,\y) -- (-0.1cm,\y) node[left] {$\y\strut$};
+}
+\foreach \y in {-2,-1} {
+\draw (0.1cm,\y) -- (-0.1cm,\y) node[left] {$\y\strut$};
+}
+%\node[below left=0.1cm] at (-0,0) {$0\strut$};
+\begin{scope}
+\clip (-5,-1) rectangle (5,5);
+\draw[color=red,samples=100] plot ({\x},{\x*\x});
+\end{scope}
+\end{tikzpicture}
+
+
+
+
+
+=================================
+
+
+
+
+
+\begin{center}
+\begin{tikzpicture}
+\draw[->] (-5,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-2) -- (0,3) node[above] {$y$};
+\foreach \x in {-4,...,-1} {
+\draw (\x,0.1cm) -- (\x,-0.1cm) node[below] {$\x\phantom{-}\strut$};
+}
+\foreach \x in {1,...,4} {
+\draw (\x,0.1cm) -- (\x,-0.1cm) node[below] {$\x\strut$};
+}
+\foreach \y in {1,...,2} {
+\draw (0.1cm,\y) -- (-0.1cm,\y) node[left] {$\y\strut$};
+}
+\foreach \y in {-2,-1} {
+\draw (0.1cm,\y) -- (-0.1cm,\y) node[left] {$\y\strut$};
+}
+%\node[below left=0.1cm] at (-0,0) {$0\strut$};
+\draw [ultra thick] (0,1) -- (4,1);
+\draw [ultra thick] (-4,0) -- (0,0);
+\end{tikzpicture}
+\end{center}
+
+
+
+
+
+
+===============================================
+
+
+
+
+
+
+\begin{center}
+\begin{tikzpicture}[thick,scale=0.5]
+\draw[-] (-10,0) -- (10,0) node [below] {$n$};
+\node[below](0,0){0};
+\foreach \x in {-9,...,9}{
+\draw[fill=black] (\x,0) -- (\x,{unitstep(\x)})  circle (0.2cm);
+}
+\end{tikzpicture}
+\end{center}
+
+
+
+
+
+
+
+==========================================
+
+
+
+
+
+\begin{center}
+\begin{tikzpicture}[thick,scale=0.5]
+\draw[-] (-10,0) -- (10,0) node [below] {$n$};
+\node[below](0,0){0};
+\foreach \x in {-9,...,9}{
+\draw[fill=black] (\x,0) -- (\x,{delta(\x)})  circle (0.2cm);
+}
+\end{tikzpicture}
+\end{center}
+
+
+
+
+
+
+====================================
+
+
+
+
+
+
+\begin{center}
+\begin{tikzpicture}[thick,scale=0.5]
+\draw[-] (-10,0) -- (10,0) node [below] {$n$};
+\node[below](0,0){0};
+\foreach \x in {-9,...,-1}{
+\draw[fill=black] (\x,0) -- (\x,-1cm)  circle (0.2cm);
+}
+\foreach \x in {0,...,9}{
+\draw[fill=black] (\x,0) -- (\x,1cm)  circle (0.2cm);
+}
+\end{tikzpicture}
+\end{center}
+
+
+
+
+
+
+
+
+
+=====================================
+
+
+
+
+
+
+
+
+

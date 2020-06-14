@@ -1,0 +1,251 @@
+\usepackage{amsmath, amssymb}
+
+\usepackage{tikz}
+\usetikzlibrary{graphs,quotes,arrows.meta}
+\usetikzlibrary{automata,positioning}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{chains}
+\usetikzlibrary{matrix,backgrounds}
+\usetikzlibrary{calc}
+
+
+======================
+
+
+\begin{tikzpicture}
+\node {root}
+child {node {left}}
+child {node {right}
+	child {node {child}}
+	child {node {child}}
+};
+\end{tikzpicture}
+
+
+
+==========================
+
+
+\begin{tikzpicture}[level distance=1.5cm,
+  level 1/.style={sibling distance=3cm},
+  level 2/.style={sibling distance=1.5cm}]
+  \node {root}
+    child {node {left}
+      child {node {lleft}}
+      child {node {rleft}}
+    }
+    child {node {right}
+    child {node {lright}}
+      child {node {rright}}
+    };
+\end{tikzpicture}
+
+
+
+===========================BEST============
+
+\begin{tikzpicture}
+\node[circle,draw](z){$30$}
+  child[missing]{}
+  child{ node[circle,draw]{40} 
+	  child{ node[circle,draw] {20} } 
+	  child[missing] 
+  };
+\end{tikzpicture}
+
+
+===========================
+
+
+
+\begin{tikzpicture}
+\node {$q_{1}$}
+child {node {$q_{4}$}}
+child {node {$q_{1}$}
+	child {node {$q_{2}$}}
+	child {node {$q_{1}$}
+		child {node {$q_{1}$}
+				child {node {$q_{1}$}}
+				child {node {$q_{4}$}}
+		}
+		child {node {$q_{4}$}
+			child {node {$q_{5}$}}
+		}
+	}
+};
+\end{tikzpicture}
+
+
+
+===========================
+
+
+
+
+\begin{tikzpicture}[sibling distance=2cm]
+\node {$<sentence>$}
+child {node {$<noun>$}
+	child {node {$Ram$}}
+}
+child {node {$<verb>$}
+	child {node {$is$}}
+}
+child {node {$<art>$}
+	child {node {$a$}}
+}
+child {node {$<adj>$}
+	child {node {$good$}}
+}
+child {node {$<noun>$}
+	child {node {$boy$}}
+};
+\end{tikzpicture}
+
+
+
+======================================
+
+
+
+\begin{tikzpicture}[level distance=10mm]
+\tikzstyle{every node}=[fill=red!60,circle,inner sep=1pt]
+\tikzstyle{level 1}=[sibling distance=20mm,
+set style={{every node}+=[fill=red!45]}]
+\tikzstyle{level 2}=[sibling distance=10mm,
+set style={{every node}+=[fill=red!30]}]
+\tikzstyle{level 3}=[sibling distance=5mm,
+set style={{every node}+=[fill=red!15]}]
+\node {31}
+child {node {30}
+	child {node {20}
+		child {node {5}}
+		child {node {4}}
+	}
+	child {node {10}
+		child {node {9}}
+		child {node {1}}
+	}
+}
+child {node {20}
+	child {node {19}
+		child {node {1}}
+		child[fill=none] {edge from parent[draw=none]}
+	}
+	child {node {18}}
+};
+\end{tikzpicture}
+
+
+
+
+======================================
+
+
+
+
+\begin{tikzpicture}
+\node[circle,fill=black,minimum width=8pt] {}
+child {[fill] circle (2pt)}
+child {[fill] circle (2pt)};
+\end{tikzpicture}
+
+
+
+================================
+
+
+
+
+\begin{tikzpicture}
+\node {root}
+child {[fill] circle (2pt)}
+child {[fill] circle (2pt)};
+\end{tikzpicture}
+
+
+
+
+
+
+
+==============================
+
+
+
+
+
+
+\begin{tikzpicture}
+\node {root} [grow=up]
+child {node {left}}
+child {node {right}
+child {node {child}}
+child {node {child}}
+};
+\end{tikzpicture}
+
+
+
+
+========================
+
+
+
+
+
+\begin{tikzpicture}
+\node {root} [grow=right]
+	child {node {left}
+	}
+	child {node {right}
+		child[missing] {node {child}}
+		child {node {child}
+			child {node {child}}
+			child[missing] {node {child}}
+		}
+	};
+\end{tikzpicture}
+
+
+
+
+============================
+
+
+
+
+\begin{tikzpicture}
+\node {root}
+	child {node {left}
+	}
+	child {node {right}
+		child[missing] {node {child}}
+		child {node {child}
+			child {node {child}}
+			child[missing] {node {child}}
+		}
+	};
+\end{tikzpicture}
+
+
+
+
+
+
+==============================
+
+
+
+\begin{center}
+\begin{tikzpicture}[node distance = 1cm,level distance = 2cm,sibling distance = 4cm]
+\node {$F(x,y,y') = 0$}
+child {node {$y' = f(x,y)$}}
+child {node {$y = f(x,y')$}}
+child {node {$x = f(y,y')$}
+};
+\end{tikzpicture}
+\end{center}
+
+
+
+====================

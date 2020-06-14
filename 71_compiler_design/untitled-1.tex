@@ -1,0 +1,1173 @@
+\documentclass[12pt]{book}
+
+\usepackage{amsmath, amssymb}
+\usepackage{mathtools}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=3
+}
+
+
+\lstdefinestyle{javaStyle}{
+  frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=black,  %choose some color if you want links to stand out
+}
+
+
+\usepackage[margin=1.1in,footskip=.25in]{geometry}
+
+\begin{document}
+
+\chapter{Variables}
+
+\section{C++ Variables}
+
+\subsection{C++ Variables}
+
+Variables are containers for storing data values.\newline
+
+In C++, there are different types of variables (defined with different keywords), for example:
+
+\begin{itemize}
+	\item [int] stores integers (whole numbers), without decimals, such as 123 or -123
+	\item [double] stores floating point numbers, with decimals, such as 19.99 or -19.99
+	\item [char] stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes
+	\item [string] stores text, such as "Hello World". String values are surrounded by double quotes
+	\item [bool] stores values with two states: true or false
+\end{itemize}
+
+
+
+
+\subsection{Declaring (Creating) Variables}
+
+To create a variable, you must specify the type and assign it a value:
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+type variable = value;
+\end{lstlisting}
+
+
+Where type is one of C++ types (such as int), and variable is the name of the variable (such as x or myName). The equal sign is used to assign values to the variable.
+
+To create a variable that should store a number, look at the following example:
+
+
+Create a variable called myNum of type int and assign it the value 15:
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+int myNum = 15;
+cout << myNum;
+\end{lstlisting}
+
+You can also declare a variable without assigning the value, and assign the value later:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+int myNum;
+myNum = 15;
+cout << myNum;
+\end{lstlisting}
+
+
+Note that if you assign a new value to an existing variable, it will overwrite the previous value:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+int myNum = 15;  // myNum is 15
+myNum = 10;  // Now myNum is 10
+cout << myNum;  // Outputs 10
+\end{lstlisting}
+
+
+\subsection{Constants}
+
+However, you can add the const keyword if you don't want others (or yourself) to override existing values (this will declare the variable as "constant", which means unchangeable and read-only):
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+const int myNum = 15;  // myNum will always be 15
+myNum = 10;  // error: assignment of read-only variable 'myNum'
+\end{lstlisting}
+
+
+\subsection{Other Types}
+
+A demonstration of other data types:
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+int myNum = 5;               // Integer (whole number without decimals)
+double myFloatNum = 5.99;    // Floating point number (with decimals)
+char myLetter = 'D';         // Character
+string myText = "Hello";     // String (text)
+bool myBoolean = true;       // Boolean (true or false)
+\end{lstlisting}
+
+
+
+
+\subsection{Display Variables}
+
+The cout object is used together with the << operator to display variables.
+
+To combine both text and a variable, separate them with the << operator:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+int myAge = 35;
+cout << "I am " << myAge << " years old.";
+\end{lstlisting}
+
+
+
+\subsection{Add Variables Together}
+
+To add a variable to another variable, you can use the + operator:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+int x = 5;
+int y = 6;
+int sum = x + y;
+cout << sum;
+\end{lstlisting}
+
+
+
+
+\subsection{Declare Many Variables}
+
+To declare more than one variable of the same type, you can use a comma-separated list:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+int x = 5, y = 6, z = 50;
+cout << x + y + z;
+\end{lstlisting}
+
+
+
+\subsection{C++ Identifiers}
+
+All C++ variables must be identified with unique names.
+
+These unique names are called identifiers.
+
+Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).
+
+Note: It is recommended to use descriptive names in order to create understandable and maintainable code.
+
+The general rules for constructing names for variables (unique identifiers) are:
+
+\begin{itemize}
+	\item Names can contain letters, digits and underscores
+	\item Names must begin with a letter or an underscore (\_)
+	\item Names are case sensitive (myVar and myvar are different variables)
+	\item Names cannot contain whitespaces or special characters like !, \#, \%, etc.
+	\item Reserved words (like C++ keywords, such as int) cannot be used as names
+
+\end{itemize}
+
+
+
+\section{Python Variables}
+
+\subsection{Creating Variables}
+
+Variables are containers for storing data values.
+
+Unlike other programming languages, Python has no command for declaring a variable.
+
+A variable is created the moment you first assign a value to it.
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x = 5
+y = "John"
+print(x)
+print(y)
+\end{lstlisting}
+
+
+
+Variables do not need to be declared with any particular type and can even change type after they have been set.
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x = 4 # x is of type int
+x = "Sally" # x is now of type str
+print(x)
+\end{lstlisting}
+
+
+
+String variables can be declared either by using single or double quotes:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x = "John"
+# is the same as
+x = 'John'
+\end{lstlisting}
+
+
+
+\subsection{Variable Names}
+
+A variable can have a short name (like x and y) or a more descriptive name (age, carname, total\_volume). Rules for Python variables:
+
+
+\begin{itemize}
+	\item A variable name must start with a letter or the underscore character
+	\item A variable name cannot start with a number
+	\item A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and \_ )
+	\item Variable names are case-sensitive (age, Age and AGE are three different variables)
+\end{itemize}
+
+
+Remember that variable names are case-sensitive
+
+
+\subsection{Assign Value to Multiple Variables}
+
+Python allows you to assign values to multiple variables in one line:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x, y, z = "Orange", "Banana", "Cherry"
+print(x)
+print(y)
+print(z)
+\end{lstlisting}
+
+
+
+
+And you can assign the same value to multiple variables in one line:
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x = y = z = "Orange"
+print(x)
+print(y)
+print(z)
+\end{lstlisting}
+
+
+
+
+
+\subsection{Output Variables}
+
+The Python print statement is often used to output variables.
+
+To combine both text and a variable, Python uses the + character:
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x = "awesome"
+print("Python is " + x)
+\end{lstlisting}
+
+
+
+You can also use the + character to add a variable to another variable:
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x = "Python is "
+y = "awesome"
+z =  x + y
+print(z)
+\end{lstlisting}
+
+
+
+
+For numbers, the + character works as a mathematical operator:
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x = 5
+y = 10
+print(x + y)
+\end{lstlisting}
+
+
+
+If you try to combine a string and a number, Python will give you an error:
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x = 5
+y = "John"
+print(x + y)
+\end{lstlisting}
+
+
+
+
+\subsection{Global Variables}
+
+Variables that are created outside of a function (as in all of the examples above) are known as global variables.
+
+Global variables can be used by everyone, both inside of functions and outside.
+
+\subsubsection{Example}
+
+Create a variable outside of a function, and use it inside the function
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x = "awesome"
+
+def myfunc():
+  print("Python is " + x)
+
+myfunc()
+\end{lstlisting}
+
+
+If you create a variable with the same name inside a function, this variable will be local, and can only be used inside the function. The global variable with the same name will remain as it was, global and with the original value.
+
+
+
+
+\subsubsection{Example}
+
+Create a variable inside a function, with the same name as the global variable
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x = "awesome"
+
+def myfunc():
+  x = "fantastic"
+  print("Python is " + x)
+
+myfunc()
+
+print("Python is " + x)
+\end{lstlisting}
+
+
+
+
+\subsection{The global Keyword}
+
+Normally, when you create a variable inside a function, that variable is local, and can only be used inside that function.
+
+To create a global variable inside a function, you can use the global keyword.
+
+\subsubsection{Example}
+
+If you use the global keyword, the variable belongs to the global scope:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+def myfunc():
+  global x
+  x = "fantastic"
+
+myfunc()
+
+print("Python is " + x)
+\end{lstlisting}
+
+
+
+Also, use the global keyword if you want to change a global variable inside a function.
+
+
+
+
+\subsubsection{Example}
+
+To change the value of a global variable inside a function, refer to the variable by using the global keyword:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x = "awesome"
+
+def myfunc():
+  global x
+  x = "fantastic"
+
+myfunc()
+
+print("Python is " + x)
+\end{lstlisting}
+
+
+
+
+\section{Ada Variables}
+
+
+\subsection{Declaring a Variable}
+
+To declare a variable, in the line under procedure, use the following formula:
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Ada, caption=Ada example]
+VariableName : DataType;
+\end{lstlisting}
+
+The declaration starts with the name of the variable:
+
+\begin{itemize}
+	\item The name of a variable must be in one word
+	\item It must start with a letter
+	\item It can include a combination of letters, digits, and underscores
+	\item It must not contain special characters
+\end{itemize}
+
+
+
+
+The above formula is used to declare one variable. You can use it to declare various variables, each on its own line. This would be:
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Ada, caption=Ada example]
+VariableName1, VariableName2 : DataType1;
+\end{lstlisting}
+
+
+
+\subsection{Initializing a Variable}
+
+
+Initializing a variable consists of assigning a value to it before using it. You have two options.
+
+To initialize a variable when declaring it, after the name of the variable, type := followed by an appropriate value. This would be done as follows:
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Ada, caption=Ada example]
+VariableName : DataType := Value;
+\end{lstlisting}
+
+
+The option consists of assigning a value after declaring it. This can be done as follows:
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Ada, caption=Ada example]
+VariableName : DataType
+begin
+    VariableName:= Value;
+end
+\end{lstlisting}
+
+
+\subsection{The declare Keyword}
+
+We saw that, to declare a variable, you can use the section under the procedure. As another option, in the body of the procedure, use the declare keyword, then declare the variable(s). Before using the variable(s), start a section with begin, include the necessary code, and end it with end;. Here is an example:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Ada, caption=Ada example]
+with Ada.Text_IO;
+use Ada.Text_IO;
+
+procedure Exercise is
+   
+begin
+    declare
+        -- Declarations
+    begin
+        -- Initializations
+    end;
+end Exercise;
+\end{lstlisting}
+
+\subsection{Displaying the Value of a Variable}
+
+One way you can use a variable consists of displaying its value to the user. To do this, you can use Put\_Line(). If the variable represents a word or sentence (a string), you can write the name of the variable in the parentheses. Otherwise, we will see other ways of displaying it.
+
+\subsubsection{Characters}
+
+A character is a a letter, a symbol, or a digit. To declare a variable that can hold a variable, use the character keyword. To initialize it, include the value is single-quotes. Here is an example:
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Ada, caption=Ada example]
+with Ada.Text_IO;
+use Ada.Text_IO;
+
+procedure Welcome is
+   gender : character := 'M';
+begin
+   Put_Line("Gender = " & character'image(gender));
+end Welcome;
+\end{lstlisting}
+
+
+
+\subsubsection{Strings}
+
+A string is a combination of characters. To represent strings, Ada uses the String data type. When declaring the variable, to initialize it, include its value in double-quotes.
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Ada, caption=Ada example]
+with Ada.Text_IO;
+use Ada.Text_IO;
+
+procedure Exercise is
+   sentence : String := "Welcome to the wonderful world of Ada programming!";
+
+begin
+    
+end Exercise;
+\end{lstlisting}
+
+\newpage
+
+To declare a string variable, in the parentheses of Put\_Line(), include the name of the variable. Here is an example:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Ada, caption=Ada example]
+with Ada.Text_IO;
+use Ada.Text_IO;
+
+procedure Exercise is
+   sentence : String := "Welcome to the wonderful world of Ada programming!";
+
+begin
+    Put_Line(sentence);
+end Exercise;
+\end{lstlisting}
+
+
+
+\newpage
+
+\section{Pascal}
+
+\subsection{Variable Declaration in Pascal}
+
+All variables must be declared before we use them in Pascal program. All variable declarations are followed by the var keyword. A declaration specifies a list of variables, followed by a colon (:) and the type. Syntax of variable declaration is -
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+var
+variable_list : type;
+\end{lstlisting}
+
+
+
+Here, type must be a valid Pascal data type including character, integer, real, boolean, or any user-defined data type, etc., and variable\_list may consist of one or more identifier names separated by commas. Some valid variable declarations are shown here - 
+
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+var
+age, weekdays : integer;
+taxrate, net_income: real;
+choice, isready: boolean;
+initials, grade: char;
+name, surname : string;
+\end{lstlisting}
+
+
+
+\subsection{Variable Initialization in Pascal}
+
+Variables are assigned a value with a colon and the equal sign, followed by a constant expression. The general form of assigning a value is -
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+variable_name := value;
+\end{lstlisting}
+
+
+By default, variables in Pascal are not initialized with zero. They may contain rubbish values. So it is a better practice to initialize variables in a program. Variables can be initialized (assigned an initial value) in their declaration. The initialization is followed by the var keyword and the syntax of initialization is as follows -
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+var
+variable_name : type = value;
+\end{lstlisting}
+
+
+
+
+Some examples are -
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+age: integer = 15;
+taxrate: real = 0.5;
+grade: char = 'A';
+name: string = 'John Smith';
+\end{lstlisting}
+
+
+Let us look at an example, which makes use of various types of variables discussed so far -
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+Live Demo
+program Greetings;
+const
+message = ' Welcome to the world of Pascal ';
+
+type
+name = string;
+var
+firstname, surname: name;
+
+begin
+   writeln('Please enter your first name: ');
+   readln(firstname);
+   
+   writeln('Please enter your surname: ');
+   readln(surname);
+   
+   writeln;
+   writeln(message, ' ', firstname, ' ', surname);
+end.
+\end{lstlisting}
+
+
+
+
+
+\section{Lisp}
+
+In LISP, each variable is represented by a symbol. The variable's name is the name of the symbol and it is stored in the storage cell of the symbol.
+
+\subsection{Global Variables}
+
+Global variables have permanent values throughout the LISP system and remain in effect until a new value is specified.
+
+Global variables are generally declared using the defvar construct.
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+(defvar x 234)
+(write x)
+\end{lstlisting}
+
+
+Since there is no type declaration for variables in LISP, you directly specify a value for a symbol with the setq construct.
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+->(setq x 10)
+\end{lstlisting}
+
+
+
+The above expression assigns the value 10 to the variable x. You can refer to the variable using the symbol itself as an expression.
+
+
+
+\subsection{Example}
+
+Create new source code file named main.lisp and type the following code in it.
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+(setq x 10)
+(setq y 20)
+(format t "x = ~2d y = ~2d ~%" x y)
+
+(setq x 100)
+(setq y 200)
+(format t "x = ~2d y = ~2d" x y)
+\end{lstlisting}
+
+
+
+\subsection{Local Variables}
+
+Like the global variables, local variables can also be created using the setq construct.
+
+There are two other constructs - let and prog for creating local variables.
+
+
+\subsubsection{Example}
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+(let ((y 1)
+      (z y))
+      (list y z))
+\end{lstlisting}
+
+Result  $\to$ (1 2)
+
+             
+\subsubsection{Example}
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+(let ((str "Hello, world!"))
+      (string-upcase str))
+\end{lstlisting}
+
+Result $\to$ "HELLO, WORLD!"
+
+
+\newpage
+
+\section{Variables - Summary}
+
+\subsection{C}
+
+Local variables are generally called auto variables in C. Variables must be declared before use. The declaration of a variable, without assigning a value takes the form
+
+$<typename> <variablename>;$
+
+Some common types are: char, short, int, long, float, double and unsigned.
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C, caption=C example]
+int j;
+\end{lstlisting}
+
+Multiple variables may be defined in a single statement as follows:
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C, caption=C example]
+double double1, double2, double3;
+\end{lstlisting}
+
+It is possible to initialize variables with expressions having known values when they are defined. The syntax follows the form 
+
+$<typename> <variablename> = <initializing expression>;$
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C, caption=C example]
+short b1 = 2500;
+long elwood = 3*BSIZE, jake = BSIZE -2;
+\end{lstlisting}
+
+Strings in C are arrays of char terminated by a 0 or NULL character. To declare space for a string of up to 20 characters, the following declaration is used.
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C, caption=C example]
+char mystring[21];
+\end{lstlisting}
+
+
+\subsection{C++}
+
+Much like C, C++ variables are declared at the very start of the program after the headers are declared. To declare a as an integer you say: the type of variable; then the variable followed by a semicolon ";".
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+int a;
+\end{lstlisting}
+
+
+
+
+\newpage
+
+\subsection{Python}
+
+Names in Python are not typed .
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+# these examples, respectively, refer to integer, float, boolean, and string objects
+example1 = 3
+example2 = 3.0
+example3 = True
+example4 = "hello"
+ 
+# example1 now refers to a string object.
+example1 = "goodbye"
+\end{lstlisting}
+
+\subsection{Ada}
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Ada, caption=Ada example]
+Name: declare   -- a local declaration block has an optional name
+   A : constant Integer := 42;  -- Create a constant
+   X : String := "Hello"; -- Create and initialize a local variable
+   Y : Integer;           -- Create an uninitialized variable
+   Z : Integer renames Y: -- Rename Y (creates a view)
+   function F (X: Integer) return Integer is
+     -- Inside, all declarations outside are visible when not hidden: X, Y, Z are global with respect to F.
+     X: Integer := Z;  -- hides the outer X which however can be referred to by Name.X
+   begin
+     ...
+   end F;  -- locally declared variables stop to exist here
+begin
+   Y := 1; -- Assign variable
+   declare
+     X: Float := -42.0E-10;  -- hides the outer X (can be referred to Name.X like in F)
+   begin
+     ...
+   end;
+end Name; -- End of the scope
+\end{lstlisting}
+
+
+
+\newpage
+
+\subsection{Pascal}
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+var
+  i: Integer;
+  s: string;
+  o: TObject;
+begin
+  i := 123;
+  s := 'abc';
+  o := TObject.Create;
+  try
+    // ...
+  finally
+    o.Free;
+  end;
+end;
+\end{lstlisting}
+
+\subsection{Lisp}
+
+Special variables may be defined with defparameter.
+Special variables are wrapped with asterisks (called 'earmuffs').
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+(defparameter *x* nil "nothing")
+\end{lstlisting}
+
+We may also use defvar, which works like defparameter except that defvar won't overwrite the value of the variable that has already been bound.
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+(defvar *x* 42 "The answer.")
+\end{lstlisting}
+
+For local varibles, we use let:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+(let ((jenny (list 8 6 7 5 3 0 9))
+      hobo-joe)
+      (apply #'+ jenny))
+\end{lstlisting}
+
+
+
+\newpage
+
+We use setf to modify the value of a symbol.
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+(setf *x* 625)
+\end{lstlisting}
+
+
+We can also modify multiple symbols sequentially:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+(setf *x* 42 *y* (1+ *x*))
+\end{lstlisting}
+
+Result $\to$  43
+
+
+We can use psetf to set variables in parallel:
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+(setf *x* 625)
+(psetf *x* 42 *y* (1+ *x*))
+\end{lstlisting}
+
+
+
+\newpage
+
+\section{Pointers}
+
+
+\subsection{C++}
+
+The following code creates a pointer to an int variable
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+int var = 3;
+int *pointer = &var;
+\end{lstlisting}
+
+Access the integer variable through the pointer:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+int v = *pointer; /* sets v to the value of var (i.e. 3) */
+*pointer = 42; /* sets var to 42 */
+\end{lstlisting}
+
+
+Change the pointer to refer to another object
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+int othervar;
+pointer = &othervar;
+\end{lstlisting}
+
+Change the pointer to not point to any object
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+pointer = NULL; /* needs having stddef.h included */
+\end{lstlisting}
+
+or
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+pointer = 0; /* actually any constant integer expression evaluating to 0 could be used, e.g. (1-1) will work as well */
+\end{lstlisting}
+
+
+or 
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+pointer = (void*)0; /* C only, not allowed in C++ */
+\end{lstlisting}
+
+
+Get a pointer to the first element of an array:
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+int array[10];
+pointer = array;
+/* or alternatively: */
+pointer = &array[0];
+\end{lstlisting}
+
+
+Move the pointer to another object in the array
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+pointer += 3; /* pointer now points to array[3] */
+pointer -= 2; /* pointer now points to array[1] */
+\end{lstlisting}
+
+\subsection{Python}
+
+Python does not have pointers and all Python names (variables) are implicitly references to objects. Python is a late-binding dynamic language in which "variables" are untyped bindings to objects. (Thus Pythonistas prefer the term name instead of "variable" and the term bind in lieu of "assign").
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+ # Bind a literal string object to a name:
+ a = "foo"
+ # Bind an empty list to another name:
+ b = []
+ # Classes are "factories" for creating new objects: invoke class name as a function:
+ class Foo(object):
+     pass
+ c = Foo()
+ # Again, but with optional initialization:
+ class Bar(object):
+     def __init__(self, initializer = None)
+         # "initializer is an arbitrary identifier, and "None" is an arbitrary default value
+         if initializer is not None:
+            self.value = initializer
+ d = Bar(10)
+ print d.value
+ # Test if two names are references to the same object:
+ if a is b: pass
+ # Alternatively:
+ if id(a) == id(b): pass
+ # Re-bind a previous used name to a function:
+ def a(fmt, *args):
+     if fmt is None:
+         fmt = "%s"
+      print fmt % (args)
+ # Append reference to a list:
+ b.append(a)
+ # Unbind a reference:
+ del(a)
+ # Call (anymous function object) from inside a list
+ b[0]("foo")  # Note that the function object we original bound to the name "a" continues to exist
+              # even if its name is unbound or rebound to some other object.
+\end{lstlisting}
+
+\subsection{Ada}
+
+In Ada pointer types are called access types.
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Ada, caption=Ada example]
+type Int_Access is access Integer;
+Int_Acc : Int_Access := new Integer'(5);
+\end{lstlisting}
+
+
+
+
+
+\subsection{Pascal}
+
+Delphi ( Object Pascal ) fully supports both typed and untyped pointers.
+
+Simple untyped pointer variable:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+pMyPointer : Pointer ;
+\end{lstlisting}
+
+Simple pointer to a predefined type:
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+pIntPointer : ^Integer ;
+\end{lstlisting}
+
+
+A pointer to a Record. This is the equivalent to a Struct in C
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+MyRecord = Record
+            FName : string[20];
+            LName : string[20];
+           end;
+           
+pMyRecord : ^MyRecord ;
+\end{lstlisting}
+
+
+Dereferencing a Pointer -
+
+Pointers are dereferenced using the caret '\^' symbol.
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+IntVar := pIntPointer^ ;
+\end{lstlisting}
+
+
+
+\subsection{Lisp}
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+
+\end{lstlisting}
+
+
+\end{document}

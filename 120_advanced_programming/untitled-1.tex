@@ -1,0 +1,1942 @@
+\documentclass[12pt]{article}
+
+
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+
+
+
+\usepackage{amsmath, amssymb}
+\usepackage{mathtools}
+
+\usepackage[margin=1in,footskip=.25in]{geometry}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},  
+    commentstyle=\color{codegreen},
+    %keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\normalsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                                            
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=3
+}
+\lstset{style=mystyle}
+
+
+
+\usepackage[most]{tcolorbox}
+
+\tcbset{
+    frame code={}
+    center title,
+    left=10pt,
+    right=10pt,
+    top=10pt,
+    bottom=10pt,
+    colback=gray!5,
+    colframe=gray,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=0mm,
+    boxsep=5pt,
+    arc=0pt,outer arc=0pt,
+}
+
+
+\usepackage{xepersian}
+\settextfont[Scale=1]{Vazir}
+
+\renewcommand{\baselinestretch}{1.3} 
+
+
+\begin{document}
+
+\noindent
+1. برنامه ای بنویسید که نام خودتان را در صفحه ی خروجی چاپ کند .
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	cout << "Sajjad Adollahi";
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+\noindent
+2 . برنامه ای بنویسید که 2 عدد صحیح را از ورودی دریافت کند و حاصل جمع آنها را محاسبه کرده و نمایش دهد .
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	float number1,number2;
+	cin >> number1;
+	cin >> number2;
+	
+	float sum = number1 + number2;
+	cout << sum ;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+\newpage
+
+
+\noindent
+3 . برنامه ای بنویسید که 2 عدد اعشاری را از ورودی دریافت کرده و حاصل جمع آنها را محاسبه کرده و نمایش دهد .
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	float number1,number2;
+	cin >> number1;
+	cin >> number2;
+	
+	float sum = number1 + number2;
+	cout << sum ;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+\noindent
+4 . برنامه ای بنویسید که 3 عدد دلخواه را از ورودی دریافت کرده و میانگین آنها را محاسبه کرده و نمایش دهد .
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	float a,b,c;
+	cin >> a;
+	cin >> b;
+	cin >> c;
+	
+	float avg = (a+b+c)/3;
+	cout << avg ;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+\newpage
+
+\noindent
+5 . برنامه ای بنویسید که نام و نام خانوادگی شما را دریافت کرده و در یک خط به صورت نام-نام خانوادگی چاپ نماید .
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	char fname[20];
+	char lname[20];
+	
+	cin >> fname ;
+	cin >> lname ;
+	
+	cout << fname << "-" << lname ;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+\noindent
+6 . برنامه ای بنویسید که طول و عرض یک مستطیل را از ورودی دریافت کرده ، مساحت و محیط مستطیل را محاسبه کند .
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	float width ,height;
+	cin >> width;
+	cin >> height;
+	
+	cout << "Area : " ;
+	cout << width * height << endl;
+		
+	cout << "Perimeter : ";
+	cout << 2 * (width + height);
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+\noindent
+7 . برنامه ای بنویسید که شعاع یک دایره را دریافت کرده و محیط و مساحت دایره را محاسبه کرده و نمایش دهد .
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	const float pi = 3.14;
+	float radius;
+	cin >> radius;
+	
+	cout << "Area : ";
+	cout << pi * radius * radius << endl;
+	
+	cout << "Perimeter : ";
+	cout << 2 * pi * radius;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+\noindent
+8 . برنامه ای بنویسید که قاعده و ارتفاع یک مثلث را دریافت کرده و مساحت مثلث را محاسبه کرده و چاپ کند .
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	float b;
+	float h;
+	cin >> b >> h;
+	
+	cout << "Area : ";
+	cout << ( b * h ) / 2;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+\noindent
+9 . برنامه ای بنویسید که حقوق ناخالص کارمندی را دریافت کرده و با استفاده از قوانین زیر حقوق خالص کارمند را محاسبه نماید و نمایش دهد .
+
+\begin{itemize}
+	\item بیمه $=$ حقوق خالص 
+	$\times$ 7 درصد
+	\item مالیات $=$ حقوق خالص 
+	$\times$ 10 درصد
+	\item حقوق خالص $=$ حقوق ناخالص $-$ بیمه $-$ مالیات
+\end{itemize}
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	float salary ;
+	cin >> salary ;
+	
+	float ensurance = ( salary * 7 ) / 100;
+	float tax = ( salary * 10 ) / 100;
+	float exactSalary = salary - ensurance - tax;
+	
+	cout << "ensurance : " << ensurance << endl;
+	cout << "tax : " << tax << endl;
+	cout << "exactSalary : " << exactSalary;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+\newpage
+
+
+\noindent
+10 . برنامه ای بنویسید که سن شما را به روز دریافت کرده و با سال ، ماه ، هفته و روز نمایش دهد .  
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int age ;
+	cin >> age ;
+	
+	int year , month , week , day;
+	
+	year = age / 365 ;
+	age = age % 365 ;
+	
+	month = age / 12 ;
+	age = age % 12 ;
+	
+	week = age / 4 ;
+	age = age % 4 ;
+	
+	day = age ;
+	
+	cout << "year : " << year << endl ;
+	cout << "month : " << month << endl ;
+	cout << "week : " << week << endl ;
+	cout << "day : " << day << endl ;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+\newpage
+
+\noindent
+13 . برنامه ای بنویسید که
+\lr{ATM}
+ یک عدد صحیح دلخواه را به عنوان پول درخواستی از کاربر دریافت کند و سپس آن مبلغ را به پول های 1 و 5 و 10 و 50 هزار تومانی خرد کند .
+ 
+ 
+ 
+ 
+ \begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int cash ;
+	cin >> cash ;
+	
+	int fifty, ten , five , one ;
+	
+	fifty = cash / 50 ;
+	cash %= 50 ;
+	
+	ten = cash / 10 ;
+	cash %= 10 ;
+	
+	five = cash / 5 ;
+	cash %= 5 ;
+	
+	one = cash ;
+	
+	cout << "fifty : " << fifty  << endl;
+	cout << "ten : " << ten << endl;
+	cout << "five : " << five << endl;
+	cout << "one : " << one  << endl;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+ 
+ 
+ 
+ 
+\newpage
+ 
+\noindent
+14 . برنامه ای بنویسید که بدون استفاده از دستور شرطی 
+\lr{if}
+،
+یک عدد از ورودی دریافت کرده و مقدار قدر مطلق آن را نمایش دهد .
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+	int number ; 
+	cin >> number;
+	
+	cout << abs(number);
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+\noindent
+15 . برنامه ای بنویسید که دو عدد دلخواه را از ورودی دریافت کرده و ماکزیمم و مینیمم این دو عدد را بدون استفاده از دستور شرطی
+\lr{if}
+محاسبه کرده و نمایش دهد .
+
+
+\begin{align*}
+Max(x,y) = \cfrac{|x+y| + |x-y|}{2} \qquad \qquad
+Min(x,y) = \cfrac{|x+y| - |x-y|}{2}
+\end{align*}
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+	int x , y ;
+	
+	cout << "Max : " << ( abs(x+y) + abs(x-y) ) / 2  << endl ;
+	
+	cout << "Min : " << ( abs(x+y) - abs(x-y) ) / 2  << endl ;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+\noindent
+16 . برنامه ای بنویسید که 2 عدد را از ورودی دریافت کرده و در دو متغیر قرار دهد ، سپس بدون استفاده از متغیر سوم ، مقدار این دو متغیر را با یکدیگر عوض کرده و نمایش دهد .
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int a, b;
+    cin >> a >> b;
+    
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    
+    cout << a << endl;
+    cout << b ;
+    
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+\noindent
+17 . برنامه ای بنویسید که عددی را از ورودی دریافت کرده و مشخص کند عدد وارد شده زوج است یا فرد .
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int number ; 
+	cin >> number ;
+	if ( number % 2 == 0 ) {
+		cout << "ZOJ" ;
+	} else {
+		cout << "FARD" ;
+	}
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+
+
+\noindent
+18 . برنامه ای بنویسید که 2 عدد را از ورودی دریافت کرده و عدد بزرگتر را نمایش دهد .
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int a , b ;
+	cin >> a >>  b;
+    
+	if ( a > b ) {
+		cout << a << ">" << b ;
+	} else if (a < b) {
+		cout << a << "<" << b ;
+	} else if (a == b) {
+		cout << a << "==" << b ;
+	}
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+\newpage
+
+\noindent
+19 . برنامه ای بنویسید که نمرات 5 درس یک دانش آموز را دریافت کرده و معدل انش آموز را محاسبه نماید، اگر معدل دانش آموز کمتر از 12 بود ، دانش آموز مشروط ، اگر معدل بیشتر از 17 بود به عنوان دانش آموز ممتاز و در غیر این صورت به عنوان دانش آموز متوسط معرفی نماید .
+
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	const int size = 5;
+	int a[size];
+	int sum = 0;
+	
+	for(int i=0;i<size;i++) {
+		cin >> a[i];
+		sum += a[i];
+	}
+	
+	float avg = sum / size;
+	
+	cout << "Average : " << avg << endl ;
+	
+	if( avg < 12 ) {
+		cout << "Mashrot";
+	} else if( avg > 17 ) {
+		cout << "Momtaz";
+	} else {
+		cout << "Motevaset";
+	}
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+
+\newpage
+
+\noindent
+20 . برنامه ای بنویسید که 4 عدد را از ورودی دریافت کند و بزرگترین عدد را نمایش دهد .
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	const int size = 5;
+	int a[size];
+	int max ;
+	
+	for(int i=0;i<size;i++) {
+		cin >> a[i];
+		if( i == 0 ) {
+			max = a[i];
+		} else {
+			if(a[i] > max) {
+				max = a[i];
+			}
+		}
+	}
+	
+	cout << "Max : " << max ;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+\newpage
+
+\noindent
+21 . برنامه ای بنویسید که با استفاده از دستور 
+\lr{switch}
+یک عدد از 0 تا 7 را دریافت کرده و نام روز متناسب با آن را نمایش دهد . ( به طور مثال اگر عدد وارد شده 0 بود ، روز شنبه را نمایش دهد و اگر عدد وارد شده 6 بود ، روز جمعه را نمایش دهد  )
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=,basicstyle=\ttfamily\small]
+#include<iostream>
+using namespace std;
+int main() {
+	int day ;
+	cin >> day ;
+	switch(day) {
+		case 0:
+			cout << "Shanbe" << endl;
+			break;
+		case 1: 
+			cout << "1 Shanbe" << endl;
+			break;
+		case 2:
+			cout << "2 Shanbe" << endl;
+			break;
+		case 3:
+			cout << "3 Shanbe" << endl;
+			break;
+		case 4:
+			cout << "4 Shanbe" << endl;
+			break;
+		case 5:
+			cout << "5 Shanbe" << endl;
+			break;
+		case 6:
+			cout << "Jome" << endl;
+			break;
+		case 7:
+			cout << "Shanbe" << endl;
+			break;
+	}
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+
+\noindent
+22 . برنامه ای بنویسید که 4 عدد را از ورودی دریافت کرده و دومین بزرگترین عدد را نمایش دهد .
+
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	const int size = 4;
+	int a[size];
+	int max ;
+	int secondMax ; 
+	
+	for(int i=0;i<size;i++) {
+		cin >> a[i];
+		if( i == 0 ) {
+			secondMax = max = a[i];
+		} else {
+			if(a[i] > max) {
+				secondMax = max;
+				max = a[i];
+			}
+		}
+	}
+	
+	cout << "Second Max : " << secondMax ;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+
+\newpage
+
+\noindent
+23 . برنامه ای بنویسید که حقوق ناخالص کارمندی را دریافت کرده و میزان مالیت را بر اساس قوانین زیر محاسبه کند .
+
+\begin{itemize}
+	\item اگر حقوق ناخالص کمتر از 1000 بود معاف از مالیات
+	\item اگر حقوق ناخالص کمتر از 2000 بود نرخ مالیات
+	 5\%
+	\item اگر حقوق ناخالص کمتر از 3000 بود نرخ مالیات
+	10\%
+	\item اگر حقوق ناخالص بیشتر از 3000 بود نرخ مالیات
+	15\%
+\end{itemize}
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int salary ;
+	int tax ;
+	cin >> salary;
+	
+	if(salary < 1000) {
+		tax = 0;
+	} else if(salary < 2000) {
+		tax = (salary * 5) / 100;
+	} else if(salary < 3000) {
+		tax = (salary * 10) / 100;
+	} else if(salary >= 3000) {
+		tax = (salary * 15) / 100;
+	}
+	
+	cout << "Tax : " << tax;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+\newpage
+
+\noindent
+24 . برنامه ای بنویسید که 3 عدد دلخواه را از ورودی دریافت کرده و مشخص کند که آیا این 3 عدد تشکیل یک مثلث خواهند داد یا خیر .
+
+
+
+\begin{align*}
+\text{شرط تشکیل مثلث : } \\ 
+a+b>c \qquad \&\& \qquad b+c>a \qquad \&\& \qquad a+c>b
+\end{align*}
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	float a,b,c;
+	cin >> a >> b >> c;
+	
+	if( a+b>c && b+c>a && a+c>b ) {
+		cout << "yes";
+	} else {
+		cout << "no";
+	}
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+\newpage
+
+\noindent
+25 . برنامه ای بنویسید که 3 عدد دلخواه را به عنوان اضلاع یک مثلث دریافت کند و بررسی کند که این مثلث متساوی الساقین است یا خیر . ( مثلث متساوی الساقین دارای 2 ضلع برابر است )
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	float a,b,c;
+	cin >> a >> b >> c;
+	
+	if( a == b || a == c || b == c ) {
+		cout << "yes";
+	} else {
+		cout << "no";
+	}
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+\newpage
+
+\noindent
+26 . برنامه ای بنویسید که 3 عدد دلخواه را به عنوان اضلاع یک مثلث دریافت کند و بررسی کند که این مثلث متساوی الضلاع است یا خیر . ( مثلث متساوی الاضلاع دارای 3 ضلع برابر است )
+
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	float a,b,c;
+	cin >> a >> b >> c;
+	
+	if( a == b && b == c ) {
+		cout << "yes";
+	} else {
+		cout << "no";
+	}
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+\newpage
+
+\noindent
+27 . برنامه ای بنویسید که 3 عدد دلخواه را به عنوان اضلاع یک مثلث دریافت کند و بررسی کند که این مثلث قائم الزاویه است یا خیر . 
+
+در مثلث قائم الزاویه یکی از روابط زیر برقرار است :
+
+
+\begin{align*}
+\colorbox{gray!10}{\parbox{90pt}{
+$$a^{2} = b^{2} + c^{2}$$
+}}
+\qquad
+\colorbox{gray!10}{\parbox{90pt}{
+$$b^{2} = a^{2} + c^{2}$$
+}}
+\qquad
+\colorbox{gray!10}{\parbox{90pt}{
+$$c^{2} = a^{2} + b^{2} $$
+}}
+\end{align*}
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+	float a,b,c;
+	cin >> a >> b >> c;
+	
+	if( pow(a,2) == pow(b,2) + pow(c,2) || 
+		pow(b,2) == pow(a,2) + pow(c,2) || 
+		pow(c,2) == pow(a,2) + pow(b,2) 
+	) {
+		cout << "yes";
+	} else {
+		cout << "no";
+	}
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+\newpage
+
+\noindent
+29 . برنامه ای بنویسید که اعداد 1 تا 100 را چاپ کند .
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	for(int i=1;i<=100;i++) {
+		cout << i << endl;
+	}
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+\noindent
+30 . برنامه ای بنویسید که حاصل جمع اعداد 1 تا 100 را چاپ کند .
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int sum = 0;
+	
+	for(int i=1;i<=100;i++) {
+		sum += i;
+	}
+	
+	cout << "Sum : " << sum;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+\newpage
+
+
+\noindent
+31 . برنامه ای بنویسید که اعداد زوج بین 1 تا 100 را چاپ کند .
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	for(int i=1;i<=100;i++) {
+		if( i % 2 == 0 ) {
+			cout << i << endl;
+		}
+	}
+
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+
+\noindent
+32 . برنامه ای بنویسید که حاصل جمع اعداد فرد بین 1 تا 100 را چاپ کند .
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int sum = 0;
+	
+	for(int i=1;i<=100;i++) {
+		if( i % 2 != 0 ) {
+			sum += i;
+		}
+	}
+	
+	cout << "Sum : " << sum;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+\newpage
+
+\noindent
+33 . برنامه ای بنویسید که یک عدد صحیح را از ورودی دریافت کرده و اعداد کوچکتر از آن را چاپ نماید .
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n ;
+	cin >> n;
+	
+	for(int i=n-1;i>0;i--) {
+		cout << i << endl;
+	}
+
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+
+
+\noindent
+34 . برنامه ای بنویسید که یک عدد را از ورودی دریافت کرده و مقسوم علیه های آن را چاپ کند .
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n ;
+	cin >> n;
+	
+	for(int i=n/2;i>0;i--) {
+		if( n % i == 0 ) {
+			cout << i << endl;
+		}
+	}
+
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+\newpage
+
+\noindent
+35 . برنامه ای بنویسید که یک عدد را از ورودی دریافت کرده و مجموعه مقسوم علیه های آن را چاپ کند .
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n ;
+	cin >> n;
+	
+	int sum = 0;
+	
+	for(int i=n/2;i>0;i--) {
+		if( n % i == 0 ) {
+			sum += i;
+		}
+	}
+
+	cout << "sum : " << sum;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+
+\newpage
+
+\noindent
+36 . برنامه ای بنویسید که یک عدد را از ورودی دریافت کرده و تعداد مقسوم علیه های آن را چاپ کند .
+
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n ;
+	cin >> n;
+	
+	int counter = 0;
+	
+	for(int i=n/2;i>0;i--) {
+		if( n % i == 0 ) {
+			counter++;
+		}
+	}
+
+	cout << "counter : " << counter;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+
+\newpage
+
+
+\noindent
+37 . برنامه ای بنویسید که یک عدد را از ورودی دریافت کرده و مجموع مقسوم علیه های فرد آن را چاپ کند .
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n ;
+	cin >> n;
+	
+	int sum = 0;
+	
+	for(int i=n/2;i>0;i--) {
+		if( n % i == 0 ) {
+			if( i%2 != 0 ) {
+				sum += i ;
+			}
+		}
+	}
+
+	cout << "sum : " << sum;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+\newpage
+
+
+\noindent
+38 . برنامه ای بنویسید که یک عدد را از ورودی دریافت کرده و تعداد مقسوم علیه های زوج آن را چاپ کند .
+
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n ;
+	cin >> n;
+	
+	int counter = 0;
+	
+	for(int i=n/2;i>0;i--) {
+		if( n % i == 0 ) {
+			if( i%2 == 0 ) {
+				counter++;
+			}
+		}
+	}
+
+	cout << "counter : " << counter;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+
+\newpage
+
+\noindent
+39 . برنامه ای بنویسید که یک عدد را از ورودی دریافت کرده و مشخص کند که عدد وارد شده عدد اول است یا خیر . ( عددی اول است که به غیر از 1 و خودش مقسوم علیه دیگری نداشته باشد ) 
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n ;
+	cin >> n;
+	
+	bool aval = true;
+	
+	for(int i=2;i*i<=n;i++) {
+		if( n % i == 0 ) {
+			aval = false;
+		}
+	}
+
+	if(aval == true) {
+		cout << "AVAL";
+	} else {
+		cout << "NOT AVAL";
+	}
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\noindent
+40 . برنامه ای بنویسید که یک عدد را از ورودی دریافت کرده و مشخص کند که عدد وارد شده عدد کامل است یا خیر . ( عددی کامل است که مجموع مقسوم علیه های به غیر از خودش با خود عدد برابر باشد )
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n ;
+	cin >> n;
+	
+	int sum = 0;
+	
+	for(int i=n/2;i>=1;i--) {
+		if( n % i == 0 ) {
+			sum += i;
+		}
+	}
+
+	if(sum == n) {
+		cout << "Kamel";
+	} else {
+		cout << "NOT Kamel";
+	}
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+\newpage
+
+\noindent
+41 . برنامه ای بنویسید که با استفاده از حلقه ی تکرار 10 عدد را از ورودی دریافت کند و میانگین آنها را نمایش دهد .
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	const int size = 10;
+	int a[size];
+	int sum = 0;
+	
+	for(int i=0;i<size;i++) {
+		cin >> a[i];
+		sum += a[i];
+	}
+	
+	float avg = sum / size;
+
+	cout << "Average : " << avg << endl;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+\newpage
+
+\noindent
+42 . برنامه ای بنویسید که با استفاده از حلقه ی تکرار 10 عدد را از ورودی دریافت کند و بزرگترین آنها را نمایش دهد .
+
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	const int size = 10;
+	int a[size];
+	int max ;
+	
+	for(int i=0;i<size;i++) {
+		cin >> a[i];
+		if( i == 0 ) {
+			max = a[i];
+		} else {
+			if(a[i] > max) {
+				max = a[i];
+			}
+		}
+	}
+	
+	cout << "Max : " << max ;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+\newpage
+
+\noindent
+43 . برنامه ای بنویسید که با استفاده از حلقه ی تکرار 10 عدد را از ورودی دریافت کند و دومین بزرگترین آنها را نمایش دهد .
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	const int size = 10;
+	int a[size];
+	int max ;
+	int secondMax ; 
+	
+	for(int i=0;i<size;i++) {
+		cin >> a[i];
+		if( i == 0 ) {
+			secondMax = max = a[i];
+		} else {
+			if(a[i] > max) {
+				secondMax = max;
+				max = a[i];
+			}
+		}
+	}
+	
+	cout << "Second Max : " << secondMax ;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+\newpage
+
+\noindent
+44 . برنامه ای بنویسید که عددی را از ورودی دریافت کرده و تعداد ارقام آن را نمایش دهد . ( برای مثال عدد 123 ، 3 رقم دارد )
+
+
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int number ;
+	cin >> number ;
+	
+	int counter = 0;
+	
+	while( number != 0 ) {
+		counter++;
+		number /= 10;
+	}
+	
+	cout << "counter : " << counter ;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+\newpage
+
+\noindent
+45 . برنامه ای بنویسید که یک عدد صحیح را از ورودی دریافت کرده و عدد وارد شده را مقلوب نماید . ( برای مثال مقلوب عدد 123 ، عدد 321 است )
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int number ;
+	cin >> number ;
+	
+	int counter;
+	int digit;
+	
+	while( number != 0 ) {
+		digit = number % 10;
+		number /= 10;
+		cout << digit ;
+	}
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+\newpage
+
+\noindent
+46 . برنامه ای بنویسید که یک عدد صحیح را دریافت کرده و مجموع اعداد زوج آن را نمایش دهد . ( برای مثال مجموع اعداد زوج 249 ، عدد 6 می باشد )
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int number ;
+	cin >> number ;
+	
+	int counter;
+	int digit;
+	int sum = 0;
+	
+	while( number != 0 ) {
+		digit = number % 10;
+		number /= 10;
+		if (digit % 2 == 0) {
+			sum += digit;
+		}
+	}
+	
+	cout << "sum : " << sum ;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+\newpage
+
+\noindent
+47 . برنامه ای بنویسید که یم عدد صحیح را دریافت کرده و تعداد اعداد فرد آن را نمایش دهد . ( برای مثال تعداد اعداد فرد عدد 163 ، عدد 2 می باشد )
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int number ;
+	cin >> number ;
+	
+	int digit;
+	int counter = 0;
+	
+	while( number != 0 ) {
+		digit = number % 10;
+		number /= 10;
+		if (digit % 2 != 0) {
+			counter++;
+		}
+	}
+	
+	cout << "counter : " << counter ;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+\newpage
+
+\noindent
+49 . برنامه ای بنویسید که 50 جمله ی اول سری فیبوناتچی را چاپ کند .
+
+$$
+0 , 1 , 1 , 2 , 3 , 5 , 8 , 13 , 21 , 34 , 55 , \dots
+$$
+
+
+\begin{align*}
+F(n) = 
+\begin{cases}
+0 & n = 0 \\
+1 & n = 1 \\
+F(n-1) + F(n-2) & n > 1 
+\end{cases}
+\end{align*}
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {	
+	long long first = 0;
+	long long second = 1;
+	long long temp = second;
+	
+	cout << first << endl;
+	cout << second << endl;
+	
+	for(int i=0;i<50;i++) {
+		
+		temp = second;
+		second += first ;
+		first = temp;
+		
+		cout << second << endl ;
+	}
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+\newpage
+
+\noindent
+51 . برنامه ای بنویسید که یک جدول ضرب 10 در 10 را چاپ نماید .
+
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+	for(int i=1;i<=10;i++) {
+		for(int j=1;j<=10;j++) {
+			cout << left << setw(5) << i * j ;
+		}
+		cout << endl;
+	}
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+\newpage
+
+\noindent
+54 . برنامه ای بنویسید که یک عدد دلخواه را از ورودی دریافت کرده و معادل مبنای 2 آن را نمایش دهد .
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int base = 2;
+	
+	int n ;
+	cin >> n;
+	
+	int digit;
+	int binary = 0 ;
+	int counter = 0;
+	int ten = 1;
+	
+	while( n != 0 ) {
+		digit = n % base;
+		binary += digit * ten;
+		n /= base;
+		
+		ten *= 10;
+		counter++;
+	}
+	
+	cout << binary << endl;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+\newpage
+
+\noindent
+55 . برنامه ای بنویسید که یک عدد دلخواه را از ورودی دریافت کرده و معادل مبنای 8 آن را نمایش دهد .
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int base = 8;
+	
+	int n ;
+	cin >> n;
+	
+	int digit;
+	int octal = 0;
+	int counter = 1;
+	int ten = 1;
+	
+	while( n != 0 ) {
+		digit = n % base ;
+		octal += digit * ten;
+		n /= base;
+		
+		ten *= 10;
+		counter++;
+	}
+	
+	cout << octal;
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+\newpage
+
+\noindent
+59 . برنامه ای بنویسید که یک عدد را از ورودی دریافت کرده و فاکتوریل آن را محاسبه نماید .
+
+\begin{tcolorbox}
+$$
+n ! = 1 \times 2 \times 3 \times \dots \times (n-1) \times (n-2) \times n
+$$
+\end{tcolorbox}
+
+
+
+
+
+
+
+\begin{latin}
+\begin{lstlisting}[language=C++, caption=]
+#include<iostream>
+using namespace std;
+
+int main() {
+	int n ;
+	cin >> n;
+	
+	int fact = 1;
+	
+	for(int i=1;i<=n;i++) {
+		fact *= i;
+	}
+	
+	cout << "factorial(" << n << ") : " << fact << endl;  
+	
+	return 0;
+}
+\end{lstlisting}
+\end{latin}
+
+
+
+
+
+
+
+
+\end{document}

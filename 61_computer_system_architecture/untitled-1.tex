@@ -1,0 +1,330 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{verbatim}
+
+
+\usepackage{circuitikz}
+\usetikzlibrary{circuits.logic.IEC,calc}
+
+
+\begin{document}
+\pagestyle{empty}
+
+\tikzstyle{int}=[draw, fill=blue!20, minimum size=4em]
+\tikzstyle{intSpecial}=[draw, fill=blue!20, minimum size=6em,
+	label={[xshift=8mm]left:$c_{out}$},
+    label={[yshift=5mm]below:$s$},
+    label={[xshift=-6mm]right:$c_{in}$},
+    label={[yshift=-3mm, anchor=center]65:$b$},
+    label={[yshift=-3mm, anchor=center]115:$a$}]
+\tikzstyle{init} = [pin edge={<-,thin,black}]
+
+
+\tikzstyle{mux24} = [draw, shape=rectangle, fill=gray!20, minimum width=6em,
+minimum height=6em]
+
+\tikzstyle{mux38} = [draw, shape=rectangle, fill=gray!20, minimum width=6em,
+minimum height=10em]
+
+
+
+\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+    \node [int] (a) {$F.A$};
+    \node (b) [left of=a,node distance=2cm, coordinate] {a};
+    \node [int] (c) [right of=a] {$F.A$};
+    \node [coordinate] (start) [right of=c, node distance=2cm]{};
+    
+    \path[->] (a) edge node {$a$} (b);
+    \path[->] (c) edge node {$v$} (a);
+    \path[->] (start) edge node {$p$} (c) ;
+    
+    \draw[<-] (a.115) --++(90:0.5cm) node [above] {$b_1$};
+    \draw[<-] (a.65) --++(90:0.5cm) node [above] {$a_1$};
+    
+    \draw[<-] (c.115) --++(90:0.5cm) node [above] {$b_0$};
+    \draw[<-] (c.65) --++(90:0.5cm) node [above] {$a_0$};
+\end{tikzpicture}
+
+
+
+
+
+
+\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+    \node [int] (a) {$F.A$};
+    \node [int] (b) [left of=a] {$F.A$};
+    \node [int] (c) [left of=b] {$F.A$};
+    \node [int] (d) [left of=c] {$F.A$};
+    \node [coordinate] (start) [right of=a, node distance=2cm]{};
+    \node [coordinate] (end) [left of=d, node distance=2cm]{};
+    
+    \path[->] (start) edge node {$C_{0}$} (a) ;
+    \path[->] (a) edge node {$C_{1}$} (b) ;
+    \path[->] (b) edge node {$C_{2}$} (c) ;
+    \path[->] (c) edge node {$C_{3}$} (d) ;
+    \path[->] (d) edge node {$C_{4}$} (end) ;
+    
+    \draw[<-] (a.115) --++(90:0.5cm) node [above] {$b_0$};
+    \draw[<-] (a.65) --++(90:0.5cm) node [above] {$a_0$};
+    
+    \draw[<-] (b.115) --++(90:0.5cm) node [above] {$b_1$};
+    \draw[<-] (b.65) --++(90:0.5cm) node [above] {$a_1$};
+    
+    \draw[<-] (c.115) --++(90:0.5cm) node [above] {$b_2$};
+    \draw[<-] (c.65) --++(90:0.5cm) node [above] {$a_2$};
+    
+    \draw[<-] (d.115) --++(90:0.5cm) node [above] {$b_3$};
+    \draw[<-] (d.65) --++(90:0.5cm) node [above] {$a_3$};
+\end{tikzpicture}
+
+
+
+
+
+\begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
+    \node [int] (a) {$F.A$};
+    \node [int] (b) [left of=a] {$F.A$};
+    \node [int] (c) [left of=b] {$F.A$};
+    \node [int] (d) [left of=c] {$F.A$};
+    \node [coordinate] (start) [right of=a, node distance=2cm]{};
+    \node [coordinate] (end) [left of=d, node distance=2cm]{};
+    \node (endBelow) [below of=end, node distance=1.2cm]{};
+    
+    \path[->] (start) edge node {$C_{0}$} (a) ;
+    \path[->] (a) edge node {$C_{1}$} (b) ;
+    \path[->] (b) edge node {$C_{2}$} (c) ;
+    \path[->] (c) edge node {$C_{3}$} (d) ;
+    \path[-] (d) edge node {} (end) ;
+    \path[->] (end) edge node[below,yshift=-.6cm] {$C_{4}$} (endBelow) ;
+    
+    \draw[<-] (a.115) --++(90:0.5cm) node [above] {$b_0$};
+    \draw[<-] (a.65) --++(90:0.5cm) node [above] {$a_0$};
+    \draw[->] (a.south) --++(-90:0.5cm) node [below] {$s_1$};
+    
+    \draw[<-] (b.115) --++(90:0.5cm) node [above] {$b_1$};
+    \draw[<-] (b.65) --++(90:0.5cm) node [above] {$a_1$};
+    \draw[->] (b.south) --++(-90:0.5cm) node [below] {$s_2$};
+
+    \draw[<-] (c.115) --++(90:0.5cm) node [above] {$b_2$};
+    \draw[<-] (c.65) --++(90:0.5cm) node [above] {$a_2$};
+    \draw[->] (c.south) --++(-90:0.5cm) node [below] {$s_3$};
+   
+    \draw[<-] (d.115) --++(90:0.5cm) node [above] {$b_3$};
+    \draw[<-] (d.65) --++(90:0.5cm) node [above] {$a_3$};
+    \draw[->] (d.south) --++(-90:0.5cm) node [below] {$s_4$};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+\begin{center}
+\begin{tikzpicture}[node distance=3cm,auto,>=latex']
+    \node [intSpecial] (a) {$F.A$};
+    \node [intSpecial] (b) [left of=a] {$F.A$};
+    \node [intSpecial] (c) [left of=b] {$F.A$};
+    \node [intSpecial] (d) [left of=c] {$F.A$};
+    \node [coordinate] (start) [right of=a, node distance=2cm]{};
+    \node [coordinate] (end) [left of=d, node distance=2cm]{};
+    \node (endBelow) [below of=end, node distance=1.2cm]{};
+    
+    \path[->] (start) edge node {$C_{0}$} (a) ;
+    \path[->] (a) edge node {$C_{1}$} (b) ;
+    \path[->] (b) edge node {$C_{2}$} (c) ;
+    \path[->] (c) edge node {$C_{3}$} (d) ;
+    \path[-] (d) edge node {} (end) ;
+    \path[->] (end) edge node[below,yshift=-.6cm] {$C_{4}$} (endBelow) ;
+    
+    \draw[<-] (a.115) --++(90:0.5cm) node [above] {$b_0$};
+    \draw[<-] (a.65) --++(90:0.5cm) node [above] {$a_0$};
+    \draw[->] (a.south) --++(-90:0.5cm) node [below] {$s_1$};
+    
+    \draw[<-] (b.115) --++(90:0.5cm) node [above] {$b_1$};
+    \draw[<-] (b.65) --++(90:0.5cm) node [above] {$a_1$};
+    \draw[->] (b.south) --++(-90:0.5cm) node [below] {$s_2$};
+
+    \draw[<-] (c.115) --++(90:0.5cm) node [above] {$b_2$};
+    \draw[<-] (c.65) --++(90:0.5cm) node [above] {$a_2$};
+    \draw[->] (c.south) --++(-90:0.5cm) node [below] {$s_3$};
+   
+    \draw[<-] (d.115) --++(90:0.5cm) node [above] {$b_3$};
+    \draw[<-] (d.65) --++(90:0.5cm) node [above] {$a_3$};
+    \draw[->] (d.south) --++(-90:0.5cm) node [below] {$s_4$};
+\end{tikzpicture}
+\end{center}
+
+
+
+
+
+
+\begin{tikzpicture}[node distance=3cm,auto,>=latex']
+    \node [mux24] (a) {$2 \times 4$};
+    \draw[<-] (a.160) --++(180:0.5cm) node [left] {$A$};
+    \draw[<-] (a.200) --++(180:0.5cm) node [left] {$B$};
+    
+    \draw[->] (a.30) --++(0:0.5cm) node [right] {$I_{0}$};
+    \draw[->] (a.10) --++(0:0.5cm) node [right] {$I_{1}$};
+    \draw[->] (a.-10) --++(0:0.5cm) node [right] {$I_{2}$};
+    \draw[->] (a.-30) --++(0:0.5cm) node [right] {$I_{3}$};
+\end{tikzpicture}
+
+
+
+{
+.
+\newline
+\newline
+\newline
+}
+
+
+
+
+\begin{tikzpicture}[node distance=3cm,auto,>=latex']
+    \node [mux38] (a) {$3 \times 8$};
+    \draw[<-] (a.140) --++(180:0.5cm) node [left] {$A$};
+    \draw[<-] (a.180) --++(180:0.5cm) node [left] {$B$};
+    \draw[<-] (a.220) --++(180:0.5cm) node [left] {$C$};
+    
+    \draw[->] (a.55) --++(0:0.5cm) node [right] {$I_{0}$};
+    \draw[->] (a.45) --++(0:0.5cm) node [right] {$I_{1}$};
+    \draw[->] (a.30) --++(0:0.5cm) node [right] {$I_{2}$};
+    \draw[->] (a.11) --++(0:0.5cm) node [right] {$I_{3}$};
+    \draw[->] (a.-11) --++(0:0.5cm) node [right] {$I_{4}$};
+    \draw[->] (a.-30) --++(0:0.5cm) node [right] {$I_{5}$};
+    \draw[->] (a.-45) --++(0:0.5cm) node [right] {$I_{6}$};
+    \draw[->] (a.-55) --++(0:0.5cm) node [right] {$I_{7}$};
+\end{tikzpicture}
+
+
+
+{
+.
+\newline
+\newline
+\newline
+}
+
+
+
+
+\begin{circuitikz}
+\ctikzset{multipoles/thickness=3}
+\ctikzset{multipoles/dipchip/width=2}
+ \draw (0,0) node[dipchip,
+ num pins=10, hide numbers, no topmark,
+ external pins width=0](C){Block};
+ \node [right, font=\tiny] at (C.bpin 1) {1};
+ \node [right, font=\tiny] at (C.bpin 2) {2};
+ \node [right, font=\tiny] at (C.bpin 3) {3};
+ \node [right, font=\tiny] at (C.bpin 4) {4};
+ \node [right, font=\tiny] at (C.bpin 5) {5};
+ \node [left, font=\tiny] at (C.bpin 6) {6};
+ \node [left, font=\tiny] at (C.bpin 7) {7};
+ \node [left, font=\tiny] at (C.bpin 8) {8};
+ \node [left, font=\tiny] at (C.bpin 9) {9};
+ \node [left, font=\tiny] at (C.bpin 10) {10};
+\end{circuitikz}
+
+{
+.
+\newline
+\newline
+\newline
+}
+
+\begin{circuitikz}
+\ctikzset{multipoles/thickness=3}
+\ctikzset{multipoles/dipchip/width=1}
+ \draw (0,0) node[dipchip,
+ num pins=10, hide numbers, no topmark,
+ external pins width=0](C){};
+ \node [right, font=\tiny] at (C.bpin 2) {$S$};
+ \node [right, font=\tiny] at (C.bpin 3) {};
+ \draw (C.bpin 3) ++(0,0.1) -- ++(0.1,-0.1)
+ node[right, font=\tiny]{$C$} -- ++(-0.1,-0.1);
+ 
+ \node [right, font=\tiny] at (C.bpin 4) {$R$};
+ 
+ \draw (C.bpin 2) -- ++(-1,0) coordinate(extpin2);
+ \draw (C.bpin 3) -- ++(-1,0) coordinate(extpin3);
+ \draw (C.bpin 4) -- ++(-1,0) coordinate(extpin4);
+ 
+  
+ \node [left, font=\tiny] at (C.bpin 7) {$$};
+ \node [left, font=\tiny] at (C.bpin 9) {$Q$};
+ \node [ocirc, anchor=0](notin2) at (C.bpin 7) {}; 
+ 
+ 
+ \draw (C.bpin 7) -- ++(1,0) coordinate(extpin7);
+ \draw (C.bpin 9) -- ++(1,0) coordinate(extpin9);
+ 
+\end{circuitikz}
+
+
+
+
+{
+.
+\newline
+\newline
+\newline
+}
+
+
+\begin{tikzpicture}[node distance=3cm,auto,>=latex']
+    \node [mux38, 
+    label={[xshift=7mm]left:$clk$},
+    label={[xshift=4.5mm,yshift=9mm]left:$S$},
+    label={[xshift=4.5mm,yshift=-9mm]left:$R$},
+    label={[xshift=-5mm,yshift=10mm]right:$Q$},
+    ] (a) {};
+    \draw[-] (a.140) --++(180:0.5cm) node [left] {};
+    \draw[-] (a.180) --++(180:0.5cm) node [left] {};
+    \draw[-] (a.220) --++(180:0.5cm) node [left] {};
+    
+    \draw[-] (a.45) --++(0:0.5cm) node [right] {};
+    \draw[-] (a.-45) --++(0:0.5cm) node [right] {};
+\end{tikzpicture}
+
+
+{
+.
+\newline
+\newline
+\newline
+}
+
+
+\begin{tikzpicture}[node distance=3cm,auto,>=latex']
+    \node [mux38, 
+    label={[xshift=7.5mm]left:$clk$},
+    label={[xshift=4.5mm,yshift=9mm]left:$S$},
+    label={[xshift=4.5mm,yshift=-9mm]left:$R$},
+    label={[xshift=-6mm,yshift=10mm]right:$Q$},
+    label={[xshift=-6mm,yshift=-10mm]right:$$},
+    ] (a) {};
+    
+    \draw (a.180) ++(0,0.1) -- ++(0.1,-0.1) -- ++(-0.1,-0.1);
+    
+    \draw (.96,-1.06) circle (1mm) ;
+    
+    \draw[-] (a.140) --++(180:0.5cm) node [left] {};
+    \draw[-] (a.180) --++(180:0.5cm) node [left] {};
+    \draw[-] (a.220) --++(180:0.5cm) node [left] {};
+    
+    \draw[-] (a.45) --++(0:0.5cm) node [right] {};
+    \draw[-] (a.-45) --++(0:0.5cm) node [right] {};
+\end{tikzpicture}
+
+
+
+
+
+\end{document}

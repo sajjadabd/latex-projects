@@ -1,0 +1,111 @@
+\documentclass[a4paper,12pt]{article}
+
+%\usepackage{color}
+%\usepackage{tikz}
+%\usetikzlibrary{positioning}
+%\usepackage{amsmath, amssymb}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=3
+}
+
+
+\lstdefinestyle{javaStyle}{
+  frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+ 
+
+\begin{document}
+\title{My First Document}
+\author{SJAbd}
+\date{\today}
+\maketitle
+
+\lstlistoflistings
+
+
+%\newpage
+\begin{lstlisting}[language=Python, caption=Python example]
+x = 1
+
+while x < 10 :
+	print x 
+	x + = 1
+\end{lstlisting}
+
+
+%\newpage
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+#include<iostream>
+
+using namespace std;
+
+int main(){
+	cout << "Hello World" << endl;
+	return 0;
+}
+\end{lstlisting}
+
+
+\newpage
+\lstset{style=javaStyle}
+\begin{lstlisting}[language=Java, caption=Java example]
+import javax.swing.JApplet;
+import java.awt.Graphics;
+
+public class Hello extends JApplet {
+    public void paintComponent(Graphics g) {
+        g.drawString("Hello, world!", 65, 95);
+    }    
+}
+\end{lstlisting}
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,25 @@
+\usepackage{tikz-qtree}
+
+
+\begin{tikzpicture}
+\tikzset{every tree node/.style={minimum width=2em,draw,circle},
+         blank/.style={draw=none},
+         edge from parent/.style=
+         {draw, edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
+         level distance=1.5cm}
+         
+\Tree
+[.50     
+    [.60 
+    \edge[]; {10}
+    \edge[blank]; \node[blank]{};
+    ]
+    [.30  
+    \edge[blank]; \node[blank]{};
+    \edge[]; [.40
+             \edge[]; {20}
+             \edge[blank]; \node[blank]{};
+         ]
+    ]
+]
+\end{tikzpicture}

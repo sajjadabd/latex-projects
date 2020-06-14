@@ -1,0 +1,21 @@
+% A circular diagram of a TeX workflow
+% Author: Stefan Kottwitz
+% https://www.packtpub.com/hardware-and-creative/latex-cookbook
+\documentclass[border=10pt]{article} 
+%%%<
+\usepackage{verbatim}
+%%%>
+\begin{comment}
+:Title: A circular diagram of a TeX workflow
+:Tags: Diagrams;Flowcharts;Smartdiagram;Cookbook
+:Author: Stefan Kottwitz
+:Slug: smart-circle
+
+A diagram showing a TeX workflow using the
+clever smartdiagram package.
+\end{comment}
+\usepackage{smartdiagram}
+\begin{document}
+\smartdiagram[circular diagram:clockwise]{Edit,
+  pdf\LaTeX, Bib\TeX/ biber, make\-index, pdf\LaTeX}
+\end{document}

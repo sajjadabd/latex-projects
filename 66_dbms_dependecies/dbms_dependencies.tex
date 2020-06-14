@@ -1,0 +1,513 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1.1in,footskip=.25in]{geometry}
+
+\usepackage{mathtools}
+
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+
+
+\usepackage{fancyhdr}
+
+\fancypagestyle{myplain}
+{
+  \fancyhf{}
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\footrulewidth{0pt}
+  \fancyfoot[C]{\thepage}
+}
+\fancyhf{}
+\fancyhf{}
+\fancyhead[CO]{\nouppercase\leftmark}
+\fancyhead[CE]{\hdrtitle}
+\fancyhead[LE,RO]{\thepage}
+
+\pagestyle{fancy}
+
+\renewcommand\sectionmark[1]{\markboth{#1}{}}%don't move this
+
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=black,  %choose some color if you want links to stand out
+}
+
+\usepackage{xepersian}
+\settextfont[Scale=1]{Vazir}
+
+\renewcommand{\baselinestretch}{1.3} 
+
+
+\begin{document}
+
+\section{انواع وابستگی ها}
+
+\begin{itemize}
+	\item وابستگی تابعی
+	\item وابستگی تابعی کامل
+	\item وابستگی با واسطه
+	\item وابستگی تابعی چند مقداری
+	\item وابستگی پیوندی
+\end{itemize}
+
+
+\begin{latin}
+	\begin{LTR}
+		\begin{itemize}
+			\item Functional Dependency
+			\item Full-Functional Dependency
+			\item Transitive Dependency
+			\item Multi-Valued Dependency
+			\item Join Dependency
+		\end{itemize}
+	\end{LTR}
+\end{latin}
+
+
+
+
+\section{وابستگی تابعی}
+
+رابطه ی 
+$$R(A,B,\dots)$$
+را در نظر بگیرید، می گوییم B با A وابستگی تابعی دارد و نشان می دهیم، 
+$$A \to B$$
+اگر و فقط اگر در هر مقدار ممکن از متغیر رابطه R ، به هر مقدار A فقط یک مقدار B متناظر باشد .
+
+
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{  c | c | c }
+    A & B & C \\
+    \hline
+    3 & 2 & 1 \\ 
+    8 & 7 & 2 \\ 
+    9 & 7 & 3 \\ 
+    3 & 2 & 4 \\
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+
+\newpage
+
+\subsection{مثال}
+
+A با B وابستگی تابعی دارد .
+
+$$
+B \to A
+$$
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{  c | c }
+    A & B  \\
+    \hline
+    1 & 4  \\ 
+    1 & 5  \\ 
+    3 & 7  \\ 
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+
+
+\subsection{نکته}
+
+اگر A کلید اصلی رابطه ی 
+$R(A,B,\dots)$
+ باشد ، در این صورت هر صفت خاصه ی دیگر با A دارای وابستگی تابعی است .
+\begin{align*}
+A &\to B \\
+A &\to C \\
+&\vdots
+\end{align*}
+
+
+
+\subsection{مثال}
+
+تعیین وابستگی های تابعی در رابطه ی 
+$R(A,B,C)$ :
+
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{  c | c | c }
+    A & B & C \\
+    \hline
+    1 & 5 & 3 \\ 
+    1 & 7 & 8 \\ 
+    2 & 7 & 9 \\ 
+    2 & 5 & 3 \\
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+
+
+
+
+\begin{align*}
+(A,B) &\to C \\
+C &\to B
+\end{align*}
+
+
+
+
+\newpage
+
+\section{وابستگی تابعی کامل}
+
+اگر X و Y دو زیر مجموعه از مجموعه ی رابطه ی R باشند ، می گوییم Y با X وابستگی تابعی کامل دارد و نشان می دهیم :
+$$
+X \Rightarrow Y
+$$
+
+اگر و فقط اگر Y با X وابستگی تابعی داسته باشد ولی با هیچ زیر مجموعه از X وابستگی تابعی نداشته باشد .
+
+
+* بدیهی است اگر X صفت ساده باشد ، وابستگی کامل خواهد بود . 
+
+
+\subsection{مثال}
+
+در مثال زیر وابستگی تابعی $ C $ به $ (A, B) $ کامل نمی باشد .
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{  c | c | c }
+    A & B & C \\
+    \hline
+    \hline
+    \hline
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+\begin{align*}
+(A,B) &\to C \\
+A &\to C
+\end{align*}
+
+
+
+
+\section{وابستگی باواسطه}
+
+رابطه ی $R(A,B,C)$  مفروض است، اگر داشته باشیم :
+
+\begin{align*}
+A &\to B \\
+B &\to C
+\end{align*}
+
+می گوییم C با A وابستگی با واسطه دارد .
+
+برای از بین بردن این وابستگی رابطه را به صورت زیر تجزیه می کنیم :
+
+\begin{align*}
+&R_{1}(A, B) \\
+&R_{2}(B, C)
+\end{align*}
+
+
+
+\newpage
+
+\section{قواعد استنتاج آرمسترانگ}
+
+
+با فرض رابطه ی $R(A,B,C,D)$ قواعد زیر برقرارند :
+
+\subsection{انعکاسی}
+
+\begin{latin}
+	\begin{center}
+		if $B \subseteq A$ then $A \to B$
+	\end{center}
+\end{latin}
+
+
+\subsection{تعدی ( تراگذاری )}
+
+\[
+\begin{rcases*}
+A \to B \\
+B \to C
+\end{rcases*} \Rightarrow A \to C
+\]
+
+
+\subsection{افزایش}
+
+\begin{latin}
+	\begin{center}
+		if $A \to B$ then $AC \to BC$
+	\end{center}
+\end{latin}
+
+\subsection{تجزیه}
+
+\[
+ A \to BC \Rightarrow
+\begin{cases*}
+A \to B \\
+A \to C
+\end{cases*} 
+\]
+
+\subsection{اجتماع}
+
+\[
+\begin{rcases*}
+A \to B \\
+A \to C
+\end{rcases*} \Rightarrow A \to BC
+\]
+
+
+\subsection{ترکیب}
+
+\[
+\begin{rcases*}
+A \to B \\
+C \to D
+\end{rcases*} \Rightarrow AC \to BD
+\]
+
+\subsection{شبه تعدی}
+
+
+\[
+\begin{rcases*}
+A \to B \\
+CB \to D
+\end{rcases*} \Rightarrow AC \to D
+\]
+
+\[
+\begin{rcases*}
+AB \to C \\
+A \to B
+\end{rcases*} \Rightarrow A \to C
+\]
+
+
+
+\section{تعیین مجموعه حداقل وابستگی ها}
+
+
+\begin{align*}
+R = \{ &S\#, city , status \} \\
+F = \{ &S\# \to city ,  \\
+&city \to status , \\
+&S\# \to status  \} 
+\end{align*}
+
+
+جواب : وابستگی سوم از 2 وابستگی اول قابل استنتاج است و می توان آن را ذکر نکرد .
+
+\begin{align*}
+F_{optimum} &= \{ S\# \to city ,  city \to status \} 
+\end{align*}
+
+
+\section{تعیین مجموعه حداقل وابستگی ها}
+
+
+\begin{align*}
+R = \{ &u , v , w , y , z \} \\
+F = \{ &u \to xy , \\
+&x \to y , \\
+&xy \to zv  \} 
+\end{align*}
+
+
+
+حل : 
+
+\begin{align*}
+&u \to xy \Rightarrow \begin{cases*}  u \to x \\ u \to y \end{cases*}  \\
+&\begin{rcases*} u \to xy \\  xy \to zv \end{rcases*} \Rightarrow u \to zv \Rightarrow \begin{cases*} 
+u \to z \\ u \to v \end{cases*} \\
+&\begin{rcases*} xy \to zv \\ x \to y \end{rcases*} \Rightarrow x \to zv \Rightarrow \begin{cases*} x \to z \\ x \to v \end{cases*} \\
+\end{align*}
+
+بنابراین مجموعه ی وابستگی ها برابر است با :
+
+\begin{align*}
+F = \{ &u \to x , \\ 
+&u \to y , \\
+&u \to z , \\
+&u \to v , \\
+&x \to z , \\
+&x \to v , \\
+&x \to y \} 
+\end{align*}
+
+
+که 
+$u \to z$
+و
+$u \to v$
+و
+$u \to y$
+اضافی هستند چون می توان آنها را به دست آورد . پس F کمینه برابر است با :
+
+\begin{align*}
+F_{optimum} = \{ &u \to x , \\
+&x \to z , \\
+&x \to v , \\
+&x \to y \} 
+\end{align*}
+
+
+\section{کلید کاندید}
+کلید کاندید صفتی است که از طریق آن به همه ی صفت های دیگر می توان رسید .
+
+
+\subsection{تعیین کلید کاندید }
+
+
+\begin{align*}
+R = \{ &S , T , U , V , W \}  \\
+F = \{ &S \to T , 
+V \to SW , 
+T \to U \}
+\end{align*}
+
+حل :
+
+
+\begin{align*}
+&V \to SW \Rightarrow  \begin{cases*}  V \to S \\ V \to W \end{cases*} \\ 
+& \begin{rcases*} V \to S \\ S \to T \end{rcases*} \Rightarrow V \to T \\
+&\begin{rcases*} V \to T \\ T \to U \end{rcases*} \Rightarrow V \to U \\
+\end{align*}
+
+
+همه ی صفت ها با $V$  در وابستگی تابعی هستند بنابراین $V$  کلید کاندید است .
+
+
+\subsection{تعیین کلید کاندید }
+
+
+\begin{align*}
+R = \{ &A , B , C , D , E , F \}  \\
+F = \{ &A \to BE , \\
+&C \to F , \\
+&B \to C , \\
+&B \to E , \\
+&DB \to E \}
+\end{align*}
+
+حل :
+
+\begin{align*}
+&A \to BE \Rightarrow  \begin{cases*}  A \to B \\ A \to E  \end{cases*}  \\
+&\begin{rcases*}B \to C \\ B \to F \end{rcases*} \Rightarrow B \to F \\
+&\begin{rcases*}A \to B \\ B \to F \end{rcases*} \Rightarrow A \to F \\
+&\begin{rcases*}A \to B \\ B \to C \end{rcases*} \Rightarrow A \to C \\
+\end{align*}
+
+
+همه ی صفت ها با A در وابستگی تابعی هستند بنابراین A کلید کاندید است .
+
+
+
+\newpage
+
+\subsection{تعیین کلید کاندید }
+
+\begin{align*}
+R = \{ &A , B , C , D , E , F , G \}  \\
+F = \{ &ABD \to EG , \\
+&C \to DG , \\
+&E \to FG , \\
+&AB \to C , \\
+&G \to F \}
+\end{align*}
+
+
+حل :
+\begin{align*}
+&C \to DG \Rightarrow  \begin{cases*} C \to D \\ C \to G  \end{cases*} \\
+&E \to FG \Rightarrow  \begin{cases*} E \to F \\ E \to G  \end{cases*} \\
+& \begin{rcases*}C \to G \\ G \to F  \end{rcases*} \Rightarrow C \to F \\
+& \begin{rcases*}AB \to C \\ C \to D  \end{rcases*} \Rightarrow AB \to D \\
+& \begin{rcases*}ABD \to EG \\ AB \to D  \end{rcases*} \Rightarrow AB \to EG \\
+&AB \to EG \Rightarrow  \begin{cases*} AB \to E \\ AB \to G  \end{cases*} \\
+& \begin{rcases*}AB \to E \\ E \to F  \end{rcases*} \Rightarrow AB \to F \\
+&AB \to A \\
+&AB \to B \\
+\end{align*}
+
+همه ی صفت ها با AB در وابستگی تابعی هستند بنابراین AB کلید کاندید است .
+
+
+
+
+\subsection{تعیین کلید کاندید }
+
+\begin{align*}
+R = \{ &A , B , C , D , E , F , G \}  \\
+F = \{ &AF \to BE , \\
+&FC \to DE , \\
+&F \to CD , \\
+&D \to E , \\
+&C \to A \}
+\end{align*}
+
+حل :
+
+\begin{align*}
+&AF \to BE \Rightarrow \begin{cases*} AF \to B \\ AF \to E \end{cases*} \\
+&FC \to DE \Rightarrow \begin{cases*} FC \to D \\ FC \to E \end{cases*} \\
+&F \to CD \Rightarrow \begin{cases*} F \to C \\ F \to D \end{cases*} \\
+&D \to E \\
+&C \to A 
+\end{align*}
+
+\begin{align*}
+&\begin{rcases*}FC \to E \\ F \to C \end{rcases*} \Rightarrow F \to E \\
+&\begin{rcases*}F \to C \\ C \to A \end{rcases*} \Rightarrow F \to A \\
+&\begin{rcases*}AF \to B , F \to A  \end{rcases*}\Rightarrow F \to B \\
+\end{align*}
+
+
+
+F
+همه ی صفت ها به غیر از G را نتیجه می دهد ، بنابراین 
+$ (F , G) $
+کلید کاندید است .
+
+
+
+
+
+
+
+
+\end{document}

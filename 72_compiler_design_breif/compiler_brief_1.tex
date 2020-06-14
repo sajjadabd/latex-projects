@@ -1,0 +1,562 @@
+\documentclass[12pt]{article}
+
+\renewcommand{\baselinestretch}{1.3} 
+
+\usepackage{amsmath, amssymb}
+\usepackage{mathtools}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=3
+}
+
+
+\lstdefinestyle{javaStyle}{
+  frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\lstset{style=mystyle}
+
+\usepackage[margin=1.1in,footskip=.25in]{geometry}
+
+
+
+
+\begin{document}
+
+
+\section{Types Of Parameter Passing}
+
+\subsection{call-by-value}
+
+the parameter refer to the new copied values in this new memory . at the function conclusion this memory may simply be deallocated .
+
+
+
+\subsection{call-by-reference}
+
+in the call-by-reference evaluation strategy , when a function is called it recieves the memory locations of the arguments passed to it .
+
+in this case , no extra memory need to be allocated .
+
+
+\section{Parameter Passing in Languages}
+
+
+\subsection{C}
+
+predefined data type like : int , char , $\dots$ are passed with call-by-value in C .
+
+call-by-reference simulated in C by employing the concept of a pointer , 
+
+This is done with the operator * .
+
+if $a$ is a pointer , then $*a$ is the actual memory location pointed to .
+
+
+\subsection{C++}
+
+C++ allows one to declare reference types, for example 
+\lstinline{int& b = a;}
+defines an integer reference b, which simply acts as an alias for the integer a .
+
+
+Additionally, C++ offers a $const$ keyword if one would like the performance benefits of call-by-reference but still wants assurance that the arguments are never modified as in call-by-value .
+
+
+\subsection{Java}
+
+Java is almost like C++ . 
+
+but does not support the pointer manipulation and reference types offered in C++ .
+
+in Java , variables are passed by value .
+
+Java , passes Objects by reference .
+
+
+\subsection{Fortran}
+
+the default method of parameter passing is call-by-reference .
+
+\subsection{ALGOL}
+
+supports both call-by-value and call-by-reference .
+
+
+\section{Parameter Passing Modes in C}
+
+\begin{itemize}
+	\item Call by value parameter passing only
+	\item Objects can be modified in a function by passing pointers to the object to the function
+	\item Arrays and pointers are exchangeble in C: an array is
+automatically passed as a pointer to the array
+\end{itemize}
+
+
+
+\section{Parameter Passing Modes in Fortran}
+
+\begin{itemize}
+	\item Call by reference parameter passing only
+\end{itemize}
+
+
+
+\section{Parameter Passing Modes in Pascal}
+
+\begin{itemize}
+	\item Call by value and call by reference parameter passing
+	\item Call by value is similar to C
+	\item Call by reference is indicated by var parameters
+\begin{lstlisting}[language=Pascal]
+swap(var a:integer, var b:integer)
+var t;
+begin
+t := a; a := b; b := t
+end
+\end{lstlisting}
+\end{itemize}
+
+
+
+
+
+\section{Parameter Passing Modes in C++}
+
+\begin{itemize}
+	\item Call by value and call by reference parameter passing
+	\item Call by value is similar to C
+	\item Call by reference is indicated by using \& for formal parameters
+\begin{lstlisting}[language=C]
+swap(int &a, int &b)
+{ 
+	int t = a; 
+	a = b; 
+	b = t; 
+}
+\end{lstlisting}
+
+	\item Large objects should be passed by reference instead of by value to increase efficiency
+	\item Arrays are automatically passed by reference (like in C)
+	\item To avoid objects to be modified when passed by reference, const parameters can be used
+\begin{lstlisting}[language=C]
+store_record_in_file(const huge_record &r)
+{ 
+	... 
+}
+\end{lstlisting}
+
+\end{itemize}
+
+
+
+
+
+
+\section{Parameter Passing Modes in Java}
+
+\begin{itemize}
+	\item Call by value and call by reference/sharing parameter passing
+	\item Java adopts both value and reference models of variables
+	\begin{itemize}
+		\item Variables of built-in types are passed by value
+		\item Class instances are passed by sharing
+	\end{itemize}
+\end{itemize}
+
+
+
+
+
+\section{Parameter Passing Modes in Ada}
+
+\begin{itemize}
+	\item Call by value, call by result, and call by value/result parameter passing
+	\item Indicated by Ada’s in(by value), out(by result), and in out(by value/result) modes for formal parameters
+\begin{lstlisting}[language=Ada]
+procedure shift(a:out integer, b:in out integer,
+c:in integer) is
+begin
+	a := b; b := c;
+end shift;
+\end{lstlisting}
+	\item in mode parameters can be read but not written in the subroutine
+	\item out mode parameters can be written but not read in the subroutine
+	\item in out mode parameters can be read and written in the subroutine
+\end{itemize}
+
+
+
+
+\section{Parameter Passing Modes in Python}
+
+Python uses a mechanism, which is known as "Call-by-Object", sometimes also called "Call by Object Reference" or "Call by Sharing".
+
+
+
+
+
+
+
+\section{C++ Variables}
+
+
+\subsection{Declaring (Creating) Variables}
+
+To create a variable, you must specify the type and assign it a value:
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=C++, caption=C++ example]
+type variable = value;
+\end{lstlisting}
+
+
+\newpage
+
+\section{Python Variables}
+
+\subsection{Creating Variables}
+
+Python has no command for declaring a variable.
+
+A variable is created the moment you first assign a value to it.
+
+Variables do not need to be declared with any particular type and can even change type after they have been set.
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x = 5
+y = "John"
+print(x)
+print(y)
+\end{lstlisting}
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x = 4 # x is of type int
+x = "Sally" # x is now of type str
+print(x)
+\end{lstlisting}
+
+
+
+\subsection{Assign Value to Multiple Variables}
+
+Python allows you to assign values to multiple variables in one line:
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python, caption=Python example]
+x, y, z = "Orange", "Banana", "Cherry"
+print(x)
+print(y)
+print(z)
+\end{lstlisting}
+
+
+
+\newpage
+
+\section{Ada Variables}
+
+
+\subsection{Declaring a Variable}
+
+
+To declare a variable, use the following formula:
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Ada, caption=Ada example]
+VariableName : DataType;
+\end{lstlisting}
+
+
+declare various variables :
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Ada, caption=Ada example]
+VariableName1, VariableName2 : DataType1;
+\end{lstlisting}
+
+
+
+\subsection{Initializing a Variable}
+
+
+To initialize a variable :
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Ada, caption=Ada example]
+VariableName : DataType := Value;
+\end{lstlisting}
+
+
+
+assigning a value after declaring it :
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Ada, caption=Ada example]
+VariableName : DataType
+begin
+    VariableName:= Value;
+end
+\end{lstlisting}
+
+
+\newpage
+
+\section{Pascal}
+
+
+\subsection{Variable Declaration in Pascal}
+
+All variable declarations are followed by the var keyword. A declaration specifies a list of variables, followed by a colon (:) and the type. Syntax of variable declaration is -
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+var
+variable_list : type;
+\end{lstlisting}
+
+
+valid Pascal data type including :
+ character, integer,  real, boolean,  any user-defined data type .
+
+
+Some valid variable declarations are shown here - 
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+var
+age, weekdays : integer;
+taxrate, net_income: real;
+choice, isready: boolean;
+initials, grade: char;
+name, surname : string;
+\end{lstlisting}
+
+
+\newpage
+
+\subsection{Variable Initialization in Pascal}
+
+
+Variables are assigned a value with a colon and the equal sign, followed by a constant expression. The general form of assigning a value is -
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+variable_name := value;
+\end{lstlisting}
+
+
+Variables can be initialized (assigned an initial value) in their declaration :
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+var
+variable_name : type = value;
+\end{lstlisting}
+
+
+Some examples are -
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Pascal, caption=Pascal example]
+age: integer = 15;
+taxrate: real = 0.5;
+grade: char = 'A';
+name: string = 'John Smith';
+\end{lstlisting}
+
+
+
+\newpage
+
+\section{Lisp}
+
+
+\subsection{Global Variables}
+
+
+Global variables are generally declared using the defvar construct.
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+(defvar x 234)
+(write x)
+\end{lstlisting}
+
+
+you can directly specify a value for a symbol with the setq construct :
+
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+->(setq x 10)
+\end{lstlisting}
+
+
+
+\subsection{Local Variables}
+
+
+There are two other constructs - let and prog for creating local variables :
+
+
+\subsubsection{Example}
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+(let ((y 1)
+      (z y))
+      (list y z))
+\end{lstlisting}
+
+Result  $\to$ (1 2)\newline
+
+             
+\subsubsection{Example}
+
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Lisp, caption=Lisp example]
+(let ((str "Hello, world!"))
+      (string-upcase str))
+\end{lstlisting}
+
+Result $\to$ "HELLO, WORLD!"
+
+\newpage
+
+
+\section{Definition of Compiler}
+
+\begin{itemize}
+
+	\item A compiler is a computer program that translates computer code written in one programming language (the source language) into another language (the target language). 
+	
+	\item The name compiler is primarily used for programs that translate source code from a high-level programming language to a lower level language (e.g., assembly language, object code, or machine code) to create an executable program.
+
+\end{itemize}
+
+
+
+\section{What is Decompiler?}
+
+A program that translates from a low-level language to a higher level one is a decompiler.
+
+
+\section{Source-to-Source compiler or transpiler}
+
+A program that translates between high-level languages is usually called a source-to-source compiler or transpiler
+
+\section{Alphabet, String, Language}
+
+\begin{itemize}
+	\item [Alphabet] finite set of symbols
+	\item [String] finite sequence of sumbols
+	\item [Language] set of strings on an alphabet 
+\end{itemize}
+
+\section{What is Parser?}
+
+Syntax analysis (also known as parsing) involves parsing the token sequence to identify the syntactic structure of the program. This phase typically builds a parse tree, which replaces the linear sequence of tokens with a tree structure built according to the rules of a formal grammar which define the language's syntax. The parse tree is often analyzed, augmented, and transformed by later phases in the compiler.
+
+
+\section{Types Of Compilers}
+
+\subsection{native or hosted compiler}
+
+A native or hosted compiler is one whose output is intended to directly run on the same type of computer and operating system that the compiler itself runs on.
+
+
+\subsection{Cross compiler}
+
+The output of a cross compiler is designed to run on a different platform. 
+
+\subsection{Source-to-Source compiler}
+
+Source-to-source compilers are a type of compiler that takes a high-level language as its input and outputs a high-level language.
+
+\subsection{Bytecode compiler}
+
+Bytecode compilers that compile to assembly language
+
+
+\subsection{Just-in-time compilers}
+
+Just-in-time compilers (JIT compiler) defer compilation until runtime. 
+
+
+\subsection{Decompiler}
+
+A program that translates from a low-level language to a higher level one is a decompiler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

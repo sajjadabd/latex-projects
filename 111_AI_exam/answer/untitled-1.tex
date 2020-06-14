@@ -1,0 +1,261 @@
+\documentclass[12pt]{article}
+
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+
+
+\usepackage{amsmath, amssymb}
+\usepackage{mathtools}
+
+\usepackage[margin=1in,footskip=.25in]{geometry}
+
+\usepackage{listings}
+
+\usepackage[most]{tcolorbox}
+
+\tcbset{
+    frame code={}
+    center title,
+    left=10pt,
+    right=10pt,
+    top=10pt,
+    bottom=10pt,
+    colback=gray!5,
+    colframe=gray,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=0mm,
+    boxsep=5pt,
+    arc=0pt,outer arc=0pt,
+}
+
+\usepackage{xepersian}
+\settextfont[Scale=1]{Vazir}
+\renewcommand{\baselinestretch}{1.3} 
+
+\begin{document}
+
+\pagenumbering{gobble} % remove page numbering
+
+\noindent
+هوش مصنوعی چیست ؟
+
+\begin{tcolorbox}
+به توانایی فکر کردن و یادگرفتن یک برنامه ی کامپیوتری یا ماشین  هوش مصنوعی می گویند 
+\end{tcolorbox}
+
+
+\vspace{30pt}
+
+\noindent
+انواع دانش را نام ببرید ؟
+
+\begin{tcolorbox}
+\textbf{  دانش صریح : }
+
+
+دانش صریح یا آشکار، دانشی است که به‌وضوح تعریف یا فرموله می‌شود و از طریق فناوری‌های اطلاعاتی نیز به اشتراک گذاشته می‌شود. دانش صریح می‌تواند در ذخایر کتابخانه‌ها، آرشیوها، پایگاه‌های اطلاعاتی ذخیره‌شده و بر اساس یک مبنای مشخص ارزیابی شود.
+
+\textbf{دانش ضمنی : }
+
+دانش ضمنی از مدل‌های ذهنی، باورها و اعتقادات هر فرد تشکیل می‌شود که آن‌چنان در ذهن وی جای گرفته‌اند که بدیهی تلقی می‌شوند. دانش ضمنی، ریشه در درون افراد دارد و بیان آن در قالب کلمات دشوار است
+\end{tcolorbox}
+
+
+\vspace{30pt}
+
+\noindent
+زبانهای مورد استفاده در فرموله کردن و نمایش دانش را نام ببرید ؟
+\begin{latin}
+\begin{tcolorbox}
+There are mainly four ways of knowledge representation which are given as follows: 
+\begin{itemize}
+	\item Logical Representation
+	\item Semantic Network Representation
+	\item Frame Representation
+	\item Production Rules
+\end{itemize}
+\end{tcolorbox}
+\end{latin}
+
+\vspace{30pt}
+
+
+\noindent
+هرس
+\textbf{$\alpha$}
+و
+\textbf{$\beta$}
+را شرح دهید ؟
+
+\begin{tcolorbox}
+هرس آلفا بتا 
+\lr{(Alpha Beta Pruning)}
+ الگوریتمی است که کارایی الگوریتم درخت
+  \lr{Minimax}
+  (درخت کمینه بیشینه یا درخت بازی) را بهبود می بخشد؛ با استفاده از هرس آلفا بتا، بخش هایی از درخت کمینه بیشینه که پیمایششان بی تأثیر است پیمایش نمی شوند و به این ترتیب پیمایش درخت کمینه بیشینه تا یک عمق مشخص در زمانی کمتر صورت می گیرد.
+\end{tcolorbox}
+
+\vspace{30pt}
+
+
+\noindent
+انواع روابط در شبکه ی معنی را نام ببرید ؟
+
+
+\begin{tcolorbox}
+شبکه معنایی 
+\lr{(semantic network)}
+ یا شبکه قاب 
+\lr{(frame network)}
+  یک نوع پایگاه دانش است که «روابط معنایی بین مفاهیم» را در یک شبکه نمایش می دهد.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}
+بعضی از معمول ترین رابطه‌های معنایی تعریف شده از این قرار است: 
+\begin{itemize}
+	\item جزءواژگی 
+	\lr{(meronymy)} : 
+	\lr{A}
+	یک جزء واژه از
+	\lr{B}
+	است اگر 
+	\lr{A}
+	بخشی از
+	\lr{B}
+	باشد .
+	\item کل‌واژه 
+	\lr{(holonymy)} : 
+	\lr{B}
+	یک کل واژه از
+	\lr{A}
+	است اگر
+	\lr{B}
+	شامل 
+	\lr{A}
+	باشد .
+	\item تابعیت
+	\lr{(troponymy)} : 
+	\lr{A}
+	از 
+	\lr{B}
+	تبعیت دارد یعنی
+	\lr{A}
+	نوعی از 
+	\lr{B}
+	است .
+	\item  مافوق بودن
+	\lr{(hypernymy)}
+	\item مترادف بودن 
+	\lr{(synonymy)} :
+	\lr{A}
+	به همان چیزی اشاره می کند که
+	\lr{B}
+	اشاره می کند .
+	\item متضاد
+	\lr{(antonymy)} :
+	\lr{A}
+	به چیزی اشاره می کند که متضاد با چیزی است که
+	\lr{B}
+	به آن اشاره می کند .
+\end{itemize}
+    
+\end{tcolorbox}
+
+
+\vspace{30pt}
+
+
+
+\noindent
+مزایا و معایب شبکه ی معنی را بیان کنید ؟
+
+
+\vspace{30pt}
+
+
+
+\noindent
+روشهای استنتاج از قوانین را نام ببرید ؟
+
+
+\vspace{30pt}
+
+
+\noindent
+خصوصیات قابها را بیان کنید ؟
+
+\begin{tcolorbox}
+قاب 
+\lr{(Frame)}
+یا فریم نوعی ساختمان داده در هوش مصنوعی است، که از آن برای تقسیم دانش به زیرساختارها از طریق نمایش «وضعیت تفکر قالبی 
+\lr{(stereotype)}
+» استفاده می‌شود.
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}
+مزیت اول: وجود استثنا
+
+مزیت دوم: ساخت ساده‌تر شبکه معنایی
+
+مزیت سوم: اسنتاج ساده
+
+مزیت چهارم: انعطاف‌پذیری از طریق رویه
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}
+ساختار قاب
+
+یک فریم شامل اطلاعاتی دربارهٔ «چگونگی استفاده از قاب»، «در آینده چه مورد انتظار است»، «اگر این انتظارها برآورده نشود باید چه کرد» هستند.
+
+بخشی از اطلاعات در قاب معمولاً تغییر نمی‌کنند در حالیکه اطلاعات دیگر که در «پایانه» 
+\lr{(terminal)}
+ ذخیره شده‌اند، معمولاً تغییر می‌کنند. ترمینال‌ها را می‌توان به صورت متغیر درنظر گرفت.
+\end{tcolorbox}
+
+
+\vspace{30pt}
+
+
+
+\noindent
+با توجه به پایگاه دانش زیر به سوالات داده شده پاسخ دهید ؟
+
+
+
+
+
+\begin{latin}
+\begin{align*}
+&add(0,x,x) \\
+&add(1,4,5) \\
+&add(1,3,4) \\
+&sub(x,y,z) \leftarrow ge(x,y) \land add(y,z,x) \\
+&ge(4,1) \\
+&ge(5,1) \\
+\end{align*}
+\end{latin}
+
+
+\noindent
+سوالات :
+
+
+\begin{latin}
+\begin{align*}
+add(1,4,5) \\
+add(x,y,5) \\
+add(0,x,x) \\
+sub(x,y,z) \\
+\end{align*}
+\end{latin}
+
+
+
+
+\end{document}

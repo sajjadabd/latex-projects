@@ -1,0 +1,203 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+
+\begin{document}
+
+\tdplotsetmaincoords{70}{110}
+\begin{tikzpicture}[tdplot_main_coords]
+\draw[thick,->] (0,0,0) -- (3,0,0) node[anchor=north east]{$x$};
+\draw[thick,->] (0,0,0) -- (0,3,0) node[anchor=north west]{$y$};
+\draw[thick,->] (0,0,0) -- (0,0,3) node[anchor=south]{$z$};
+\end{tikzpicture}
+
+
+\tdplotsetmaincoords{70}{110}
+\begin{tikzpicture}[tdplot_main_coords]
+\draw[thick,->] (0,0,0) -- (3,0,0) node[anchor=north east]{$x$};
+\draw[thick,->] (0,0,0) -- (0,3,0) node[anchor=north west]{$y$};
+\draw[thick,->] (0,0,0) -- (0,0,3) node[anchor=south]{$z$};
+\tdplotsetrotatedcoords{60}{40}{30}
+\draw[thick,color=blue,tdplot_rotated_coords,->] (0,0,0) --(.7,0,0) node[anchor=north]{$x’$};
+\draw[thick,color=blue,tdplot_rotated_coords,->] (0,0,0) --(0,.7,0) node[anchor=west]{$y’$};
+\draw[thick,color=blue,tdplot_rotated_coords,->] (0,0,0) --(0,0,1.7) node[anchor=south]{$z’$};
+\end{tikzpicture}
+
+
+\tdplotsetmaincoords{70}{110}
+\begin{tikzpicture}[tdplot_main_coords]
+\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
+\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+\draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+\tdplotsetrotatedcoords{60}{40}{30}
+\coordinate (Shift) at (0.5,0.5,0.5);
+\tdplotsetrotatedcoordsorigin{(Shift)}
+\draw[thick,color=blue,tdplot_rotated_coords,->] (0,0,0) --(.7,0,0) node[anchor=north]{$x’$};
+\draw[thick,color=blue,tdplot_rotated_coords,->] (0,0,0) --(0,.7,0) node[anchor=west]{$y’$};
+\draw[thick,color=blue,tdplot_rotated_coords,->] (0,0,0) --(0,0,.7) node[anchor=south]{$z’$};
+\end{tikzpicture}
+
+
+\tdplotsetmaincoords{70}{110}
+\begin{tikzpicture}[scale=3,tdplot_main_coords]
+\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
+\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+\draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+\tdplotsetcoord{P}{.8}{50}{70}
+\tdplotsetcoord{O}{0}{0}{0}
+%draw a vector from origin to point (P)
+\draw[-stealth,color=red] (O) -- (P);
+%draw projection on xy plane, and a connecting line
+\draw[dashed, color=red] (O) -- (Pxy);
+\draw[dashed, color=red] (P) -- (Pxy);
+\tdplotsetthetaplanecoords{70}
+\draw[tdplot_rotated_coords,color=blue,thick,->] (0,0,0)
+-- (.2,0,0) node[anchor=east]{$x’$};
+\draw[tdplot_rotated_coords,color=blue,thick,->] (0,0,0)
+-- (0,.2,0) node[anchor=north]{$y’$};
+\draw[tdplot_rotated_coords,color=blue,thick,->] (0,0,0)
+-- (0,0,.2) node[anchor=west]{$z’$};
+\end{tikzpicture}
+
+
+
+
+\tdplotsetmaincoords{60}{130}
+\begin{tikzpicture}[scale=2,tdplot_main_coords]
+\coordinate (O) at (0,0,0);
+\tdplotsetcoord{P}{.8}{55}{60}
+\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
+\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+\draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+\draw[-stealth,color=red] (O) -- (P);
+\draw[dashed, color=red] (O) -- (Px);
+\draw[dashed, color=red] (O) -- (Py);
+\draw[dashed, color=red] (O) -- (Pz);
+\draw[dashed, color=red] (Px) -- (Pxy);
+\draw[dashed, color=red] (Py) -- (Pxy);
+\draw[dashed, color=red] (Px) -- (Pxz);
+\draw[dashed, color=red] (Pz) -- (Pxz);
+\draw[dashed, color=red] (Py) -- (Pyz);
+\draw[dashed, color=red] (Pz) -- (Pyz);
+\draw[dashed, color=red] (Pxy) -- (P);
+\draw[dashed, color=red] (Pxz) -- (P);
+\draw[dashed, color=red] (Pyz) -- (P);
+\end{tikzpicture}
+
+
+
+
+\pgfmathsetmacro{\thetavec}{30}
+\pgfmathsetmacro{\phivec}{60}
+\tdplotsetmaincoords{70}{110}
+\begin{tikzpicture}[tdplot_main_coords]
+\draw[thick,->] (0,0,0) -- (3,0,0) node[anchor=north east]{$x$};
+\draw[thick,->] (0,0,0) -- (0,3,0) node[anchor=north west]{$y$};
+\draw[thick,->] (0,0,0) -- (0,0,3) node[anchor=south]{$z$};
+\pgfmathsetmacro{\ax}{1}
+\pgfmathsetmacro{\ay}{1}
+\pgfmathsetmacro{\az}{1}
+\draw[->,red] (0,0,0) -- (\ax,\ay,\az);
+\draw[dashed,red] (0,0,0) -- (\ax,\ay,0) -- (\ax,\ay,\az);
+\tdplotgetpolarcoords{\ax}{\ay}{\az}
+\tdplotsetthetaplanecoords{\tdplotresphi}
+\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{1}{0}
+{\tdplotrestheta}{anchor=west}{$\theta = \tdplotrestheta$}
+\end{tikzpicture}
+
+
+
+
+\tdplotsetmaincoords{50}{110}
+\begin{tikzpicture}[tdplot_main_coords]
+\draw[thick,->] (0,0,0) -- (3,0,0) node[anchor=north east]{$x$};
+\draw[thick,->] (0,0,0) -- (0,3,0) node[anchor=north west]{$y$};
+\draw[thick,->] (0,0,0) -- (0,0,3) node[anchor=south]{$z$};
+\pgfmathsetmacro{\ax}{1}
+\pgfmathsetmacro{\ay}{1}
+\pgfmathsetmacro{\az}{.4}
+\pgfmathsetmacro{\bx}{-1}
+\pgfmathsetmacro{\by}{1}
+\pgfmathsetmacro{\bz}{.6}
+\tdplotcrossprod(\ax,\ay,\az)(\bx,\by,\bz)
+\draw[->,red] (0,0,0) -- (\ax,\ay,\az) node[anchor=west]{$\vec{A}$};
+\draw[dashed,red] (0,0,0) -- (\ax,\ay,0) -- (\ax,\ay,\az);
+\draw[->,green!50!black] (0,0,0) --(\bx,\by,\bz) node[anchor=south west]{$\vec{B}$};
+\draw[dashed,green!50!black] (0,0,0) -- (\bx,\by,0) -- (\bx,\by,\bz);
+\draw[->,blue] (0,0,0) -- (\tdplotresx,\tdplotresy,\tdplotresz)
+node[anchor=south east]{$\vec{A}\times\vec{B}$};
+\draw[dashed,blue] (0,0,0) -- (\tdplotresx,\tdplotresy,0)
+-- (\tdplotresx,\tdplotresy,\tdplotresz);
+\end{tikzpicture}
+
+
+
+\tdplotsetmaincoords{60}{110}
+%
+\pgfmathsetmacro{\rvec}{.8}
+\pgfmathsetmacro{\thetavec}{30}
+\pgfmathsetmacro{\phivec}{60}
+%
+\begin{tikzpicture}[scale=5,tdplot_main_coords]
+\coordinate (O) at (0,0,0);
+\draw[thick,->] (0,0,0) -- (1,0,0) node[anchor=north east]{$x$};
+\draw[thick,->] (0,0,0) -- (0,1,0) node[anchor=north west]{$y$};
+\draw[thick,->] (0,0,0) -- (0,0,1) node[anchor=south]{$z$};
+\tdplotsetcoord{P}{\rvec}{\thetavec}{\phivec}
+\draw[-stealth,color=red] (O) -- (P);
+\draw[dashed, color=red] (O) -- (Pxy);
+\draw[dashed, color=red] (P) -- (Pxy);
+\tdplotdrawarc{(O)}{0.2}{0}{\phivec}{anchor=north}{$\phi$}
+\tdplotsetthetaplanecoords{\phivec}
+\tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{0.5}{0}%
+{\thetavec}{anchor=south west}{$\theta$}
+\draw[dashed,tdplot_rotated_coords] (\rvec,0,0) arc (0:90:\rvec);
+\draw[dashed] (\rvec,0,0) arc (0:90:\rvec);
+\tdplotsetrotatedcoords{\phivec}{\thetavec}{0}
+\tdplotsetrotatedcoordsorigin{(P)}
+\draw[thick,tdplot_rotated_coords,->] (0,0,0)
+-- (.5,0,0) node[anchor=north west]{$x’$};
+\draw[thick,tdplot_rotated_coords,->] (0,0,0)
+-- (0,.5,0) node[anchor=west]{$y’$};
+\draw[thick,tdplot_rotated_coords,->] (0,0,0)
+-- (0,0,.5) node[anchor=south]{$z’$};
+\draw[-stealth,color=blue,tdplot_rotated_coords] (0,0,0) -- (.2,.2,.2);
+\draw[dashed,color=blue,tdplot_rotated_coords] (0,0,0) -- (.2,.2,0);
+\draw[dashed,color=blue,tdplot_rotated_coords] (.2,.2,0) -- (.2,.2,.2);
+\tdplotdrawarc[tdplot_rotated_coords,color=blue]{(0,0,0)}{0.2}{0}%
+{45}{anchor=north west,color=black}{$\phi’$}
+\tdplotsetrotatedthetaplanecoords{45}
+\tdplotdrawarc[tdplot_rotated_coords,color=blue]{(0,0,0)}{0.2}{0}%
+{55}{anchor=south west,color=black}{$\theta’$}
+\end{tikzpicture}
+
+
+
+
+\tdplotsetmaincoords{60}{110}
+\begin{tikzpicture}[tdplot_main_coords]
+\draw[thick,->] (0,0,0) -- (5,0,0) node[anchor=north east]{$x$};
+\draw[thick,->] (0,0,0) -- (0,5,0) node[anchor=north west]{$y$};
+\draw[thick,->] (0,0,0) -- (0,0,5) node[anchor=south]{$z$};
+\tdplotdefinepoints(2,2,2)(3,5,1)(-1,5,3)
+\draw[dashed] (0,0,0) -- (\tdplotvertexx,\tdplotvertexy,0) --(\tdplotvertexx,\tdplotvertexy,\tdplotvertexz);
+\draw[dashed] (0,0,0) -- (\tdplotax,\tdplotay,0)
+-- (\tdplotax,\tdplotay,\tdplotaz);
+\draw[dashed] (0,0,0) -- (\tdplotbx,\tdplotby,0)
+-- (\tdplotbx,\tdplotby,\tdplotbz);
+\draw[->,red] (\tdplotvertexx,\tdplotvertexy,\tdplotvertexz)
+-- (\tdplotax,\tdplotay,\tdplotaz);
+\draw[->,green!50!black] (\tdplotvertexx,\tdplotvertexy,\tdplotvertexz)
+-- (\tdplotbx,\tdplotby,\tdplotbz);
+\node[anchor=east] at (\tdplotvertexx,\tdplotvertexy,\tdplotvertexz){Vertex};
+\node[anchor=north west] at (\tdplotax,\tdplotay,\tdplotaz){A};
+\node[anchor=south west] at (\tdplotbx,\tdplotby,\tdplotbz){B};
+\tdplotdrawpolytopearc[thick]{1}{anchor=west}{$\theta$}
+\end{tikzpicture}
+
+
+
+
+
+
+\end{document}

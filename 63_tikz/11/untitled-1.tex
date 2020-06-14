@@ -1,0 +1,23 @@
+% A diagram of TeX engines
+% Author: Stefan Kottwitz
+% https://www.packtpub.com/hardware-and-creative/latex-cookbook
+\documentclass[border=10pt]{article} 
+%%%<
+\usepackage{verbatim}
+%%%>
+\begin{comment}
+:Title: A diagram of TeX engines
+:Tags: Diagrams;Smartdiagram;Cookbook
+:Author: Stefan Kottwitz
+:Slug: smart-bubbles
+
+A diagram of TeX engines using the
+clever smartdiagram package.
+\end{comment}
+\usepackage{smartdiagram}
+\usepackage{metalogo}
+\usepackage{dtklogos}
+\begin{document}
+\smartdiagram[bubble diagram]{\TeX\ engines,
+  \TeX\ (dvi), pdf\TeX, \XeTeX, \LuaTeX, Con\TeX t}
+\end{document}

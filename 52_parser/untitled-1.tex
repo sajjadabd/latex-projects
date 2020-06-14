@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=black,  %choose some color if you want links to stand out
+}
+
+\begin{document}
+
+\tableofcontents
+
+\section{What is Parser ?}
+
+A parser is a compiler or interpreter component that breaks data into smaller elements for easy translation into another language. A parser takes input in the form of a sequence of tokens or program instructions and usually builds a data structure in the form of a parse tree or an abstract syntax tree.
+
+
+\section{Parser Elements}
+
+A parser is commonly used as a component of an interpreter or a compiler. 
+
+The overall process of parsing involves three stages:
+
+\begin{itemize}
+	\item \textbf{Lexical Analysis :} a lexical analyzer is used to produce tokens from a stream of input string characters, which are broken into small components to form meaningful expressions.
+	\item \textbf{Syntactic Analysis :} Checks whether the generated tokens form a meaningful expression. This makes use of a context-free grammar that defines algorithmic procedures for components. These work to form an expression and define the particular order in which tokens must be placed.
+	\item \textbf{Semantic Parsing :} The final parsing stage in which the meaning and implications of the validated expression are determined and necessary actions are taken.
+\end{itemize}
+
+
+
+\section{What ways data can be derived?}
+
+A parser's main purpose is to determine if input data may be derived from the start symbol of the grammar. If yes, then in what ways can this input data be derived? This is achieved as follows:
+
+
+\begin{itemize}
+	\item \textbf{Top-Down Parsing : } Involves searching a parse tree to find the left most derivations of an input stream by using a top-down expansion. Examples include LL parsers and recursive-descent parsers.
+	\item \textbf{Bottom-Up Parsing : } Involves rewriting the input back to the start symbol. This type of parsing is also known as shift-reduce parsing. One example is a LR parser.
+\end{itemize}
+
+
+\section{Parser Usage}
+
+Parsers are widely used in the following technologies:
+
+\begin{itemize}
+	\item Java and other programming languages
+	\item HTML and XML
+	\item Interactive data language and object definition language
+	\item Database languages, such as SQL
+	\item Modeling languages, such as virtual reality modeling language
+	\item Scripting languages
+	\item Protocols, such as HTTP and Internet remote function calls
+\end{itemize}
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,324 @@
+\documentclass[12pt]{article}
+
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+
+
+\newcolumntype{C}{ >{\centering\arraybackslash} m{4cm} }
+\newcolumntype{E}{ >{\centering\arraybackslash} m{11cm} }
+\newcolumntype{I}{ >{\centering\arraybackslash} m{12cm} }
+\newcolumntype{D}{ >{\centering\arraybackslash} m{3cm} }
+\newcolumntype{F}{ >{\centering\arraybackslash} m{1cm} }
+\newcolumntype{G}{ >{\centering\arraybackslash} m{2cm} }
+\newcolumntype{H}{ >{\centering\arraybackslash} m{8cm} }
+\newcolumntype{K}{ >{\centering\arraybackslash} m{7cm} }
+\newcolumntype{Y}{ >{\centering\arraybackslash} m{10cm} }
+
+\usepackage{amsmath, amssymb}
+\usepackage{mathtools}
+
+\usepackage{listings}
+\lstdefinestyle{mystyle}{
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                               
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=3
+}
+
+
+
+
+
+
+\lstset{style=mystyle}
+
+
+\usepackage[margin=1in,footskip=.25in]{geometry}
+
+\usepackage{xepersian}
+\settextfont[Scale=1]{Vazir}
+
+\renewcommand{\baselinestretch}{1.3} 
+
+\begin{document}
+
+\noindent
+به نظر شما هدف از ارائه ی درس طراحی الگوریتم ها در مقطع کارشناسی فناوری اطلاعات چیست ؟
+
+
+\vspace{30pt}
+
+\noindent
+در تولید یک محصول نرم افزاری محاسبه ی پیچیدگی زمانی و فضایی یکی از مهمترین متریک های محاسبه شده توسط مهندسین نرم افزار است .
+
+
+\vspace{30pt}
+
+
+\noindent
+الف ) به نظر شما چرا پیچیدگی الگوریتم و نرم افزار را محاسبه می کنند ؟
+
+\vspace{30pt}
+
+
+\noindent
+ب ) منظور از 
+$f(n) = O(g(n))$
+و
+$f(n) = \Omega(g(n))$
+و
+$f(n) = \theta(g(n))$
+چیست ؟
+
+
+\vspace{30pt}
+
+
+
+\noindent
+ج ) کدامیک از موارد زیر می تواند درست باشد .
+
+\begin{align*}
+\begin{rcases}
+f(n) = O(g(n)) \\
+f(n) = \theta(g(n))
+\end{rcases} \Rightarrow
+f(n) = \Omega(g(n))
+\end{align*}
+
+
+\begin{align*}
+\begin{rcases}
+f(n) = \Omega(g(n)) \\
+f(n) = \theta(g(n))
+\end{rcases} \Rightarrow
+f(n) = \Omega(g(n))
+\end{align*}
+
+
+
+
+\begin{align*}
+\begin{rcases}
+f(n) = \theta(h(n)) \\
+g(n) = \Omega(f(n))
+\end{rcases} \Rightarrow
+g(n) = \Omega(h(n))
+\end{align*}
+
+
+
+
+\begin{align*}
+\begin{rcases}
+f(n) = \Omega(g(n)) \\
+f(n) = O(g(n))
+\end{rcases} \Rightarrow
+f(n) = \theta(g(n))
+\end{align*}
+
+
+
+
+
+
+
+\begin{align*}
+\begin{rcases}
+f(n) = \theta(g(n)) \\
+g(n) = \Omega(f(n))
+\end{rcases} \Rightarrow
+f(n) = \theta(g(n))
+\end{align*}
+
+
+
+\newpage
+
+
+
+\noindent
+تفاوت میان الگوریتم های از نوع 
+\textbf{تقسیم و غلبه}
+ و
+\textbf{حریصانه}
+ چیست ؟
+
+
+\vspace{30pt}
+
+
+
+
+
+\noindent
+اگر الگوریتمی روی سیستمی با اندازه ورودی 10 به مدت 8 میلی ثانیه اجرا شود ، همین الگوریتم با اندازه ورودی 100 روی سیستمی دیگر با قدرت پردازشی و سرعت اجرایی نصف سیستم موجود در چه زمانی اجرا خواهد شد ( پیچیدگی این الگوریتم از مرتبه ی 
+$n\log{(n)}$
+می باشد )
+
+
+\vspace{30pt}
+
+
+
+\noindent
+الگوریتم جستجوی دودویی را بیان کنید و مشخص کنید از کدام دسته از الگوریتم هاست و پیچیدگی آن چیست ؟
+
+
+\vspace{30pt}
+
+
+
+\noindent
+فلوچارتی را رسم کنید که عددی را از ورودی دریافت کند و مشخص کند که زوج است یا خیر ؟
+
+
+
+
+\vspace{30pt}
+
+
+
+\noindent
+پیچیدگی موارد زیر را مشخص کنید ؟
+
+
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{ E  D  }
+	\begin{lstlisting}[language=C++, caption=]
+	z = 0;
+	for(i=1;i<=n;i++) {
+		for(j=1;j<=n;j+=2) {
+			for(k=1;k<=n^2;n*=3) {
+				z++;
+			}
+		}
+	}
+	\end{lstlisting}
+     &  
+	\begin{lstlisting}[language=C++, caption=]
+	.
+	.
+	.
+	.
+	.
+	.
+	.
+	.
+	\end{lstlisting}
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+
+
+
+
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{ I  D  }
+	\begin{lstlisting}[language=C++, caption=]
+	F(n) {
+		if( n <= 1 ) {
+			return 1;
+		} else {
+			return F(n/2) + F(n/3) + F(n-1) + F(n-2);
+		}
+	}
+	\end{lstlisting}
+     &  
+	\begin{lstlisting}[language=C++, caption=]
+	.
+	.
+	.
+	.
+	.
+	.
+	.
+	\end{lstlisting}
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+
+
+
+
+
+\newpage
+
+
+\noindent
+فرض کنید تابع 
+$g(x,y)$
+به این صورت تعریف شده باشد که در مکان
+$x$
+به تعداد
+$y$
+علامت 
+$*$
+را چاپ کند . در این صورت :
+
+
+\noindent
+خروجی الگوریتم
+\lr{\lstinline{F_Print(0,8,3)}}
+چیست ؟
+
+\noindent
+پیچیدگی زمانی این الگوریتم را محاسبه کنید ؟
+
+
+\begin{latin}
+\begin{center}
+  \bgroup
+  \def\arraystretch{1.5}%
+  \begin{tabular}{ E  D  }
+	\begin{lstlisting}[language=C++, caption=]
+	F_Print(int a,int b,int c) {
+		int m = (a+b)/2 ;
+		if(c > 0) {
+			g(m,c);
+			F_Print(a,m,c-1);
+			F_Print(m,b,c-1);
+		}
+	}
+	\end{lstlisting}
+     &  
+	\begin{lstlisting}[language=C++, caption=]
+	.
+	.
+	.
+	.
+	.
+	.
+	.
+	.
+	\end{lstlisting}
+  \end{tabular}
+  \egroup
+\end{center}
+\end{latin}
+
+
+
+
+
+
+
+\end{document}

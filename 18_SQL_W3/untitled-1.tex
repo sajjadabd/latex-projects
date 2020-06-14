@@ -1,0 +1,670 @@
+\documentclass[a4paper,12pt]{article}
+
+%\usepackage{color}
+%\usepackage{tikz}
+%\usetikzlibrary{positioning}
+%\usepackage{amsmath, amssymb}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=black,  %choose some color if you want links to stand out
+}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\normalsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=3
+}
+
+
+\lstdefinestyle{javaStyle}{
+  frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+\begin{document}
+\title{SQL Tutorial}
+%\author{SJAbd}
+\date{\today}
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\lstset{style=mystyle}
+
+
+SQL is a standard language for storing, manipulating and retrieving data in databases.
+
+Our SQL tutorial will teach you how to use SQL in: MySQL, SQL Server, MS Access, Oracle, Sybase, Informix, Postgres, and other database systems.
+
+
+
+\section{Introduction to SQL}
+
+SQL is a standard language for accessing and manipulating databases.
+
+\subsection{What is SQL?}
+
+\begin{itemize}
+	\item SQL stands for Structured Query Language
+	\item SQL lets you access and manipulate databases
+	\item SQL became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) in 1987
+\end{itemize}
+
+
+
+\subsection{What Can SQL do?}
+
+\begin{itemize}
+	\item SQL can execute queries against a database
+	\item SQL can retrieve data from a database
+	\item SQL can insert records in a database
+	\item SQL can update records in a database
+	\item SQL can delete records from a database
+	\item SQL can create new databases
+	\item SQL can create new tables in a database
+	\item SQL can create stored procedures in a database
+	\item SQL can create views in a database
+	\item SQL can set permissions on tables, procedures, and views
+\end{itemize}
+
+
+\subsection{SQL is a Standard - BUT....}
+
+Although SQL is an ANSI/ISO standard, there are different versions of the SQL language.
+
+However, to be compliant with the ANSI standard, they all support at least the major commands (such as SELECT, UPDATE, DELETE, INSERT, WHERE) in a similar manner.
+
+
+Note: Most of the SQL database programs also have their own proprietary extensions in addition to the SQL standard!
+
+
+
+\subsection{Using SQL in Your Web Site}
+
+To build a web site that shows data from a database, you will need:
+
+\begin{itemize}
+	\item An RDBMS database program (i.e. MS Access, SQL Server, MySQL)
+	\item To use a server-side scripting language, like PHP or ASP
+	\item To use SQL to get the data you want
+	\item To use HTML / CSS to style the page
+\end{itemize}
+
+
+\subsection{RDBMS}
+
+RDBMS stands for Relational Database Management System.
+
+RDBMS is the basis for SQL, and for all modern database systems such as MS SQL Server, IBM DB2, Oracle, MySQL, and Microsoft Access.
+
+The data in RDBMS is stored in database objects called tables. A table is a collection of related data entries and it consists of columns and rows.
+
+Look at the "Customers" table:
+
+
+\begin{lstlisting}
+SELECT * FROM Customers;
+\end{lstlisting}
+
+
+Every table is broken up into smaller entities called fields. The fields in the Customers table consist of CustomerID, CustomerName, ContactName, Address, City, PostalCode and Country. A field is a column in a table that is designed to maintain specific information about every record in the table.
+
+A record, also called a row, is each individual entry that exists in a table. For example, there are 91 records in the above Customers table. A record is a horizontal entity in a table.
+
+A column is a vertical entity in a table that contains all information associated with a specific field in a table.
+
+
+
+\section{SQL Syntax}
+
+A database most often contains one or more tables. Each table is identified by a name (e.g. "Customers" or "Orders"). Tables contain records (rows) with data.
+
+\subsection{SQL Statements}
+
+Most of the actions you need to perform on a database are done with SQL statements.
+
+The following SQL statement selects all the records in the "Customers" table:
+
+
+\begin{lstlisting}
+SELECT * FROM Customers;
+\end{lstlisting}
+
+In this tutorial we will teach you all about the different SQL statements.
+
+
+\subsection{Keep in Mind That...}
+
+\begin{itemize}
+	\item SQL keywords are NOT case sensitive: select is the same as SELECT
+\end{itemize}
+
+In this tutorial we will write all SQL keywords in upper-case.
+
+
+
+\subsection{Semicolon after SQL Statements?}
+
+Some database systems require a semicolon at the end of each SQL statement.
+
+Semicolon is the standard way to separate each SQL statement in database systems that allow more than one SQL statement to be executed in the same call to the server.
+
+In this tutorial, we will use semicolon at the end of each SQL statement.
+
+
+
+
+\subsection{Some of The Most Important SQL Commands}
+
+\begin{itemize}
+	\item SELECT - extracts data from a database
+	\item UPDATE - updates data in a database
+	\item DELETE - deletes data from a database
+	\item INSERT INTO - inserts new data into a database
+	\item CREATE DATABASE - creates a new database
+	\item ALTER DATABASE - modifies a database
+	\item CREATE TABLE - creates a new table
+	\item ALTER TABLE - modifies a table
+	\item DROP TABLE - deletes a table
+	\item CREATE INDEX - creates an index (search key)
+	\item DROP INDEX - deletes an index
+\end{itemize}
+
+
+
+\section{SQL SELECT Statement}
+
+\subsection{The SQL SELECT Statement}
+
+The SELECT statement is used to select data from a database.
+
+The data returned is stored in a result table, called the result-set.
+
+SELECT Syntax :
+
+\begin{lstlisting}
+SELECT column1, column2, ...
+FROM table_name;
+\end{lstlisting}
+
+Here, column1, column2, ... are the field names of the table you want to select data from. If you want to select all the fields available in the table, use the following syntax:
+
+
+\begin{lstlisting}
+SELECT * FROM table_name;
+\end{lstlisting}
+
+
+
+\subsection{SELECT Column Example}
+
+The following SQL statement selects the "CustomerName" and "City" columns from the "Customers" table:
+
+
+\begin{lstlisting}
+SELECT CustomerName, City FROM Customers;
+\end{lstlisting}
+
+
+\subsection{SELECT * Example}
+
+The following SQL statement selects all the columns from the "Customers" table:
+
+\begin{lstlisting}
+SELECT * FROM Customers;
+\end{lstlisting}
+
+
+
+\section{SQL SELECT DISTINCT Statement}
+
+\subsection{The SQL SELECT DISTINCT Statement}
+
+The SELECT DISTINCT statement is used to return only distinct (different) values.
+
+Inside a table, a column often contains many duplicate values; and sometimes you only want to list the different (distinct) values.
+
+SELECT DISTINCT Syntax :
+
+\begin{lstlisting}
+SELECT DISTINCT column1, column2, ...
+FROM table_name;
+\end{lstlisting}
+
+
+\subsection{SELECT Example Without DISTINCT}
+
+The following SQL statement selects ALL (including the duplicates) values from the "Country" column in the "Customers" table:
+
+
+\begin{lstlisting}
+SELECT Country FROM Customers;
+\end{lstlisting}
+
+
+Now, let us use the DISTINCT keyword with the above SELECT statement and see the result.
+
+
+
+\subsection{SELECT DISTINCT Examples}
+
+The following SQL statement selects only the DISTINCT values from the "Country" column in the "Customers" table:
+
+\begin{lstlisting}
+SELECT DISTINCT Country FROM Customers;
+\end{lstlisting}
+
+
+The following SQL statement lists the number of different (distinct) customer countries:
+
+\begin{lstlisting}
+SELECT COUNT(DISTINCT Country) FROM Customers;
+\end{lstlisting}
+
+
+Here is the workaround for MS Access:
+
+\begin{lstlisting}
+SELECT Count(*) AS DistinctCountries
+FROM (SELECT DISTINCT Country FROM Customers);
+\end{lstlisting}
+
+
+
+\section{SQL WHERE Clause}
+
+The WHERE clause is used to filter records.
+
+The WHERE clause is used to extract only those records that fulfill a specified condition.
+
+WHERE Syntax :
+
+
+\begin{lstlisting}
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+\end{lstlisting}
+
+Note: The WHERE clause is not only used in SELECT statement, it is also used in UPDATE, DELETE statement, etc.!
+
+
+\subsection{WHERE Clause Example}
+
+The following SQL statement selects all the customers from the country "Mexico", in the "Customers" table:
+
+
+\begin{lstlisting}
+SELECT * FROM Customers
+WHERE Country='Mexico';
+\end{lstlisting}
+
+
+\subsection{Text Fields vs. Numeric Fields}
+
+SQL requires single quotes around text values (most database systems will also allow double quotes).
+
+However, numeric fields should not be enclosed in quotes:
+
+\begin{lstlisting}
+SELECT * FROM Customers
+WHERE CustomerID=1;
+\end{lstlisting}
+
+
+\subsection{Operators in The WHERE Clause}
+
+\begin{itemize}
+	\item $=$ - Equal
+	\item $>$ - Greater than
+	\item $<$ - Less than
+	\item $>=$ - 	Greater than or equal
+	\item $<=$ - Less than or equal
+	\item $<>$ - Not equal. Note: In some versions of SQL this operator may be written as !=
+	\item BETWEEN - Between a certain range
+	\item LIKE - Search for a pattern
+	\item IN - To specify multiple possible values for a column
+\end{itemize}
+
+
+\section{SQL AND, OR and NOT Operators}
+
+\subsection{The SQL AND, OR and NOT Operators}
+
+The WHERE clause can be combined with AND, OR, and NOT operators.
+
+The AND and OR operators are used to filter records based on more than one condition:
+
+\begin{itemize}
+	\item The AND operator displays a record if all the conditions separated by AND are TRUE.
+	\item The OR operator displays a record if any of the conditions separated by OR is TRUE.
+\end{itemize}
+
+The NOT operator displays a record if the condition(s) is NOT TRUE.
+
+AND Syntax :
+
+
+\begin{lstlisting}
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;
+\end{lstlisting}
+
+
+OR Syntax :
+
+\begin{lstlisting}
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 OR condition2 OR condition3 ...;
+\end{lstlisting}
+
+NOT Syntax :
+
+\begin{lstlisting}
+SELECT column1, column2, ...
+FROM table_name
+WHERE NOT condition;
+\end{lstlisting}
+
+
+\subsection{AND Example}
+
+The following SQL statement selects all fields from "Customers" where country is "Germany" AND city is "Berlin":
+
+
+\begin{lstlisting}
+SELECT * FROM Customers
+WHERE Country='Germany' AND City='Berlin';
+\end{lstlisting}
+
+
+\subsection{OR Example}
+
+The following SQL statement selects all fields from "Customers" where city is "Berlin" OR "Munchen":
+
+\begin{lstlisting}
+SELECT * FROM Customers
+WHERE City='Berlin' OR City='Munchen';
+\end{lstlisting}
+
+
+The following SQL statement selects all fields from "Customers" where country is "Germany" OR "Spain":
+
+\begin{lstlisting}
+SELECT * FROM Customers
+WHERE Country='Germany' OR Country='Spain';
+\end{lstlisting}
+
+
+
+\subsection{NOT Example}
+
+The following SQL statement selects all fields from "Customers" where country is NOT "Germany":
+
+\begin{lstlisting}
+SELECT * FROM Customers
+WHERE NOT Country='Germany';
+\end{lstlisting}
+
+
+
+\subsection{Combining AND, OR and NOT}
+
+You can also combine the AND, OR and NOT operators.
+
+The following SQL statement selects all fields from "Customers" where country is "Germany" AND city must be "Berlin" OR "Munchen" (use parenthesis to form complex expressions):
+
+
+\begin{lstlisting}
+SELECT * FROM Customers
+WHERE Country='Germany' AND (City='Berlin' OR City='Munchen');
+\end{lstlisting}
+
+
+The following SQL statement selects all fields from "Customers" where country is NOT "Germany" and NOT "USA":
+
+\begin{lstlisting}
+SELECT * FROM Customers
+WHERE NOT Country='Germany' AND NOT Country='USA';
+\end{lstlisting}
+
+
+\section{SQL ORDER BY Keyword}
+
+\subsection{The SQL ORDER BY Keyword}
+
+The ORDER BY keyword is used to sort the result-set in ascending or descending order.
+
+The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
+
+
+
+ORDER BY Syntax :
+
+\begin{lstlisting}
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;
+\end{lstlisting}
+
+
+\subsection{ORDER BY Example}
+
+The following SQL statement selects all customers from the "Customers" table, sorted by the "Country" column:
+
+\begin{lstlisting}
+SELECT * FROM Customers
+ORDER BY Country;
+\end{lstlisting}
+
+
+\subsection{ORDER BY DESC Example}
+
+The following SQL statement selects all customers from the "Customers" table, sorted DESCENDING by the "Country" column:
+
+\begin{lstlisting}
+SELECT * FROM Customers
+ORDER BY Country DESC;
+\end{lstlisting}
+
+
+\subsection{ORDER BY Several Columns Example}
+
+The following SQL statement selects all customers from the "Customers" table, sorted by the "Country" and the "CustomerName" column. This means that it orders by Country, but if some rows have the same Country, it orders them by CustomerName:
+
+
+\begin{lstlisting}
+SELECT * FROM Customers
+ORDER BY Country, CustomerName;
+\end{lstlisting}
+
+
+\subsection{ORDER BY Several Columns Example 2}
+
+The following SQL statement selects all customers from the "Customers" table, sorted ascending by the "Country" and descending by the "CustomerName" column:
+
+
+\begin{lstlisting}
+SELECT * FROM Customers
+ORDER BY Country ASC, CustomerName DESC;
+\end{lstlisting}
+
+
+\section{SQL INSERT INTO Statement}
+
+\subsection{The SQL INSERT INTO Statement}
+
+The INSERT INTO statement is used to insert new records in a table.
+
+INSERT INTO Syntax :
+
+It is possible to write the INSERT INTO statement in two ways.
+
+The first way specifies both the column names and the values to be inserted:
+
+\begin{lstlisting}
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+\end{lstlisting}
+
+If you are adding values for all the columns of the table, you do not need to specify the column names in the SQL query. However, make sure the order of the values is in the same order as the columns in the table. The INSERT INTO syntax would be as follows:
+
+
+\begin{lstlisting}
+INSERT INTO table_name
+VALUES (value1, value2, value3, ...);
+\end{lstlisting}
+
+
+\subsection{INSERT INTO Example}
+
+The following SQL statement inserts a new record in the "Customers" table:
+
+\begin{lstlisting}
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+\end{lstlisting}
+
+
+Did you notice that we did not insert any number into the CustomerID field?
+The CustomerID column is an auto-increment field and will be generated automatically when a new record is inserted into the table.
+
+
+\subsection{Insert Data Only in Specified Columns}
+
+It is also possible to only insert data in specific columns.
+
+The following SQL statement will insert a new record, but only insert data in the "CustomerName", "City", and "Country" columns (CustomerID will be updated automatically):
+
+
+\begin{lstlisting}
+INSERT INTO Customers (CustomerName, City, Country)
+VALUES ('Cardinal', 'Stavanger', 'Norway');
+\end{lstlisting}
+
+
+
+\section{SQL NULL Values}
+
+\subsection{What is a NULL Value?}
+
+A field with a NULL value is a field with no value.
+
+If a field in a table is optional, it is possible to insert a new record or update a record without adding a value to this field. Then, the field will be saved with a NULL value.
+
+
+Note: A NULL value is different from a zero value or a field that contains spaces. A field with a NULL value is one that has been left blank during record creation!
+
+
+\subsection{How to Test for NULL Values?}
+
+It is not possible to test for NULL values with comparison operators, such as $=$, $<$, or $<>$.
+
+We will have to use the IS NULL and IS NOT NULL operators instead.
+
+IS NULL Syntax :
+
+\begin{lstlisting}
+SELECT column_names
+FROM table_name
+WHERE column_name IS NULL;
+\end{lstlisting}
+
+IS NOT NULL Syntax :
+
+\begin{lstlisting}
+SELECT column_names
+FROM table_name
+WHERE column_name IS NOT NULL;
+\end{lstlisting}
+
+\subsection{The IS NULL Operator}
+
+The IS NULL operator is used to test for empty values (NULL values).
+
+The following SQL lists all customers with a NULL value in the "Address" field:
+
+
+\begin{lstlisting}
+SELECT CustomerName, ContactName, Address
+FROM Customers
+WHERE Address IS NULL;
+\end{lstlisting}
+
+
+Tip: Always use IS NULL to look for NULL values.
+
+
+\subsection{The IS NOT NULL Operator}
+
+The IS NOT NULL operator is used to test for non-empty values (NOT NULL values).
+
+The following SQL lists all customers with a value in the "Address" field:
+
+
+\begin{lstlisting}
+SELECT CustomerName, ContactName, Address
+FROM Customers
+WHERE Address IS NOT NULL;
+\end{lstlisting}
+
+
+\section{SQL UPDATE Statement}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

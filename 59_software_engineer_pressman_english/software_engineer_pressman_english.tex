@@ -1,0 +1,820 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+
+\fancypagestyle{myplain}
+{
+  \fancyhf{}
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\footrulewidth{0pt}
+  \fancyfoot[C]{\thepage}
+}
+\fancyhf{}
+\fancyhf{}
+\fancyhead[CO]{\nouppercase\leftmark}
+\fancyhead[CE]{\hdrtitle}
+\fancyhead[LE,RO]{\thepage}
+
+\pagestyle{fancy}
+
+\renewcommand\sectionmark[1]{\markboth{#1}{}}%don't move this
+%\usepackage[margin=1.2in,footskip=.25in]{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=black,  %choose some color if you want links to stand out
+}
+
+%\renewcommand{\baselinestretch}{1.3} 
+
+\begin{document}
+
+\tableofcontents
+
+
+\newpage
+
+\section{Software And Software Eegineering}
+
+\subsection{How should we define software?}
+
+Software is: (1) instructions (computer programs) that when executed provide desired
+features, function, and performance; (2) data structures that enable the programs to adequately manipulate information, and (3) descriptive information in both hard copy and
+virtual forms that describes the operation and use of the programs.
+
+
+\subsection{Characteristics of software that make it different from hardware?}
+
+\begin{enumerate}
+	\item Software is developed or engineered; it is not manufactured in the classical sense .
+	\item Software doesn’t wear out, but it does
+deteriorate.
+	\item Although the industry is moving toward component-based construction, most
+software continues to be custom built.
+\end{enumerate}
+
+
+\subsection{Seven broad categories of computer software ?}
+
+\begin{itemize}
+	\item System software
+	\item Application software
+	\item Engineering/scientific software
+	\item Embedded software
+	\item Product-line software
+	\item Web applications
+	\item Artificial intelligence software
+\end{itemize}
+
+
+\subsection{Software engineering layers?}
+
+\begin{itemize}
+	\item Tools
+	\item Methods
+	\item Process
+	\item a quality Focus
+\end{itemize}
+
+
+\subsection{What is a Process ?}
+
+A process is a collection of \textbf{activities}, \textbf{actions}, and \textbf{tasks} that are performed when
+some work product is to be created.
+
+
+
+\subsection{What are the five generic process framework activities?}
+
+\begin{itemize}
+	\item Communication
+	\item Planning
+	\item Modeling
+	\item Construction
+	\item Deployment
+\end{itemize}
+
+
+\subsection{What is umbrella activities ?}
+
+umbrella activities are applied throughout a software project and help a software team manage and control progress, quality,
+change, and risk.
+
+\newpage
+
+\subsection{Typical umbrella activities ?}
+
+\begin{itemize}
+	\item Software project tracking and control
+	\item Risk management
+	\item Software quality assurance
+	\item Technical reviews
+	\item Measurement
+	\item Software configuration management
+	\item Reusability management
+	\item Work product preparation and production
+\end{itemize}
+
+
+\newpage
+
+\subsection{Types of Software Myths?}
+
+\subsubsection{Management myths}
+
+\begin{itemize}
+	\item [Myths :] We already have a book that’s full of standards and procedures for
+building software. Won’t that provide my people with everything they
+need to know?
+	\item [Reality :] The book of standards may very well exist, but is it used? Are software practitioners aware of its existence? Does it reflect modern
+software engineering practice? Is it complete? Is it adaptable? Is it
+streamlined to improve time-to-delivery while still maintaining a
+focus on quality? In many cases, the answer to all of these questions
+is “no.”
+\end{itemize}
+
+\begin{itemize}
+	\item [Myths :] If we get behind schedule, we can add more programmers and catch up
+(sometimes called the “Mongolian horde” concept).
+	\item [Reality :] “adding people to a late software project makes it later.” At first, this statement may seem
+counterintuitive. However, as new people are added, people who
+were working must spend time educating the newcomers
+\end{itemize}
+
+
+\begin{itemize}
+	\item [Myths :] If I decide to outsource the software project to a third party, I can just
+relax and let that firm build it.
+	\item [Reality :] If an organization does not understand how to manage and control
+software projects internally, it will invariably struggle when it outsources software projects.
+\end{itemize}
+
+\newpage
+
+\subsubsection{Customer myths}
+
+\begin{itemize}
+	\item [Myths :] A general statement of objectives is sufficient to begin writing
+programs—we can fill in the details later .
+	\item [Reality :] Although a comprehensive and stable statement of requirements is
+not always possible, an ambiguous “statement of objectives” is a recipe for disaster. Unambiguous requirements are developed only through effective and continuous
+communication between customer and developer.
+\end{itemize}
+
+
+\begin{itemize}
+	\item [Myths :] Software requirements continually change, but change can be easily
+accommodated because software is flexible.
+	\item [Reality :] It is true that software requirements change, but the impact of
+change varies with the time at which it is introduced. When requirements changes are requested early (before design or code has been
+started), the cost impact is relatively small .
+However, as time
+passes, the cost impact grows rapidly
+\end{itemize}
+
+
+\newpage
+
+\subsubsection{Practitioner’s myths}
+
+\begin{itemize}
+	\item [Myths :] Once we write the program and get it to work, our job is done.
+	\item [Reality :]  Industry data indicate that between 60 and 80 percent of all effort expended on software will be expended after it is delivered to the customer for the first time.
+\end{itemize}
+
+\begin{itemize}
+	\item [Myths :] Until I get the program “running” I have no way of assessing its quality.
+	\item [Reality :] One of the most effective software quality assurance mechanisms
+can be applied from the inception of a project—the technical review.
+\end{itemize}
+
+\begin{itemize}
+	\item [Myths :] The only deliverable work product for a successful project is the working
+program.
+	\item [Reality :] A working program is only one part of a software configuration that
+includes many elements. A variety of work products (e.g., models,
+documents, plans) provide a foundation for successful engineering
+and, more important, guidance for software support.
+\end{itemize}
+
+\begin{itemize}
+	\item [Myths :] Software engineering will make us create voluminous and unnecessary
+documentation and will invariably slow us down
+	\item [Reality :] Software engineering is not about creating documents. It is about
+creating a quality product. Better quality leads to reduced rework.
+And reduced rework results in faster delivery times.
+\end{itemize}
+
+\newpage
+
+\section{Process Models}
+
+\subsection{what is software process ?}
+
+software process is a framework for the activities, actions, and tasks that are required to build high-quality software.
+
+
+
+\subsection{Is “process” synonymous with software engineering?}
+
+The answer is “yes and no.” A software process
+defines the approach that is taken as software is engineered. But software engineering also encompasses technologies that populate the process—technical methods and automated tools.
+
+
+\subsection{the communication activity
+might have six distinct actions?}
+
+\begin{itemize}
+	\item inception
+	\item elicitation
+	\item elaboration
+	\item negotiation
+	\item specification
+	\item validation
+\end{itemize}
+
+
+
+\subsection{What is Task Set?}
+
+A task set defines the actual work to be done
+to accomplish the objectives of a software
+engineering action .
+
+
+
+
+\subsection{Process Models}
+
+\subsubsection{The Waterfall Model}
+
+The waterfall model,sometimes called the classic life cycle, suggests a systematic,
+sequential approach to software development that begins with customer specification of requirements and progresses through planning, modeling, construction, and deployment, culminating in ongoing support of the completed software
+
+\subsubsection{problems of the waterfall model ?}
+
+
+\begin{itemize}
+	\item Real projects rarely follow the sequential flow that the model proposes.
+	\item It is often difficult for the customer to state all requirements explicitly.
+	\item The customer must have patience. A working version of the program(s) will
+not be available until late in the project time span.
+\end{itemize}
+
+
+
+the linear
+nature of the classic life cycle leads to “blocking states” in which some project team
+members must wait for other members of the team to complete dependent tasks. In
+fact, the time spent waiting can exceed the time spent on productive work!
+
+
+
+\subsubsection{Incremental Process Models}
+
+there may be a compelling need to provide a limited set of software functionality to users quickly and then refine and expand on that functionality
+in later software releases.
+
+The incremental model combines elements of linear and parallel process flows
+
+Each linear sequence
+produces deliverable “increments” of the software
+
+When an incremental model is used, the first increment is often a core product.
+
+
+
+\newpage
+
+\subsubsection{Evolutionary Process Models}
+
+a set of core product or system requirements
+is well understood, but the details of product or system extensions have yet to be
+defined.
+
+Evolutionary models are iterative. They are characterized in a manner that
+enables you to develop increasingly more complete versions of the software.
+
+
+
+
+\subsubsection{Prototyping}
+Often, a customer defines a set of general objectives for software,
+but does not identify detailed requirements for functions and features. In other
+cases, the developer may be unsure of the efficiency of an algorithm, the adaptability of an operating system, or the form that human-machine interaction should
+take. In these, and many other situations, a prototyping paradigmmay offer the best
+approach.
+
+
+
+
+\subsubsection{The Spiral Model}
+
+Originally proposed by Barry Boehm , thespiral model is an evolutionary software process model that couples the iterative nature of prototyping with the controlled and systematic aspects of the waterfall model. It provides
+the potential for rapid development of increasingly more complete versions of the
+software. 
+
+Using the spiral model, software is developed in a series of evolutionary releases.
+During early iterations, the release might be a model or prototype. During later iterations, increasingly more complete versions of the engineered system are produced.
+
+
+The spiral model is a realistic approach to the development of large-scale systems .
+
+
+
+\subsubsection{Concurrent Models}
+
+The concurrent development model,sometimes called concurrent engineering,allows
+a software team to represent iterative and concurrent elements of any of the process
+models .
+
+
+
+
+
+\subsubsection{Component-Based Development}
+
+The component-based development model incorporates many of the characteristics of the
+spiral model. It is evolutionary in nature , demanding an iterative approach to
+the creation of software. However, the component-based development model constructs applications from prepackaged software components.
+
+
+
+\section{Project Management Concepts}
+
+
+
+\subsection{Effective software project management focuses on the four P’s}
+
+\begin{itemize}
+	\item people
+	\item product
+	\item process
+	\item project
+\end{itemize}
+
+
+
+
+\subsection{stakeholders can be categorized into one of five constituencies ? }
+
+
+\begin{itemize}
+	\item \textbf{Senior managers} who define the business issues that often have a significant
+influence on the project.
+	\item \textbf{Project (technical) managers} who must plan, motivate, organize, and control
+the practitioners who do software work.
+	\item \textbf{Practitioners} who deliver the technical skills that are necessary to engineer a
+product or application.
+	\item \textbf{Customers} who specify the requirements for the software to be engineered
+and other stakeholders who have a peripheral interest in the outcome.
+	\item \textbf{End users} who interact with the software once it is released for production use.
+\end{itemize}
+
+
+
+\subsection{MOI model of leadership : }
+
+What do we
+look for
+when choosing
+someone to lead a
+software project?
+
+\begin{itemize}
+	\item Motivation
+	\item Organization
+	\item Ideas or innovation
+\end{itemize}
+
+
+
+
+
+\subsection{effective project manager emphasizes four key traits}
+
+\begin{itemize}
+	\item Problem solving
+	\item Managerial identity
+	\item Achievement
+	\item Influence and team building
+\end{itemize}
+
+
+
+
+\subsection{Mantei describes seven project factors that should be considered when planning the structure of software engineering teams :}
+
+What factors
+should be
+considered when
+the structure of a
+software team is
+chosen?
+
+\begin{itemize}
+	\item Difficulty of the problem to be solved
+	\item “Size” of the resultant program(s) in lines of code or function points
+	\item Time that the team will stay together (team lifetime)
+	\item Degree to which the problem can be modularized
+	\item Required quality and reliability of the system to be built
+	\item Rigidity of the delivery date
+	\item Degree of sociability (communication) required for the project
+\end{itemize}
+
+
+
+
+\subsection{Constantine suggests four “organizational paradigms” for software
+engineering teams :}
+
+\begin{itemize}
+	\item \textbf{closed paradigm} structures a team along a traditional hierarchy of authority.
+Such teams can work well when producing software that is quite similar to
+past efforts, but they will be less likely to be innovative when working within
+the closed paradigm.
+	\item \textbf{random paradigm} structures a team loosely and depends on individual initiative of the team members. When innovation or technological breakthrough
+is required, But such teams
+may struggle when “orderly performance” is required.
+	\item \textbf{open paradigm} attempts to structure a team in a manner that achieves
+some of the controls associated with the closed paradigm but also much
+of the innovation that occurs when using the random paradigm. Open paradigm
+team structures are well suited to the solution of complex problems but may
+not perform as efficiently as other teams.
+	\item \textbf{synchronous paradigm} relies on the natural compartmentalization of a
+problem and organizes team members to work on pieces of the problem with
+little active communication among themselves.
+\end{itemize}
+
+
+
+\subsection{To achieve a high-performance team :}
+
+
+\begin{itemize}
+	\item Team members must have trust in one another.
+	\item The distribution of skills must be appropriate to the problem.
+	\item Mavericks may have to be excluded from the team, if team cohesiveness is to
+be maintained.
+\end{itemize}
+
+
+\subsection{What is a “jelled“ team?}
+
+A jelled team is a group of people so strongly knit that the whole is greater than the
+sum of the parts .
+
+
+
+\subsection{many teams suffer from five factors what Jackman calls “team toxicity” : }
+
+
+\begin{itemize}
+	\item a frenzied work atmosphere
+	\item high frustration that causes friction
+among team members
+	\item a “fragmented or poorly coordinated” software process
+	\item an unclear definition of roles on the software team
+	\item “continuous and repeated exposure to failure.”
+\end{itemize}
+
+
+In addition to the five toxins described by Jackman, a software team often struggles with the differing human traits of its members.
+
+
+
+\subsection{How to choose the software process model ?}
+
+\begin{itemize}
+	\item the customers who have requested the product and the people who will do the work
+	\item  the characteristics of the product itself
+	\item the project environment in which the
+software team works 
+\end{itemize}
+
+
+
+\subsection{simple project work tasks for the communication activity ?}
+
+\begin{itemize}
+	\item Develop list of clarification issues.
+	\item Meet with stakeholders to address clarification issues.
+	\item Jointly develop a statement of scope.
+	\item Review the statement of scope with all concerned.
+	\item Modify the statement of scope as required.
+\end{itemize}
+
+
+
+
+\subsection{complex project work tasks for the communication activity ?}
+
+\begin{itemize}
+	\item Review the customer request.
+	\item Plan and schedule a formal, facilitated meeting with all stakeholders.
+	\item Conduct research to specify the proposed solution and existing approaches.
+	\item Prepare a “working document” and an agenda for the formal meeting.
+	\item Conduct the meeting
+	\item Jointly develop mini-specs that reflect data, functional, and behavioral
+features of the software. Alternatively, develop use cases that describe the
+software from the user’s point of view.
+	\item Review each mini-spec or use case for correctness, consistency, and lack of
+ambiguity.
+	\item Assemble the mini-specs into a scoping document.
+	\item Review the scoping document or collection of use cases with all
+concerned.
+	\item Modify the scoping document or use cases as required.
+\end{itemize}
+
+
+\newpage
+
+\subsection{John Reel defines 10 signs that indicate that an information systems
+project is in jeopardy :}
+
+
+\begin{itemize}
+	\item Software people don’t understand their customer’s needs.
+	\item The product scope is poorly defined.
+	\item Changes are managed poorly.
+	\item The chosen technology changes.
+	\item Business needs change [or are ill defined].
+	\item Deadlines are unrealistic.
+	\item Users are resistant.
+	\item Sponsorship is lost [or was never properly obtained].
+	\item The project team lacks people with appropriate skills.
+	\item Managers [and practitioners] avoid best practices and lessons learned.
+\end{itemize}
+
+
+
+
+\subsection{90-90 rule :}
+
+The first 90 percent of a system absorbs 90 percent of the allotted effort and time. The last 10 percent takes another 90 percent of the
+allotted effort and time 
+
+
+
+\subsection{John Reel suggests a five-part commonsense approach to software projects : }
+
+\begin{itemize}
+	\item Start on the right foot.
+	\item Maintain momentum
+	\item Track progress.
+	\item Make smart decisions.
+	\item Conduct a postmortem analysis.
+\end{itemize}
+
+
+\subsection{W5HH Principle}
+
+Barry Boehm suggests an approach that addresses project objectives, milestones and schedules, responsibilities, management and
+technical approaches, and required resources. He calls it the W5HH Principle,after
+a series of questions that lead to a definition of key project characteristics and the
+resultant project plan:
+
+
+\begin{itemize}
+	\item \textbf{Why} is the system being developed?
+	\item \textbf{What} will be done?
+	\item \textbf{When} will it be done?
+	\item \textbf{Who} is responsible for a function?
+	\item \textbf{Where} are they located organizationally?
+	\item \textbf{How} will the job be done technically and managerially?
+	\item \textbf{How much} of each resource is needed?
+\end{itemize}
+
+
+Boehm’s W5HH Principle is applicable regardless of the size or complexity of a software project. The questions noted provide you and your team with an excellent
+planning outline.
+
+
+
+
+\section{Process And Project Metrics}
+
+
+\subsection{reasons that we measure software : }
+
+
+\begin{itemize}
+	\item to characterize
+	\item to evaluate
+	\item to predict
+	\item to improve
+\end{itemize}
+
+
+\subsection{Project metricsenable a software project manager to : }
+
+
+\begin{itemize}
+	\item assess the status of an ongoing project
+	\item track potential risks
+	\item uncover problem areas before
+they go “critical”
+	\item adjust work flow or tasks
+	\item evaluate the project team’s
+ability to control quality of software work products.
+\end{itemize}
+
+
+
+\subsection{Software metrics can
+be categorized to Direct and InDirect measures : }
+
+
+Direct measuresof the software process include cost and effort applied. Direct
+measures of the product include lines of code (LOC) produced, execution speed,
+memory size, and defects reported over some set period of time. Indirect measures
+of the product include functionality, quality, complexity, efficiency, reliability, maintainability, and many other “–abilities”
+
+
+\newpage
+
+\subsection{Size-Oriented Metrics}
+
+Size-oriented software metrics are derived by normalizing quality and/or productivity measures by considering thesizeof the software that has been produced.
+
+
+\subsection{simple size-oriented metrics}
+
+\begin{itemize}
+	\item Errors per KLOC (thousand lines of code)
+	\item Defects per KLOC
+	\item \$ per KLOC
+	\item Pages of documentation per KLOC
+	\item Errors per person-month
+	\item KLOC per person-month
+	\item \$ per page of documentation
+\end{itemize}
+
+
+
+
+\subsection{Function-Oriented Metrics}
+
+Function-oriented software metrics use a measure of the functionality delivered by
+the application as a normalization value. The most widely used function-oriented
+metric is the function point (FP). Computation of the function point is based on characteristics of the software’s information domain and complexity.
+
+
+\subsection{What is Function Point?}
+A function point is a "unit of measurement" to express the \textbf{amount of business functionality} an information system (as a product) provides to a user. Function points are used to compute a functional size measurement (FSM) of software. The cost (in dollars or hours) of a single unit is calculated from past projects.
+
+
+
+\subsection{Goal of software engineering : }
+
+The overriding goal of software engineering is to produce a high-quality system,
+application, or product within a time frame that satisfies a market need.
+
+
+
+
+\subsection{Measuring Quality}
+
+
+\begin{itemize}
+	\item Correctness
+	\item Maintainability
+	\item Integrity
+	\item Usability
+\end{itemize}
+
+
+\subsection{Correctness}
+A program must operate correctly or it provides little value to
+its users. Correctness is the degree to which the software performs its required function. The most common measure for correctness is defects per
+KLOC , defects
+are those problems reported by a user of the program after the program has
+been released for general use.
+
+\subsection{Maintainability}
+
+Maintainability is the ease
+with which a program can be corrected if an error is encountered, adapted
+if its environment changes, or enhanced if the customer desires a change in
+requirements. There is no way to measure maintainability directly; therefore, you must use indirect measures. A simple time-oriented metric is
+mean-time-to-change(MTTC), the time it takes to analyze the change
+request, design an appropriate modification, implement the change, test it,
+and distribute the change to all users. On average, programs that are maintainable will have a lower MTTC  (for equivalent types of changes)
+
+
+
+\subsection{Integrity}
+This attribute measures a system’s ability
+to withstand attacks (both accidental and intentional) to its security.
+Attacks can be made on all three components of software: programs, data,
+and documention.
+
+
+\subsection{Usability}
+If a program is not easy to use, it is often doomed to failure, even if
+the functions that it performs are valuable. Usability is an attempt to quantify
+ease of use and can be measured in terms of the characteristics
+
+
+
+
+\section{Estimation for Software Projects}
+
+
+Estimation of resources, cost, and schedule for a software engineering effort
+requires experience, access to good historical information (metrics), and the courage
+to commit to quantitative predictions when qualitative information is all that exists.
+Estimation carries inherent risk, and this risk leads to uncertainty.
+
+
+
+\textbf{Project complexity} has a strong effect on the uncertainty inherent in planning.
+Complexity, however, is a relative measure that is affected by familiarity with past
+effort. The first-time developer of a sophisticated e-commerce application might consider it to be exceedingly complex. However, a Web engineering team developing its
+tenth e-commerce WebApp would consider such work run-of-the-mill.
+
+
+
+\textbf{Project size} is another important factor that can affect the accuracy and efficacy of
+estimates. As size increases, the interdependency among various elements of the
+software grows rapidly. Problem decomposition, an important approach to estimating, becomes more difficult because the refinement of problem elements may still be
+formidable.
+
+
+The \textbf{degree of structural uncertainty} also has an effect on estimation risk.
+
+
+The availability of historical information has a strong influence on estimation risk.
+
+If project scope is poorly
+understood or project requirements are subject to change, uncertainty and estimation
+risk become dangerously high.
+
+\newpage
+
+\subsection{Resources}
+
+The second planning task is estimation of the resources required to accomplish the
+software development effort.
+
+three major categories of software engineering resources—people, reusable software components, and the development environment (hardware and software tools). Each resource is specified with
+four characteristics: 
+\begin{itemize}
+	\item description of the resource
+	\item a statement of availability
+	\item time when the resource will be required
+	\item duration of time that the resource will be
+applied
+\end{itemize}
+
+The last two characteristics can be viewed as a time window.
+
+
+
+
+
+\subsection{Reusable Software Resources}
+
+Component-based software engineering (CBSE) emphasizes reusability—that is, the
+creation and reuse of software building blocks. Such building blocks, often called
+components,must be cataloged for easy reference, standardized for easy application,
+and validated for easy integration.
+
+
+\subsection{Bennatan suggests four software
+resource categories }
+
+\begin{itemize}
+	\item Off-the-shelf components 
+	\item Full-experience components
+	\item Partial-experience components
+	\item New components
+\end{itemize}
+
+
+\subsection{Off-the-shelf components }
+Existing software that can be acquired from a third
+party or from a past project. COTS (commercial off-the-shelf) components are purchased from a third party, are ready for use on the current project, and have been
+fully validated.
+
+\subsection{Full-experience components}
+Existing specifications, designs, code, or test data
+developed for past projects that are similar to the software to be built for the
+current project. Members of the current software team have had full experience
+in the application area represented by these components. Therefore, modifications
+required for full-experience components will be relatively low risk.
+
+\subsection{Partial-experience components}
+Existing specifications, designs, code, or test data
+developed for past projects that are related to the software to be built for the current project but will require substantial modification. Members of the current software team have only limited experience in the application area represented by
+these components. Therefore, modifications required for partial-experience components have a fair degree of risk.
+
+\subsection{New components}
+Software components must be built by the software team
+specifically for the needs of the current project .
+
+\subsection{Environmental Resources}
+
+The environment that supports a software project, often called the software engineering environment(SEE), incorporates hardware and software. Hardware provides a platform that supports the tools (software) required to produce the work products that are an outcome of good software engineering practice.
+
+\end{document}

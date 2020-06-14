@@ -1,0 +1,396 @@
+\documentclass[12pt]{article}
+
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+
+\usepackage{amsmath, amssymb}
+\usepackage{mathtools}
+
+\usepackage{listings}
+
+\usepackage[margin=1.1in,footskip=.25in]{geometry}
+
+\usepackage[most]{tcolorbox}
+
+\tcbset{
+    frame code={}
+    center title,
+    left=10pt,
+    right=10pt,
+    top=10pt,
+    bottom=10pt,
+    colback=gray!5,
+    colframe=gray,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=0mm,
+    boxsep=5pt,
+    arc=0pt,outer arc=0pt,
+}
+
+
+\usepackage{xepersian}
+\settextfont[Scale=1]{Vazir}
+\renewcommand{\baselinestretch}{1.3} 
+
+\begin{document}
+
+
+\tableofcontents
+
+
+
+
+
+
+\section{عامل}
+
+\noindent
+عامل می تواند شامل ربات انسان نما ، چراغ راهرو ، ترموستات و . . . باشد .
+\newline
+
+\noindent
+تعریف عامل : عامل موجودی است که به طور متناوب بر اساس رشته دریافت هایی که از حسگر ها (سنسور ها) می گیرد ، دنباله ای از اعمال را در محیط انجام می دهد .
+
+
+
+
+\section{اجزای عامل}
+
+
+\noindent
+سنسور 
+\lr{(Sensor)}
+ : وظیفه دریافت مشخصه هایی از محیط 
+ \lr{(Percept)}
+
+
+
+\noindent
+عملگر 
+\lr{(Actuator)}
+: وظیفه ی انجام اعمال بر روی محیط
+\lr{(Action)}
+
+
+
+
+
+
+\section{وظیفه ی عامل}
+
+\noindent
+عامل وظیفه دارد رشته دریافت های ورودی را به دنباله ای از اعمال نگاشت نماید .
+
+\noindent
+بنابراین می توان گفت عامل مانند یک تابع است .
+
+\noindent
+عامل می تواند اعمال خود در محیط را درک کند ، اما تاثیر آنها بر روی محیط همیشه قابل پیش بینی نیست .
+
+
+
+
+
+
+\section{عامل و محیط}
+
+
+\begin{enumerate}
+	\item بنابراین هر محیط دارای مجموعه ای از حالت ها می باشد
+	\item محیط در هر لحظه در یکی از این حالت ها می باشد
+	\item عمل عامل در محیط باعث تغییر حالت محیط می باشد 
+\end{enumerate}
+
+
+
+
+
+\section{مفهوم عقلانیت}
+
+
+\noindent
+برای دستیابی به عقلانیت چهار فاکتور زیر باید به درستی تعریف شود :
+
+\begin{enumerate}
+	\item معیار کارایی
+	\item دانش اولیه محیطی
+	\item اعمال
+	\item رشته دریافت ها
+\end{enumerate}
+
+
+\noindent
+تعریف عامل هوشمند : عاملی است که بر اساس رشته دریافت ها و دانش اولیه محیطی ، عملی را انتخاب کند ، که به واسطه ی اجرای آن عمل ، معیار کارایی مورد انتظار حداکثر گردد .
+
+
+\vspace{30pt}
+
+\noindent
+عقلانیت با دانای کل
+\lr{(omniscience)}
+متفاوت است .
+
+
+\noindent
+دانای کل نتیجه هر عمل خود را از قبل می داند .
+
+
+
+
+\vspace{30pt}
+
+\noindent
+عقلانیت با کمال گرایی 
+\lr{(perfection)}
+متفاوت است .
+
+\noindent
+کمال گرا هر عمل را به بهترین شکل ممکن انجام می دهد .
+
+
+
+
+\section{انواع محیط}
+
+برای طراحی یک عامل هوشمند باید مشخصات دقیق مسئله تعیین شود .
+
+\noindent
+مشخصات مسئله اصطلاحاً با 
+\lr{PEAS}
+بیان می شود .
+
+
+\begin{enumerate}
+	\item \lr{Performance}
+	\item \lr{Environment}
+	\item \lr{Actuators}
+	\item \lr{Sensors}
+\end{enumerate}
+
+
+
+
+\section{انواع محیط}
+
+
+\begin{enumerate}
+	\item کاملاً قابل مشاهده
+	\lr{(Fully Observable)} :
+	تمام جنبه های محیط که بر روی انتخاب عمل تاثیر گذار است ، توسط سنسورها قابل دریافت باشد .
+	\item قطعی
+	\lr{(Deterministic)} :
+	حالت بعدی مساله از روی وضعیت فعلی قابل شناسایی باشد .
+	\item اپیزودیک
+	\lr{(Episodic)} :
+	مساله را بتوان به بخش های کوچکتر اتمیک ( غیر قابل تجزیه ) تقسیم نمود . سنسور هر بخش را جداگانه دریافت نموده و عمل مورد نظر را بر روی آن انجام دهد . عمل مورد نظر به اعمال قبلی و بعدی ارتباط ندارد .
+\end{enumerate}
+
+
+$$
+----------
+$$
+
+\vspace{10pt}
+
+\begin{enumerate}
+	\item ایستا
+	\lr{(Static)} :
+	محیطی که در حین تصمیم گیری عامل ، امکان تغییر نداشته باشد .
+	\item  گسسته
+	\lr{(Discrete)} :
+	محیطی که تعداد اعمال قابل انجام بر روی آن شمارا باشد ( غیر بی نهایت )
+	\item چند عامله
+	\lr{(Multi Agent)} :
+	محیطی که شامل عامل های دیگر باشد که درصدد حداکثر نمودن معیار کارایی خودشان هستند و بر روی کارایی عامل ممکن است تاثیر گذار باشند .
+\end{enumerate}
+
+
+$$
+----------
+$$
+
+\vspace{10pt}
+
+
+\begin{itemize}
+	\item ساده ترین محیط ، محیطی است که کاملاً قابل مشاهده ، قطعی ، اپیزودیک ، ایستا ، گسسته و تک عامله باشد
+	\item اغلب محیط های مسائل واقعی محیط های بخشی قابل مشاهده ، غیر قطعی ، ترتیبی ، پویا ، پیوسته و چند عامله هستند .
+\end{itemize}
+
+
+
+
+
+
+\section{انواع عامل}
+
+\noindent
+یک عامل چگونه کار می کند ؟
+
+\begin{center}
+عامل = برنامه + سخت افزار
+\end{center}
+
+
+
+
+\noindent
+عامل ها همگی دارای یک ساختار مشترک هستند .
+
+\begin{itemize}
+	\item ورودی : دریافت فعلی
+	\item خروجی : عمل مناسب
+	\item برنامه : پردازش ورودی برای تعیین خروجی
+\end{itemize}
+
+
+
+
+\noindent
+تفاوت عامل ها در نحوه پردازش است .
+
+
+
+\vspace{20pt}
+
+
+چهار نوع عامل عبارتند از :
+
+\begin{itemize}
+	\item عامل واکنشی ساده
+	\lr{(Simple Reflex)}
+	\item عامل واکنشی مبتنی بر مدل
+	\lr{(Model Based Reflex)}
+	\item عامل مبتنی بر هدف
+	\lr{(Goal Based)}
+	\item عامل مبتنی بر سودمندی
+	\lr{(Utility Based)}
+\end{itemize}
+
+
+\noindent
+همه ی عامل ها می توانند به قاعده یادگیری مجهز شوند .
+
+
+
+
+
+
+\section{انواع مساله}
+
+
+\begin{itemize}
+	\item قطعی و کاملاً قابل مشاهده : مسایل تک حالته
+	\lr{(Single State)}
+	\item قطعی و بخشی قابل مشاهده : مسایل غیر قابل دریافت
+	\lr{(Sensorless/Conformant)}
+	\item غیر قطعی و بخشی قابل مشاهده : مسایل احتمالی
+	\lr{(Contingency)}
+	\item فضای حالت ناشناخته : مسایل اکتشافی یا بر خط
+	\lr{(Exploration/Online)}
+\end{itemize}
+
+
+
+
+
+
+
+
+\section{فرموله سازی مساله}
+
+
+یک مساله با موارد زیر تعریف می شود .
+
+
+\begin{itemize}
+	\item حالت شروع 
+	\lr{(initial state)}
+	\item تابع جانشینی
+	\lr{(successor function)}
+	\item آزمون هدف
+	\lr{(goal test)}
+	\item هزینه ی مسیر
+	\lr{(path cost)}
+	\item راه حل
+	\lr{(solution)}
+	\item راه حل بهینه
+	\lr{(optimal solution)}
+\end{itemize}
+
+
+
+
+
+
+
+\section{دنیای جاروبرقی}
+
+
+
+\begin{itemize}
+	\item حالات : 8 حالت مختلف وجود دارد 
+	\item حالت شروع : هر یک از حالات
+	\item اعمال : 
+	\{ چپ ، راست ، مکش ، هیچ کار \}
+	\item آزمون هدف : حالت 7 یا 8
+	\item هزینه ی مسیر : تعداد اعمال انجام شده تا رسیدن به مسیر
+\end{itemize}
+
+
+
+
+\section{پازل اعداد}
+
+
+\begin{itemize}
+	\item حالات : جایگشت های مختلف
+	\item حالت شروع : هر یک از حالات
+	\item اعمال :
+	\{ چپ ، راست ، بالا ، پایین \}
+	\item آزمون هدف : حالت هدف
+	\item هزینه ی مسیر : تعداد اعمال انجام شده
+\end{itemize}
+
+
+
+
+
+
+
+\section{8 وزیر}
+
+
+\begin{itemize}
+	\item حالات : جایگشت های مختلف چینش
+	\item حالت شروع : صفحه ی خالی
+	\item اعمال :
+	\{ اضافه نمودن وزیر در جای مناسب \}
+	\item آزمون هدف : 8 وزیر بر روی صفحه ی شطرنج
+	\item هزینه ی مسیر : زمان اجرا
+\end{itemize}
+
+
+
+
+\section{بازوی مکانیکی قطعه ساز}
+
+
+\begin{itemize}
+	\item حالات : جایگشت های مختلف مفاصل
+	\item حالت شروع : هر مقدار قرارگیری مفاصل
+	\item اعمال : جابجایی مفاصل
+	\item آزمون هدف : ساخت کامل قطعه
+	\item هزینه ی مسیر : زمان اجرا
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\end{document}

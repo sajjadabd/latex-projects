@@ -1,0 +1,177 @@
+\documentclass[12pt]{article}
+
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+
+
+\usepackage[margin=1.1in,footskip=.25in]{geometry}
+
+
+
+\usepackage[most]{tcolorbox}
+
+\tcbset{
+    frame code={}
+    center title,
+    left=10pt,
+    right=10pt,
+    top=10pt,
+    bottom=10pt,
+    colback=gray!5,
+    colframe=gray,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=0mm,
+    boxsep=5pt,
+    arc=0pt,outer arc=0pt,
+}
+
+
+\usepackage{amsmath, amssymb}
+\usepackage{mathtools}
+
+
+
+\usepackage{xepersian}
+\settextfont[Scale=1]{Vazir}
+
+\renewcommand{\baselinestretch}{1.3} 
+
+
+\begin{document}
+
+
+\vspace{20pt}
+\noindent
+ادراکات چیست؟
+
+
+\begin{tcolorbox}
+به ورودی های دریافت شده توسط عامل ادراکات گفته می شود .
+\end{tcolorbox}
+
+
+
+\vspace{20pt}
+\noindent
+تابع عامل چیست؟
+
+\begin{tcolorbox}
+تابع عامل ادراکات را از محیط دریافت کرده و به خروجی تبدیل می کند که با استفاده از عملگرها بر محیط اعمال می شود .
+\end{tcolorbox}
+
+
+\vspace{20pt}
+\noindent
+تفاوت الگوریتم
+ \lr{BFS}
+ و 
+ \lr{UCS}
+ چیست؟
+
+
+\begin{tcolorbox}
+الگوریتم 
+ \lr{BFS} : 
+ 
+ در این الگوریتم ابتدا نود ریشه بسط داده می شود ، سپس همه ی نود های بسط داده شده توسط ریشه بسط داده می شوند و سپس فرزندان آنها سطر به سطر بسط داده می شود .
+ 
+ در این الگوریتم ابتدا تمامی نود ها در عمق 
+ \lr{d}
+ و سپس همه ی نودها  در عمق
+ \lr{d+1}
+ بسط داده می شوند .
+ 
+ 
+ \vspace{20pt}
+ 
+ الگوریتم
+  \lr{UCS} : 
+  
+  در این الگوریتم نود با کمترین هزینه بسط داده می شود .
+
+\end{tcolorbox}
+
+
+
+\vspace{20pt}
+\noindent
+خصوصیات الگوریتمهای جستجوی محلی چیست؟
+
+
+
+\begin{tcolorbox}
+الگوریتم های جستجوی محلی با استفاده از حالت فعلی عمل می کنند .
+
+\vspace{20pt}
+
+مسیر هایی که در جستجو برای رسیدن به هدف در پیش گرفته می شوند . در حافظه نگهداری نمی شوند .
+
+\vspace{20pt}
+
+در این الگوریتم ها حافظه ی زیادی نیاز ندارد .
+\end{tcolorbox}
+
+
+\vspace{20pt}
+\noindent
+در چه شرایطی استفاده از الگوریتمهای جستجوی محلی بهتر است.
+
+
+\begin{tcolorbox}
+در مسائلی که مسیر رسیدن به هدف مهم نباشد و فقط حالت نهایی مهم باشد ، استفاده از الگوریتم های جستجوی محلی بهتر است .
+\end{tcolorbox}
+
+
+
+\vspace{20pt}
+\noindent
+در مورد الگوریتمهای جستجوی 
+\lr{(BFS- DFS- DLS- IDS)}
+کدام یک کامل هستند و کدام یک کامل نیستند. دلیل خود را به طور واضح بیان نمایید.
+
+
+
+
+\vspace{20pt}
+\noindent
+سه روش از روشهای رسمی تولید 
+\lr{heuristic}
+ را بنویسید. برای هر مورد یک مثال کوچک بزنید.
+
+
+
+
+
+\newpage
+\vspace{20pt}
+\noindent
+منظور از الگوریتم جستجوی ناآگاهانه چیست؟
+
+
+\begin{tcolorbox}
+الگوریتم جستجوی ناآگاهانه به غیر از تعریف مسئله ، هیچ گونه اطلاعات دیگری در رابطه با مسئله در اختیار ندارد .
+\end{tcolorbox}
+
+
+\vspace{20pt}
+\noindent
+نکته کلیدی الگوریتمهای جستجوی آگاهانه چیست؟
+
+
+\begin{tcolorbox}
+الگوریتم های جستجوی آگاهانه علاوه بر تعریف مسئله ، اطلاعات بیشتری در رابطه با مسئله دارد .
+
+
+نگرش کلی جستجو های آگاهانه انتخاب اولین-بهترین 
+\lr{(Best-First)}
+بر اساس تابع ارزیابی است .
+\end{tcolorbox}
+
+
+\begin{tcolorbox}
+نکته ی کلیدی الگوریتم های جستجو ی آگاهانه استفاده از تابع هیوریستیک می باشد .
+\end{tcolorbox}
+
+
+\end{document}

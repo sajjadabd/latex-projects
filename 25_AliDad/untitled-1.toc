@@ -1,0 +1,50 @@
+\contentsline {section}{\numberline {1}مبانی کامپیوتر}{2}%
+\contentsline {subsection}{\numberline {1.1}تعریف کامپیوتر}{2}%
+\contentsline {subsection}{\numberline {1.2}کامپیوتر چیست؟}{2}%
+\contentsline {subsection}{\numberline {1.3}اجزای کامپیوتر}{2}%
+\contentsline {subsection}{\numberline {1.4}سخت افزار چیست؟}{2}%
+\contentsline {subsection}{\numberline {1.5}نرم افزار چیست؟}{2}%
+\contentsline {subsection}{\numberline {1.6}انواع نرم افزار}{2}%
+\contentsline {subsection}{\numberline {1.7}سیستم عامل چیست؟}{2}%
+\contentsline {subsection}{\numberline {1.8}انواع سیستم عامل}{2}%
+\contentsline {subsubsection}{\numberline {1.8.1}Windows}{2}%
+\contentsline {subsubsection}{\numberline {1.8.2}MacOS}{2}%
+\contentsline {subsubsection}{\numberline {1.8.3}Linux}{2}%
+\contentsline {subsubsection}{\numberline {1.8.4}Android}{2}%
+\contentsline {subsubsection}{\numberline {1.8.5}iOS}{2}%
+\contentsline {subsection}{\numberline {1.9}ساخت نرم افزار}{2}%
+\contentsline {subsection}{\numberline {1.10}برنامه نویسی چیست؟}{2}%
+\contentsline {subsection}{\numberline {1.11}انواع زبانهای برنامه نویسی}{2}%
+\contentsline {subsubsection}{\numberline {1.11.1}C}{2}%
+\contentsline {subsubsection}{\numberline {1.11.2}C++}{2}%
+\contentsline {subsubsection}{\numberline {1.11.3}Java}{2}%
+\contentsline {subsubsection}{\numberline {1.11.4}Python}{2}%
+\contentsline {subsection}{\numberline {1.12}الگوریتم چیست؟}{2}%
+\contentsline {subsection}{\numberline {1.13}مثالهایی از الگوریتم ها}{2}%
+\contentsline {section}{\numberline {2}شبکه و اینترنت}{2}%
+\contentsline {subsection}{\numberline {2.1}شبکه چیست؟}{2}%
+\contentsline {subsection}{\numberline {2.2}انواع شبکه ها}{2}%
+\contentsline {subsection}{\numberline {2.3}اینترنت چیست؟}{2}%
+\contentsline {subsection}{\numberline {2.4}انواع توپولوژی شبکه}{2}%
+\contentsline {subsection}{\numberline {2.5}سخت افزار های ایجاد شبکه}{2}%
+\contentsline {subsection}{\numberline {2.6}Network-Interface-Card}{2}%
+\contentsline {subsection}{\numberline {2.7}MAC-Address}{2}%
+\contentsline {subsection}{\numberline {2.8}IP Address}{2}%
+\contentsline {subsection}{\numberline {2.9}ساختار IPv4}{2}%
+\contentsline {subsection}{\numberline {2.10}انواع کلاسهای IP}{2}%
+\contentsline {subsection}{\numberline {2.11}ICMP}{2}%
+\contentsline {subsection}{\numberline {2.12}ARP}{2}%
+\contentsline {subsection}{\numberline {2.13}TCP}{2}%
+\contentsline {subsection}{\numberline {2.14}UDP}{2}%
+\contentsline {subsection}{\numberline {2.15}IPv6}{2}%
+\contentsline {section}{\numberline {3}شبکه های اجتماعی}{2}%
+\contentsline {subsection}{\numberline {3.1}وبلاگ چیست؟}{2}%
+\contentsline {subsection}{\numberline {3.2}انواع و نمونه هایی از وبلاگ ها}{2}%
+\contentsline {subsection}{\numberline {3.3}تعریف شبکه اجتماعی}{2}%
+\contentsline {subsection}{\numberline {3.4}انواع و نمونه هایی از شبکه های اجتماعی}{2}%
+\contentsline {subsection}{\numberline {3.5}پیام رسان چیست؟}{2}%
+\contentsline {subsection}{\numberline {3.6}انواع و نمونه هایی از پیام رسان ها}{2}%
+\contentsline {subsection}{\numberline {3.7}فرق شبکه های اجتماعی و پیام رسان}{2}%
+\contentsline {subsection}{\numberline {3.8}آثار شبکه های اجتماعی}{2}%
+\contentsline {subsection}{\numberline {3.9}فواید و مضرات شبکه های اجتماعی}{2}%
+\contentsline {subsection}{\numberline {3.10}تاثیر شبکه های اجتماعی بر زندگی و اجتماع}{2}%

@@ -1,0 +1,177 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{1,1,1}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\large,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=3
+}
+
+\lstset{style=mystyle}
+
+\usepackage{xepersian}
+\settextfont[Scale=1]{Vazir}
+
+\begin{document}
+\title{مهندسی اینترنت}
+\maketitle
+
+\begin{enumerate}
+\item    دو مزیت اصلی معماری TCP/IP را شرح دهید ؟
+
+\item کاربرد هر یک از کلاس های آدرس IP را توصیف نمایید ؟
+
+\item مزایا و عیب های تقسیم آدرس IP به یک netid و hostid را چیست ؟
+
+\item کاربرد آدرس IP \lstinline{0.0.0.0} و  \lstinline{255.255.255.255} چیست ؟
+
+\item نوع کلاس IP آدرس های زیر را به دست آورید ؟\begin{lstlisting}
+23.1.3.5     198.34.54.23     233.12.3.4 
+45.2.3.67     178.11.23.5     254.12.34.5 
+\end{lstlisting}
+
+
+\item عملکرد پروتکل NAT را توضیح دهید ؟
+
+\item پدیده ی ROADS را توضیح دهید ؟
+
+\item یک آدرس برگشت حلقه نرم افزاری چیست ؟ و چند نمایش آدرس برگشت حلقه وجود دارد ؟
+
+\item مزایای زیر شبکه سازی را بنویسید ؟
+
+\item یک شبکه کلاس C با آدرس 
+\begin{lstlisting}
+194.34.56.0
+\end{lstlisting}
+داده شده است، چند میزبان برای  این شبکه وجود دارد ؟ 
+
+\item یک شبکه کلاس B با آدرس 
+\begin{lstlisting}
+166.23.0.0
+\end{lstlisting}
+داده شده است، چند میزبان برای  این شبکه وجود دارد ؟ 
+
+\item مفهوم آدرس دهی تک پخشی، چند پخشی و همه پخشی را توضیح دهید ؟
+
+\item آدرس کلاس A با چه عددی دودویی شروع می شود ؟ و محدوده ی آدرس این کلاس را مشخص کنید ؟
+
+\item آدرس کلاس B با چه عددی دودویی شروع می شود ؟ و محدوده ی آدرس این کلاس را مشخص کنید ؟
+
+\item محدوده ی شبکه و میزبان را در کلاس های آدرس A و B و C مشخص کنید ؟
+
+\item مشخص کنید که آدرس 
+\begin{lstlisting}
+192.168.1.18/24
+\end{lstlisting}
+جزء کدام دسته کلاس آدرس می باشد و آدرس خود شبکه ، اولین میزبان ، آخرین میزبان و آدرس Broadcast را در این شبکه مشخص کنید ؟
+
+\item مشخص کنید که آدرس 
+\begin{lstlisting}
+172.16.35.123/20
+\end{lstlisting}
+جزء کدام دسته کلاس آدرس می باشد و آدرس خود شبکه ، اولین میزبان ، آخرین میزبان و آدرس Broadcast را در این شبکه مشخص کنید ؟
+
+\item مشخص کنید که آدرس 
+\begin{lstlisting}
+172.16.129.1/17
+\end{lstlisting}
+جزء کدام دسته کلاس آدرس می باشد و آدرس خود شبکه ، اولین میزبان ، آخرین میزبان و آدرس Broadcast را در این شبکه مشخص کنید ؟
+
+
+
+\item کاربرد و دلیل استفاده از پروتکل ARP را توضیح دهید ؟
+
+\item محدودیت پروتکل ARP را توضیح دهید ؟
+
+\item به چه علت پیام درخواست ARP به صورت همه پخشی ارسال می شود ؟
+
+\item آیا پیام پاسخ ARP به صورت همه پخشی ارسال می شود ؟ توضیح دهید ؟
+
+\item چگونه آزمون آدرس IP تکراری ARP انجام می شود ؟
+
+\item ساختار بسته های IPv4 را رسم کرده و کاربرد هر فیلد را توضیح دهید ؟
+
+\item مفهوم MTU را توضیح دهید ؟
+
+\item کاربرد TTL را در بسته های IP بنویسید ؟
+
+\item حداقل 5 مشکل را نام ببرید که از ICMP می توان برای گزارش دادن آنها استفاده کرد ؟
+
+\item آیا ICMP در مورد بسته هایی که شامل پیام  ICMP هستند استفاده می شود یا خیر ؟ توضیح دهید ؟
+
+\item منظور از فیلد های نوع و کد در یک پیام ICMP چیست ؟
+
+\item چه هنگامی پیام ICMP نوع 3 باید فرستاده شود ؟
+
+\item دلایل ایجاد ازدحام در یک مسیریاب شبکه را توضیح دهید ؟
+
+\item کاربرد پیام تغییر مسیر ICMP را توضیح دهید ؟
+
+\item در چه حالت هایی پیام ICMP تخطی از زمان فرستاده می شود ؟
+
+\item چه زمانی پیام ICMP مشکل پارامتر ارسال می شود ؟
+
+\item در ساختار بسته های IP ، کاربرد فیلد نوع سرویس و اجزای آن را بنویسید ؟
+
+\item مزایا و معایب بازسازی بسته ها در مسیریاب های میانی شبکه را توضیح دهید ؟
+
+\item چه هنگامی پیام  ICMP فرونشاندن مبدا فرستاده می شود ؟ چرا این پیام نباید توسط مسیریاب ها فرستاده شود ؟
+
+\item تحت کدام شرایط مسیریاب ها باید پیام های ICMP را تولید کنند ؟
+
+\item توضیح دهید آیا ضمانتی وجود دارد که پیام های ICMP تحویل داده شوند ؟
+
+\item ویژگی های اصلی TCP را نوشته و به اختصار توضیح دهید ؟
+
+\item دلیل استفاده از UDP را نوشته و با TCP مقایسه نمایید ؟
+
+\item در چه مواقعی بهتر است که از UDP استفاده کرد و در چه مواقعی از TCP ?
+
+\item ساختار بسته های TCP را رسم نمایید ؟
+
+\item کاربرد فیلد های شماره رشته ارسال و شماره تصدیق را در بسته های TCP توضیح دهید ؟
+
+\item عملیات \lstinline{handshake} سه طرفه را توضیح دهید ؟
+
+\item کاربرد هر یک از پرچم های TCP را توضیح دهید ؟
+
+\item دلیل نامگذاری روش پنجره لغزان در TCP را توضیح دهید ؟
+
+\item پدیده ی سندروم پنجره ی ابله را توضیح دهید ؟
+
+\item نحوه ی تعیین شماره رشته ی آغازین در یک اتصال TCP به چه صورت است ؟
+
+\item مفهوم تسهیم سازی در TCP را توضیح دهید ؟
+
+\item مفهوم نقاط پایانی را در TCP توضیح دهید ؟
+
+
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,710 @@
+\documentclass{article}
+
+
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{tabularx}
+\usepackage{array} 
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{color}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0.8,0.82}
+ 
+\definecolor{codegreen}{rgb}{0.4,0.9,0.9}
+\definecolor{codegray}{rgb}{0.85,0.85,0.85}
+\definecolor{codepurple}{rgb}{0.58,0.8,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+
+\begin{document}
+
+\begin{tabular}{ l c r }
+  1 & 2 & 3 \\
+  4 & 5 & 6 \\
+  7 & 8 & 9 \\
+\end{tabular}
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+\begin{tabular}{ l | c | r }
+  1 & 2 & 3 \\
+  4 & 5 & 6 \\
+  7 & 8 & 9 \\
+\end{tabular}
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+\begin{tabular}{ l | c | r }
+  \hline			
+  1 & 2 & 3 \\
+  4 & 5 & 6 \\
+  7 & 8 & 9 \\
+  \hline  
+\end{tabular}
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+
+\begin{center}
+  \begin{tabular}{ l | c | r }
+    \hline
+    1 & 2 & 3 \\ \hline
+    4 & 5 & 6 \\ \hline
+    7 & 8 & 9 \\
+    \hline
+  \end{tabular}
+\end{center}
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+\begin{center}
+  \begin{tabular}{ | l | c | r }
+    \hline
+    1 & 2 & 3 \\ \hline
+    4 & 5 & 6 \\ \hline
+    7 & 8 & 9 \\
+    \hline
+  \end{tabular}
+\end{center}
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+\begin{center}
+  \begin{tabular}{ | l | c | r | }
+    \hline
+    1 & 2 & 3 \\ \hline
+    4 & 5 & 6 \\ \hline
+    7 & 8 & 9 \\
+    \hline
+  \end{tabular}
+\end{center}
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+
+\begin{tabular}{|r|l|}
+  \hline
+  7C0 & hexadecimal \\
+  3700 & octal \\ \cline{2-2}
+  11111000000 & binary \\
+  \hline \hline
+  1984 & decimal \\
+  \hline
+\end{tabular}
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+Without specifying width for last column:
+\begin{center}
+    \begin{tabular}{| l | l | l | l |}
+    \hline
+    Day & Min Temp & Max Temp & Summary \\ \hline
+    Monday & 11C & 22C & A clear day with lots of sunshine.
+    However, the strong breeze will bring down the temperatures. \\ \hline
+    Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells 
+    across most of Scotland and Northern Ireland, 
+    but rain reaching the far northwest. \\ \hline
+    Wednesday & 10C & 21C & Rain will still linger for the morning. 
+    Conditions will improve by early afternoon and continue 
+    throughout the evening. \\
+    \hline
+    \end{tabular}
+\end{center}
+
+{
+.\newline\newline\newline
+}
+
+
+
+With width specified:
+\begin{center}
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    Day & Min Temp & Max Temp & Summary \\ \hline
+    Monday & 11C & 22C & A clear day with lots of sunshine.  
+    However, the strong breeze will bring down the temperatures. \\ \hline
+    Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells 
+    across most of Scotland and Northern Ireland, 
+    but rain reaching the far northwest. \\ \hline
+    Wednesday & 10C & 21C & Rain will still linger for the morning. 
+    Conditions will improve by early afternoon and continue 
+    throughout the evening. \\
+    \hline
+    \end{tabular}
+\end{center}
+
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+
+
+
+\begin{tabular}{ | l | l | r | }
+  \hline\noalign{\smallskip}
+  \multicolumn{2}{c}{Item} \\
+  \cline{1-2}\noalign{\smallskip}
+  Animal & Description & Price (\$) \\
+  \noalign{\smallskip}\hline\noalign{\smallskip}
+  Gnat  & per gram & 13.65 \\
+        & each     &  0.01 \\
+  Gnu   & stuffed  & 92.50 \\
+  Emu   & stuffed  & 33.33 \\
+  Armadillo & frozen & 8.99 \\
+  \noalign{\smallskip}\hline
+\end{tabular}
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+
+
+\begin{tabular}{ll}
+\hline
+Mineral & Color \\[1cm]
+Ruby & red \\
+Sapphire & blue \\
+\hline
+\end{tabular}
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+\begin{tabular}{l*{6}{c}r}
+Team              & P & W & D & L & F  & A & Pts \\
+\hline
+Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
+Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
+Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
+FC Copenhagen     & 6 & 2 & 1 & 3 &  5 & 8 &  7  \\
+\end{tabular}
+
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+\begin{tabular}{ |l|l| }
+  \hline
+  \multicolumn{2}{|c|}{Team sheet} \\
+  \hline
+  GK & Paul Robinson \\
+  LB & Lucas Radebe \\
+  DC & Michael Duberry \\
+  DC & Dominic Matteo \\
+  RB & Dider Domi \\
+  MC & David Batty \\
+  MC & Eirik Bakke \\
+  MC & Jody Morris \\
+  FW & Jamie McMaster \\
+  ST & Alan Smith \\
+  ST & Mark Viduka \\
+  \hline
+\end{tabular}
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+\begin{tabular}{ |l|l|l| }
+\hline
+\multicolumn{3}{ |c| }{Team sheet} \\
+\hline
+Goalkeeper & GK & Paul Robinson \\ \hline
+\multirow{4}{*}{Defenders} & LB & Lucas Radebe \\
+ & DC & Michael Duburry \\
+ & DC & Dominic Matteo \\
+ & RB & Didier Domi \\ \hline
+\multirow{3}{*}{Midfielders} & MC & David Batty \\
+ & MC & Eirik Bakke \\
+ & MC & Jody Morris \\ \hline
+Forward & FW & Jamie McMaster \\ \hline
+\multirow{2}{*}{Strikers} & ST & Alan Smith \\
+ & ST & Mark Viduka \\
+\hline
+\end{tabular}
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+\begin{tabular}{cc|c|c|c|c|l}
+\cline{3-6}
+& & \multicolumn{4}{ c| }{Primes} \\ \cline{3-6}
+& & 2 & 3 & 5 & 7 \\ \cline{1-6}
+\multicolumn{1}{ |c  }{\multirow{2}{*}{Powers} } &
+\multicolumn{1}{ |c| }{504} & 3 & 2 & 0 & 1 &     \\ \cline{2-6}
+\multicolumn{1}{ |c  }{}                        &
+\multicolumn{1}{ |c| }{540} & 2 & 3 & 1 & 0 &     \\ \cline{1-6}
+\multicolumn{1}{ |c  }{\multirow{2}{*}{Powers} } &
+\multicolumn{1}{ |c| }{gcd} & 2 & 2 & 0 & 0 & min \\ \cline{2-6}
+\multicolumn{1}{ |c  }{}                        &
+\multicolumn{1}{ |c| }{lcm} & 3 & 3 & 1 & 1 & max \\ \cline{1-6}
+\end{tabular}
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+\begin{tabular}{ r|c|c| }
+\multicolumn{1}{r}{}
+ &  \multicolumn{1}{c}{noninteractive}
+ & \multicolumn{1}{c}{interactive} \\
+\cline{2-3}
+massively multiple & Library & University \\
+\cline{2-3}
+one-to-one & Book & Tutor \\
+\cline{2-3}
+\end{tabular}
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+\begin{center}
+\rowcolors{1}{green}{cyan}
+
+\begin{tabular}{lll}
+odd 	& odd 	& odd \\
+even 	& even 	& even\\
+odd 	& odd 	& odd \\
+even 	& even 	& even\\
+\end{tabular}
+\end{center}
+
+
+
+{
+.\newline\newline
+}
+
+
+
+
+
+\begin{center}
+\rowcolors{1}{green}{pink}
+
+\begin{tabular}{lll}
+odd 	& odd 	& odd \\
+even 	& even 	& even\\
+odd 	& odd 	& odd \\
+even 	& even 	& even\\
+\end{tabular}
+\end{center}
+
+
+
+{
+.\newline\newline
+}
+
+
+
+
+\begin{center}
+\rowcolors{1}{gray}{mauve}
+
+\begin{tabular}{lll}
+odd 	& odd 	& odd \\
+even 	& even 	& even\\
+odd 	& odd 	& odd \\
+even 	& even 	& even\\
+\end{tabular}
+\end{center}
+
+
+
+{
+.\newline\newline
+}
+
+
+
+
+
+\begin{center}
+\rowcolors{1}{codegreen}{codegray}
+
+\begin{tabular}{lll}
+odd 	& odd 	& odd \\
+even 	& even 	& even\\
+odd 	& odd 	& odd \\
+even 	& even 	& even\\
+\end{tabular}
+\end{center}
+
+
+
+{
+.\newline\newline
+}
+
+
+
+
+\begin{center}
+\rowcolors{1}{codepurple}{backcolour}
+
+\begin{tabular}{lll}
+odd 	& odd 	& odd \\
+even 	& even 	& even\\
+odd 	& odd 	& odd \\
+even 	& even 	& even\\
+\end{tabular}
+\end{center}
+
+
+
+{
+.\newline\newline
+}
+
+
+
+
+
+
+\begin{tabular*}{0.75\textwidth}{ | c | c | c | r | }
+  \hline
+  label 1 & label 2 & label 3 & label 4 \\
+  \hline 
+  item 1  & item 2  & item 3  & item 4  \\
+  \hline
+\end{tabular*}
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+\begin{tabular*}{0.75\textwidth}{@{\extracolsep{\fill} } | c | c | c | r | }
+  \hline
+  label 1 & label 2 & label 3 & label 4 \\
+  \hline 
+  item 1  & item 2  & item 3  & item 4  \\
+  \hline
+\end{tabular*}
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+\begin{tabularx}{\textwidth}{ |X|X|X|X| }
+  \hline
+  label 1 & label 2 & label 3 & label 4 \\
+  \hline 
+  item 1  & item 2  & item 3  & item 4  \\
+  \hline
+\end{tabularx}
+
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\begin{tabularx}{\textwidth}{ |l|R|l|R| }
+  \hline
+  label 1 & label 2 & label 3 & label 4 \\
+  \hline 
+  item 1  & item 2  & item 3  & item 4  \\
+  \hline
+\end{tabularx}
+
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+
+
+
+\begin{tabularx}{1\textwidth}{ |>{\setlength\hsize{1\hsize}\centering}X|>{\setlength\hsize{1\hsize}\raggedleft}X@{} >{\setlength\hsize{1\hsize}\raggedright}X|>{\setlength\hsize{1\hsize}\centering}X| } 
+  \hline
+Label 1 & \multicolumn{2}{>{\centering\setlength\hsize{2\hsize} }X|}{Label 2} & Label 3\tabularnewline
+\hline 
+  123  & 123  & 456  & 123  \tabularnewline
+  \hline
+  123  & 123  & 456  & 123  \tabularnewline
+  \hline
+\end{tabularx}
+
+
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+
+
+\begin{tabular}{ l c r }
+  \hline
+  1 & 2 & 3 \\ \hline
+  4 & 5 & \multicolumn{1}{r|}{6}  \\ \hline
+  7 & 8 & 9 \\ \hline
+\end{tabular}
+
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+
+
+\begin{tabular}{ | l | c | r | }
+  \hline
+  1 & 2 & 3 \\ \hline
+  4 & 5 & \multicolumn{1}{r}{6} \\ \hline
+  7 & 8 & 9 \\ \hline
+\end{tabular}
+
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+
+\begin{tabular}{llr}
+\hline
+\multicolumn{2}{c}{Item} \\
+\cline{1-2}
+Animal    & Description & Price (\$) \\
+\hline
+Gnat      & per gram    & 13.65      \\
+          & each        & 0.01       \\
+Gnu       & stuffed     & 92.50      \\
+Emu       & stuffed     & 33.33      \\
+Armadillo & frozen      & 8.99       \\
+\hline
+\end{tabular}
+
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+
+\begin{tabular}{llr}
+\firsthline
+\multicolumn{2}{c}{Item} \\
+\cline{1-2}
+Animal    & Description & Price (\$) \\
+\hline
+Gnat      & per gram    & 13.65      \\
+          & each        & 0.01       \\
+Gnu       & stuffed     & 92.50      \\
+Emu       & stuffed     & 33.33      \\
+Armadillo & frozen      & 8.99       \\
+\lasthline
+\end{tabular}
+
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+
+\begin{tabular}{llr}  
+\toprule
+\multicolumn{2}{c}{Item} \\
+\cmidrule(r){1-2}
+Animal    & Description & Price (\$) \\
+\midrule
+Gnat      & per gram    & 13.65      \\
+          &    each     & 0.01       \\
+Gnu       & stuffed     & 92.50      \\
+Emu       & stuffed     & 33.33      \\
+Armadillo & frozen      & 8.99       \\
+\bottomrule
+\end{tabular}
+
+
+
+
+
+{
+.\newline\newline\newline
+}
+
+
+
+
+
+\end{document}

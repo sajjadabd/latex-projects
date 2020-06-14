@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\usepackage[margin=1in,footskip=.25in]{geometry}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\section{Learning KVL \& KCL}
+
+\begin{center}
+\begin{circuitikz}[american]
+	\draw (0,0) -- (0,3);
+	\draw (0,3) to[R=$R_1$] (7,3);
+	\draw (7,3) to[short, f>=$i_1$] (7,0);
+	\draw (7,0) to[R=$R_2$,  f>=$i_2$] (2,0);
+	\draw (2,0) to[battery1,v=$\varepsilon_{1}$] (0,0);
+	\draw (7,0) to[short, f>=$i_3$] (7,-3);
+	\draw (7,-3) to[R=$R_3$] (2,-3);
+	\draw (0,-3) to[battery1,v=$\varepsilon_{2}$] (2,-3);
+	\draw (0,-3) -- (0,0);
+	\draw[thin, <-, >=triangle 45] (3,1.5) node{$s_1$}  ++(-40:1) arc (-40:170:1);
+	\draw[thin, <-, >=triangle 45] (3,-2) node{$s_2$}  ++(-40:1) arc (-40:170:1);
+\end{circuitikz}
+\end{center}
+
+\noindent
+Assume an electric network consisting of two voltage sources and three resistors.
+\noindent
+According to the first law we have
+
+{
+\Large
+$$
+i_{1} = i_{2} + i_{3} 
+$$
+}
+
+\noindent
+The second law applied to the closed circuit $s_{1}$ gives
+
+{
+\Large
+$$
+- R_{2} i_{2}  + \varepsilon_{1} + ( - R_{1} i _{1} ) = 0   
+$$
+}
+
+\noindent
+The second law applied to the closed circuit $s_{2}$ gives
+
+{
+\Large
+$$
+- R_{3} i_{3} - \varepsilon_{2} - \varepsilon_{1} + R_{2} i_{2} = 0 
+$$
+}
+
+\noindent
+Thus we get a system of linear equations in $i_{1}, i_{2}, i_{3}$ :
+
+{
+\Large
+\begin{align*}
+\begin{cases}
+i_{2} = i_{1} + i_{3}  \\
+- R_{2} i_{2}  + \varepsilon_{1} + ( - R_{1} i _{1} ) = 0  \\
+- R_{3} i_{3} - \varepsilon_{2} - \varepsilon_{1} + R_{2} i_{2} = 0 
+\end{cases}
+\end{align*}
+}
+\end{document}
